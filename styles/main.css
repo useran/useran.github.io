@@ -1,0 +1,28 @@
+b {
+    color: aqua;
+    font-size: 40px;
+}
+/* */
+span {
+    color:brown;
+}
+div {
+    height: 200px;
+    width: 50%;
+    /* border: 1px solid black; */
+    padding: 5px 3px 6px 9px;
+    margin: 12px auto;
+    background-color: blueviolet;
+}
+.div1 {
+    background-color: burlywood;
+}
+.div2 {
+    background-color: cadetblue;
+}
+.div3 {
+    background-color: chartreuse;
+    margin: 30px auto;
+    height: 50%;
+    width: 50%;
+}
