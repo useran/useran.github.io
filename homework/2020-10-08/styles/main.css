@@ -1,0 +1,14 @@
+button {
+    width: 120px; 
+    height:45px;
+    
+    text-align: center;
+    border: 0px;
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom, #1fe418 0%, #dee917 40%, #2BC0E4 90%);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+button:active {
+    background-image: linear-gradient(to bottom, #18e4e4 0%, #dee917 40%, #e42b9d 90%);
+    box-shadow: none;
+}
