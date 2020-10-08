@@ -1,0 +1,22 @@
+.first-button {
+    color: teal;
+    /* background-color: turquoise; */
+    width: 130px;
+    height: 130px;
+    border-radius: 20px;
+    background-color: azure; 
+    border-radius: 50%; 
+    cursor: pointer; 
+}
+.first-button:first-child{
+    color: blueviolet;
+}
+.first-button:last-child{
+    color: brown;
+}
+.first-button:hover:last-of-type{
+    background-color: cadetblue;
+}
+.first-button:hover:first-child{
+    background-color: cadetblue;
+}
