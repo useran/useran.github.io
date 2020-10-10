@@ -4,7 +4,7 @@ button{
   text-align: center;
   color: white;
   border: 0px;
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: green;
 }
 button ~ button {
@@ -13,6 +13,6 @@ button ~ button {
   text-align: center;
   color: white;
   border: 0px;
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: red;
 }
