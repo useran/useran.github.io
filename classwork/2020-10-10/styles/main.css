@@ -1,22 +1,10 @@
-.first-button {
-    color: teal;
-    /* background-color: turquoise; */
-    width: 130px;
-    height: 130px;
-    border-radius: 20px;
-    background-color: azure; 
-    border-radius: 50%; 
-    cursor: pointer; 
-}
-.first-button:first-child{
-    color: blueviolet;
-}
-.first-button:last-of-type{
-    color: brown;
-}
-.first-button:hover:last-of-type{
-    background-color: cadetblue;
-}
-.first-button:hover:first-child{
-    background-color: cadetblue;
+.main {
+  display: block;
+  width: 400px; 
+  height:40px;
+  margin-bottom: 1px;
+  background-image: linear-gradient(to right, yellow 0 50px, brown 50px 100px, yellow 100px 150px, brown 150px 200px, yellow 200px 250px, brown 250px 300px, yellow 300px 350px, brown 350px 400px);
+} 
+.main:nth-child(2n) {
+  background-image: linear-gradient(to right, brown 0 50px, yellow 50px 100px, brown 100px 150px, yellow 150px 200px, brown 200px 250px, yellow 250px 300px, brown 300px 350px, yellow 350px 400px);
 }
