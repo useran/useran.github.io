@@ -1,0 +1,26 @@
+div {
+    display: flexbox;
+    height: 40px;
+    width: 80%;
+    color: cornsilk;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 20px;
+    border: 1px solid white;
+}
+div:first-of-type {
+  background-color: indigo;
+}
+div:first-of-type + div {
+  background-color: maroon;
+}
+div:nth-child(3n) {
+  background-color: lightslategray;
+}
+div:nth-child(4n) {
+  background-color: orangered;
+}
+div:last-of-type {
+  background-color: lightcoral;
+}
+
