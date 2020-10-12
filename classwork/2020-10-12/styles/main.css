@@ -1,0 +1,19 @@
+html, body { 
+  height: 100%;
+  width: 100%;
+  background-image: url(../images/wer.jpeg);
+}
+.div1 {
+  height: 70%;
+  width: 70%;
+  border: 1px solid black;
+  position: relative;
+  }
+.div2 {
+  height: 50%;
+  width: 70%;
+  border:1px solid blueviolet;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
