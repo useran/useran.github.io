@@ -1,4 +1,4 @@
-div {
+.item1, .item2, .item3 {
   display: flex;
   width: 100px;
   height: 50px;
@@ -8,134 +8,51 @@ div {
   margin: 0px 0 1px 1px;
   justify-content: center;
   align-items: center;
-  
+  position: relative;
+}
+.menu1, .menu2, .menu3 {
+  width: 100px;
+  position: absolute;
+  top: 0px;
+  left: 101px;
+  display: none;
+  background-color: rgb(192, 186, 186);
+}
+a {
+  color: black;
+  font-size: 10px;
+  padding: 12px 16px;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+}
+a:nth-child(1) {
+  border-bottom: 1px solid rgb(114, 117, 114);
+}
+a:nth-child(2) {
+  border-bottom: 1px solid rgb(114, 117, 114);
 }
 body > div:hover {
   background-color: green;
 }
-a {
-  color: white;
-  font-size: 10px;
-  width: 100px;
-  height: 35px;
-  text-decoration: none;
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
-  
-}
-.item1 {
-  position: relative;
-  border: 2px solid white;
-  
-}
-.item1 > div {
-  width: 100px;
-  height: 35px;
-  background-color: rgb(192, 186, 186);
-  
-}
-.item1 > div:hover {
-  background-color: rgb(114, 117, 114);
-}
-.menu11 {
-  position: absolute;
-  top: 0px;
-  left: 101px;
-  display: none;
-  
-}
-.menu12 {
-  position: absolute;
-  top: 35px;
-  left: 101px;
-  display: none;
-  border-top: 1px solid rgb(114, 117, 114);
-}
-.menu13 {
-  position: absolute;
-  top: 70px;
-  left: 101px;
-  display: none;
-  border-top: 1px solid rgb(114, 117, 114);
-}
 .item1:hover > div {
   display: block;
-  
-}
-.item2 {
-  position: relative;
-  border: 2px solid white;
-  top: -5px;
-}
-.item2 > div {
-  width: 101px;
-  height: 35px;
-  background-color: rgb(192, 186, 186);
-  
-}
-.item2 > div:hover {
-  background-color: rgb(114, 117, 114);
-}
-.menu21 {
-  position: absolute;
-  top: 0px;
-  left: 101px;
-  display: none;
-  
-}
-.menu22 {
-  position: absolute;
-  top: 35px;
-  left: 101px;
-  display: none;
-  border-top: 1px solid rgb(114, 117, 114);
-}
-.menu23 {
-  position: absolute;
-  top: 70px;
-  left: 101px;
-  display: none;
-  border-top: 1px solid rgb(114, 117, 114);
 }
 .item2:hover > div {
   display: block;
 }
-.item3 {
-  position: relative;
-  border: 2px solid white;
-  top: -10px;
-  
-}
-.item3 > div {
-  width: 101px;
-  height: 35px;
-  background-color: rgb(192, 186, 186);
-}
-.item3 > div:hover {
-  background-color: rgb(114, 117, 114);
-}
-.menu31 {
-  position: absolute;
-  top: 0px;
-  left: 101px;
-  display: none;
-  
-}
-.menu32 {
-  position: absolute;
-  top: 35px;
-  left: 101px;
-  display: none;
-  border-top: 1px solid rgb(114, 117, 114);
-}
-.menu33 {
-  position: absolute;
-  top: 70px;
-  left: 101px;
-  display: none;
-  border-top: 1px solid rgb(114, 117, 114);
-}
 .item3:hover > div {
   display: block;
+}
+.menu1 a:hover {
+  background-color: rgb(114, 117, 114);
+  color: white;
+}
+.menu2 a:hover {
+  background-color: rgb(114, 117, 114);
+  color: white;
+}
+.menu3 a:hover {
+  background-color: rgb(114, 117, 114);
+  color: white;
 }
