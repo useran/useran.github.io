@@ -75,11 +75,12 @@ span {
   width: 600px;
   height: 55px;
   top: 4px;
+  border: none;
+  border-radius: 2px;
+  outline: none;
 }
 .form input[type=text] {
   position: absolute;
-  border: none;
-  border-radius: 2px;
   background-image: -webkit-linear-gradient(90deg, rgb(240,240,240) 0%, rgb(235, 235, 235) 100%);
   box-shadow: inset 0px 0.9px 2px 0.7px rgba(29, 26, 22, 0.2);
   padding-left: 8px;
@@ -88,13 +89,12 @@ span {
   top: 6.2px;
   width: 182px;
   height: 29px;
-  outline: none;
   font-size: 7.5pt;
+  border: none;
 }
 .form button {
   position: absolute;
   background-image: -webkit-linear-gradient(90deg, rgb(250, 170, 34) 20%, rgb(247, 200, 59) 100%);
-  border-radius: 2px;
   color: white;
   padding-top: 1.4px;
   left: 363px;
@@ -102,10 +102,8 @@ span {
   width: 74px;
   height: 29px;
   font-weight: 600;
-  border: none;
   cursor: pointer;
-  letter-spacing: 0px;
-  outline: none;
+  border: none;
 }
 .inputfield > div {
   position: absolute;
