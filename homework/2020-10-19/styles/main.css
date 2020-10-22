@@ -97,9 +97,9 @@ span {
   position: absolute;
   background-image: -webkit-linear-gradient(90deg, rgb(250, 170, 34) 20%, rgb(247, 200, 59) 100%);
   color: white;
-  padding-top: 1.5px;
-  line-height: 0.1px;
-  left: 363px;
+  padding-top: 2px;
+  line-height: 1px;
+  left: 362.8px;
   top: 7px;
   width: 74px;
   height: 29px;
