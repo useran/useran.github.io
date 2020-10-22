@@ -71,7 +71,6 @@ span {
   position: relative;
   margin: 0 auto;
   font-family: 'Lato', sans-serif;
-  font-size: 0.7rem;
   width: 600px;
   height: 55px;
   top: 4px;
@@ -83,45 +82,32 @@ span {
   position: absolute;
   background-image: -webkit-linear-gradient(90deg, rgb(240,240,240) 0%, rgb(235, 235, 235) 100%);
   box-shadow: inset 0px 0.9px 2px 0.7px rgba(29, 26, 22, 0.2);
-  padding-left: 8px;
+  padding-left: 10px;
   padding-top: 1.4px;
   left: 163px;
   top: 6.2px;
-  width: 182px;
+  width: 180.5px;
   height: 29px;
-  font-size: 7.5pt;
+  font-size: 7.4pt;
   border: none;
+  border-radius: 2.5px;
+  letter-spacing: 0.5px;
 }
 .form button {
   position: absolute;
   background-image: -webkit-linear-gradient(90deg, rgb(250, 170, 34) 20%, rgb(247, 200, 59) 100%);
   color: white;
-  padding-top: 1.4px;
+  padding-top: 1.5px;
+  line-height: 0.1px;
   left: 363px;
   top: 7px;
   width: 74px;
   height: 29px;
   font-weight: 600;
+  font-size: 8pt;
   cursor: pointer;
   border: none;
-}
-.inputfield > div {
-  position: absolute;
-  font-size: 10px;
-  color: rgb(128, 128, 128);
-  line-height: 2.3;
-  top: 4px;
-  left:8px;
-}
-.button > div {
-  position: absolute;
-  font-size: 11px;
-  color: white;
-  top: 5px;
-  width: 70px;
-  left: 2px;
-  text-align: center;
-  font-weight: 600;
+  border-radius: 2px;
 }
 .footer {
   position: relative;
