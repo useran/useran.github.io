@@ -1,58 +1,58 @@
 .main  {
     margin: 70px 50px; 
+    width: auto;
+    height: 150px;
     position: relative;
-    border: 2px solid black;
-    display: block;
 }
-.item  {
-    border: 2px solid black;
-    position: relative;
-    background-color: rgb(148, 240, 140);
-    border-radius: 4px;
+.deck1, .deck2, .deck3, .deck4 {
+    width: 100px;
+    height: 150px;
 }
-.item1 {
-    width: 60px;
-    height: 100px;
+.card1, .card2, .card3, .card4 {
+    width: 100px;
+    height: 150px;
+    border: 1px solid rgb(252, 12, 44);
+    background-color: tomato;
+}
+.deck1 {
+    position: absolute;
+    left: 0px;
+}
+.card1 {
+    position: absolute;
+    left: 0px;
+}
+.deck2 {
     position: absolute;
     left: 50px;
-    display: block;
 }
-.item2 {
-    width: 60px;
-    height: 100px;
+.card2 {
+    position: absolute;
+    left: 0px;
+}
+.deck3 {
     position: absolute;
     left: 100px;
-    display: block;
 }
-
-.item3 {
-    width: 60px;
-    height: 100px;
+.card3 {
+    position: absolute;
+    left: 0px;
+}
+.deck4 {
     position: absolute;
     left: 150px;
-    display: block;
 }
-
-.item4 {
-    width: 60px;
-    height: 100px;
-    left: 200px;
-    display: block;
+.card4 {
+    position: absolute;
+    left: 0px;
 }
-
-.backside {
-    background: content-box radial-gradient(crimson, skyblue);
-}
-
-.item:hover {
+.main > div:hover > div {
     top: -20px;
     transform: rotateY(180deg);
     background: content-box radial-gradient(crimson, skyblue);
     z-index: 1;
+    border: none;
 }
-.item:hover > p {
-    visibility: hidden;
-}
-.item:hover main {
-    display: none;
+.main > div:hover p {
+   visibility: hidden;
 }
