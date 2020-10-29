@@ -1,0 +1,24 @@
+.main {
+  width: 550px;
+  height: 550px;
+  background-color: khaki;
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.second, .third, .h150, .h50, .null {
+  border: 1px solid grey;
+  width: 50px;
+  background-color: white;
+  display: flex;
+  margin: 50px;
+}
+.h150 {
+  height: 150px;
+}
+.w300 {
+  width: 300px;
+  border: 1px solid hotpink;
+}

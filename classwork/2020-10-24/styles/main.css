@@ -1,21 +1,49 @@
-body {
-    height: 100%;
-    background-color: #E5E5E5;
+@font-face {
+    font-family: "Proxima Nova";
+    src: url('../fonts/ProximaNova-Bold.woff');
+}
+@font-face {
+    font-family: "Proxima Nova Regular";
+    src: url('../fonts/ProximaNovaCond-Regular.woff');
+}
+@font-face {
+    font-family: "Google Sans";
+    src: url('../fonts/GoogleSans-Bold.woff');
+}
+@font-face {
+    font-family: "Gotham Pro";
+    src: url('../fonts/GothamPro-Bold.woff');
+}
+@font-face {
+    font-family: "Proxima Nova Semibold";
+    src: url('../fonts/ProximaNova-Semibold.woff');
+}
+html, body {
+    height: 100vh;
+    background-color: rgb(230, 228, 228);
+}
+.mainer {
+    width: 1920px;
+    height: 2544px;
+    background-color: rgb(244, 244, 249);
+    margin: 0 auto;
 }
 img {
     max-width: 100%;
     max-height: 100%;
 }
 .header {
-    width: 1920px;
     height: 1005.5px;
-    margin: 0 auto;
     background-image: url(../images/back.png);
     background-size: cover;
     position: relative;
+    margin: 0 auto;
 }
-pre {
-    margin: 0;
+pre, .header {
+    margin: 0 auto;
+    font-family: Proxima Nova Regular;
+    font-size: 14px;
+    line-height: 17px;
 }
 .currency {
     width: 1155px;
@@ -27,13 +55,16 @@ pre {
 .info {
     position: absolute;
     width: 642px;
-    top: 6px;
+    top: 10px;
+    left: 7px;
+    letter-spacing: 1.43px;
 }
 .language {
     position: absolute;
     width: 91px;
-    right: 0px;
-    top: 6px;
+    right: -6px;
+    top: 10px;
+    letter-spacing: 2.6px;
 }
 .line {
     position: relative;
@@ -43,6 +74,7 @@ pre {
     background: rgba(244, 244, 249, 0.5);
 }
 .menu {
+    font-family: Proxima Nova;
     width: 1155px;
     height: 90px;
     margin: 0 auto;
@@ -51,176 +83,145 @@ pre {
 }
 .pool {
     position: absolute;
-    top: 30px;
+    top: 32px;
     left: 60px;
-    font-size: 23px;
+    font-family: Gotham Pro;
+    font-size: 21px;
+    line-height: 24px;
+    letter-spacing: 1px;
 }
 .pool:before {
     content: "";
     position: absolute;
-    top: -7px;
+    top: -8.5px;
     left: -53px;
     width: 40.95px;
     height: 41px;
     background-image: url(../images/Sum2.png);
-    background-size: contain;
+    background-size: cover;
     border-radius: 15%;
 }
 .btc {
-    width: 105px;
+    width: 104px;
     height: 35px;
     position: absolute;
-    top: 27px;
+    top: 28px;
     left: 265px;
     border: 1.5px solid #FFFFFF;
     box-sizing: border-box;
     border-radius: 5px;
-}
-.btc-text {
-    position: absolute;
-    left: 43px;
-    top: 9px;
     font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
-.btc-text::before {
+.btc::before {
     content: "";
-    position: absolute;
-    top: -2px;
-    left: -27px;
     width: 16px;
     height: 16px;
     background-image: url(../images/coin.png);
+    background-size: cover;
 }
-.btc-text::after {
+.btc::after {
     content: "";
-    position: absolute;
-    top: 5px;
-    left: 37px;
     width: 5px;
     height: 5px;
     background-image: url(../images/triangle2.png);
+    background-repeat: no-repeat;
 }
 .nav {
-    position: relative;
-    width: 555px;
-    height: 38px;
-    font-size: 15px;
-    top: 35px;
-    left: 419px;
-}
-.nav > div {
-    position: relative;
-    width: 80px;
-    height: 38px;
-    display: inline-block;
-    margin-right: 7px;
-}
-.nav > div:nth-child(2) > div:first-child {
-    padding-left: 9px;
-    letter-spacing: 0.7px;
-}
-.nav > div:nth-child(3) > div:first-child {
-    padding-left: 14px;
-    letter-spacing: 0.4px;
-}
-.nav > div:nth-child(4) > div:first-child {
-    padding-left: 37px;
-    letter-spacing: 0.4px;
-}
-.nav > div:nth-child(5) > div:first-child {
-    padding-left: 26px;
-    letter-spacing: 0.3px;
-}
-.nav > div:nth-child(6) > div:first-child {
-    padding-left: 36px;
-    letter-spacing: 0.5px;
-}
-.nav > div > div:last-child {
-    visibility: hidden;
-}
-.nav > div:first-child > div:last-child {
-    visibility: visible;
-}
-.nav > div > div:first-child {
-    padding-left: 6px;
-    letter-spacing: 1px;
-}
-.line2 {
     position: absolute;
-    top: 25px;
-    left: -1px;
-    width: 73px;
-    height: 2px;
-    background: #FFFFFF;
+    width: 590px;
+    height: 38px;
+    top: 30px;
+    left: 417px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
-.nav a {
-    font-size: 15px;
+ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+}
+li a {
+    display: inline-block;
     color: white;
+    text-align: center;
+    padding: 7px 9px;
+    margin-right: 22px;
     text-decoration: none;
+    opacity: 0.6;
+  }
+ul li:first-child a {
+    border-bottom: 2px solid white;
+    opacity: 1;
 }
 .nicko {
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgba(42, 28, 117, 1);
+    color: rgb(85, 57, 182);
     width: 157px;
     height: 35px;
-    right: -7px;
-    top: 26px;
+    right: -6px;
+    top: 28px;
     background: #FFFFFF;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 .nicko::before {
     content: "";
-    position: absolute;
-    top: 11px;
-    left: 20px;
     width: 11px;
     height: 12px;
-    background-image: url(../images/nicko1.png);
+    background-image: url(../images/nicko1.png);   
 }
 .nicko::after {
     content: "";
-    position: absolute;
-    top: 16px;
-    right: 18px;
     width: 5px;
     height: 5px;
     background-image: url(../images/nicko2.png);
+    background-repeat: no-repeat;
 }
 .mainheader {
     height: 545px;
     width: 1155px;
     margin: 0 auto;
     position: relative;
+    color: #FFFFFF;
+    letter-spacing: 0.1em;
 }
-.textpart {
+.mainheader .textpart {
     width: 620px;
     position: absolute;
-    top: 102px;
-    left: 5px;
-}
-.textpart h1 {
-    font-family: Google Sans;
+    top: 125px;
+    left: 6px;
+    font-family: "Google Sans";
     font-size: 28px;
     line-height: 36px;
-    letter-spacing: 0.045em;
-    color: #FFFFFF;
 }
-.textpart p {
-    font-family: Proxima Nova;
-    font-size: 15px;
+.textpart + div {
+    width: 620px;
+    position: absolute;
+    top: 253px;
+    left: 7px;
+    font-family: Proxima Nova Semibold;
+    font-size: 14px;
     line-height: 24px;
-    letter-spacing: 0.062em;
-    color: #FFFFFF;
+    letter-spacing: 0.05em;
 }
 .mainheader button {
     position: absolute;
-    width: 223px;
+    font-family: Proxima Nova;
+    font-size: 16px;
+    line-height: 17.5px;
+    color: rgb(85, 57, 182);
+    letter-spacing: -1.1px;
+    width: 222.5px;
     height: 42px;
-    top: 375px;
-    left: 6px;
+    top: 377px;
+    left: 6.5px;
     background: #FFFFFF;
     border: 1.5px solid #FFFFFF;
     box-sizing: border-box;
@@ -228,66 +229,52 @@ pre {
 }
 .lap-img {
   position: absolute;
-  top: 35px;
-  right: -77px;
+  top: 37.5px;
+  right: -78px;
   width: 629px;
   height: 496px;
   background-image: url(../images/lap-img.png);
 }
 .lines {
-    height: 10px;
-    width: 1155px;
+    height: 8px;
+    width: 1940px;
     margin: 0 auto;
     position: relative;
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-end;
     justify-content: center;
 }
 .long {
-    position: absolute;
     width: 57px;
-    height: 3px;
-    left:533.5px;
-    top: 2px;
+    height: 2px;
     background: #FFFFFF;
 }
-.short1 {
-    position: absolute;
+.short1, .short2 {
+    margin-left: 10px;
     width: 15px;
-    height: 3px;
-    left:599px;
-    top: 2px;
-    background: rgba(255, 255, 255, 0.6);
-}
-.short2 {
-    position: absolute;
-    width: 15px;
-    height: 3px;
-    left:623px;
-    top: 2px;
+    height: 2px;
     background: rgba(255, 255, 255, 0.6);
 }
 .main-content1 {
     height: 400px;
     width: 1920px;
-    border: 1px solid black;
     margin: 0 auto;
     position: relative;
-   /*  display: flex;
-    align-items: center;
-    justify-content: center; */
 }
-.bitcoin {
+.bitcoin, .litecoin, .dash {
+    margin-top: 2px;
     position: absolute;
     width: 346px;
     height: 436px;
     left: 389px;
-    top: -88.5px;
+    top: -89px;
     background: #FFFFFF;
     box-shadow: 0px 0px 35px #D5D5E3;
     border-radius: 5px;
 }
 .bitcoin > div {
+    position: absolute;
     margin: 0 auto;
     width: 276px;
     left: 34px;
@@ -295,84 +282,61 @@ pre {
 .bitcoin-block {
     position: absolute;
     height: 42px;
-    top: 26px;
-    border: 1px solid green;
+    top: 27px;
     font-family: Google Sans;
     font-weight: 800;
-    font-size: 26px;
+    font-size: 24px;
     line-height: 31px;
     color: #333333;
-    padding-left: 42px;
+    padding-left: 45px;
 }
 .bitcoin-block::before {
     content: "";
     position: absolute;
-    top: 1px;
+    top: 0px;
     left: 0px;
-    width: 30px;
-    height: 30px;
+    width: 31px;
+    height: 31px;
     background-image: url(../images/coin.png);
     background-size: contain;
+    background-repeat: no-repeat;
 }
 .text-block {
     position: absolute;
     height: 175px;
-    top: 72px;
-    border: 1px solid green;
-    padding-top: 10px;
+    width: 276px;
+    top: 76px;
+    color: #4F4F4F;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
 }
-.row {
+.text-block > div {
     width: 276px;
     position: relative;
-    margin-bottom: 5px;
     display: flex;
 }
-.row > div:nth-child(2) {
+.row > div:nth-child(2n) {
     position: absolute;
-    left: 150px;
+    left: 153px;
+}
+.row:nth-child(2n-1) {
+    font-family: Proxima Nova Regular;
+    font-size: 15px;
+    color: #4F4F4F;
+    letter-spacing: 0.9px;  
 }
 .row:nth-child(2n) {
     font-family: Proxima Nova;
     font-size: 20px;
-    font-weight: 900;
-    line-height: 24px;
     color: #333333;
-}
-.row:nth-child(1) > div {
-    position: absolute;
-    top: -1px;
-}
-.row:nth-child(2) > div {
-    position: absolute;
-    top: 12px;
-}
-.row:nth-child(3) > div {
-    position: absolute;
-    top: 46px;
-}
-.row:nth-child(4) > div {
-    position: absolute;
-    top: 60px;
-}
-.row:nth-child(5) > div {
-    position: absolute;
-    top: 94px;
-}
-.row:nth-child(5) > div:nth-child(2) {
-    position: absolute;
-    top: 114px;
-    left: 0px;
-    font-family: Proxima Nova;
-    font-size: 20px;
-    font-weight: 900;
-    line-height: 24px;
-    color: #333333;
+    margin-bottom: 4px;
 }
 .lnk-block {
     position: absolute;
     height: 45px;
-    top: 253px;
-    border: 1px solid green;
+    top: 255px;
+    letter-spacing: 0px;
 }
 .lnk-block a {
     color: #2F80ED;
@@ -383,7 +347,7 @@ pre {
     width: 6px;
     height: 9px;
     position: absolute;
-    left: 146px;
+    left: 147px;
     top: 6px;
     background-image: url(../images/chevron.png);
     background-size: contain;
@@ -393,49 +357,312 @@ pre {
     position: absolute;
     height: 110px;
     top: 294px;
-    border: 1px solid green;
-    display: block;
     margin: 20px auto;
+}
+.btn-block button {
+    font-family: Proxima Nova;
+    padding: 12px 88px 12px 89px;
+    font-size: 14px;
+    width: 276px;
+    height: 42px;
 }
 .btn-block button:first-child {
     position: absolute;
-    padding: 12px 88px 12px 88px;
-    font-size: 15px;
-    width: 276px;
-    height: 42px;
-    top: 8px;
+    top: 10px;
     color: white;
     background: linear-gradient(58.78deg, #2A1C75 -599.37%, #5639B7 81.13%);
     border-radius: 5px;
+    border: none;
 }
 .btn-block button:last-child {
-    position: absolute;
-    padding: 12px 88px 12px 88px;
-    font-size: 15px;
-    width: 276px;
-    height: 42px;
+    position: absolute; 
     top: 62px;
-    border: 1px solid #2A1C75;
+    color: rgb(85, 57, 182);
+    border: 1px solid rgb(85, 57, 182);
     border-radius: 5px;
+    background-color: white;
 }
 .litecoin {
     position: absolute;
-    width: 346px;
-    height: 436px;
     left: 793px;
-    top: -88.5px;
-    background: #FFFFFF;
-    box-shadow: 0px 0px 35px #D5D5E3;
-    border-radius: 5px;
+}
+.litecoin > div {
+    margin: 0 auto;
+    width: 276px;
+    left: 36px;
+}
+.litecoin .bitcoin-block::before {
+    position: absolute;
+    left: 2px;
+    background-image: url(../images/litecoin.png);
+    background-size: contain;
+}
+.dash .bitcoin-block::before {
+    background-image: url(../images/dash.png);
 }
 .dash {
     position: absolute;
-    width: 346px;
-    height: 436px;
     left: 1198px;
     top: -88.5px;
+}
+.dash > div {
+    margin: 0 auto;
+    width: 276px;
+    left: 34px;
+}
+.main-content2 {
+    height: 507px;
+    width: 1920px;
+    margin: 0px auto;
+    position: relative;
+}
+.mini-content1 {
+    height: 110px;
+    width: 1920px;
+    position: relative;
+}
+.news {
+    position: absolute;
+    left: 389px;
+    top: 30px;
+    font-family: Google Sans;
+    font-size: 28px;
+    line-height: 36px;
+    color: #333333;
+}
+.mini-content2 {
+    height: 300px;
+    width: 1920px;
+    margin: 0px auto;
+    position: absolute;
+    top: 112px;
+}
+.mini-content1 .line {
+    position: absolute;
+    width: 1155px;
+    height: 2px;
+    left: 389px;
+    top: 87px;
+    background: #CCD4DC;
+    border-radius: 1px;
+}
+.thline {
+    position: absolute;
+    width: 346px;
+    height: 5px;
+    left: 389px;
+    top: 85px;
+    background: linear-gradient(58.78deg, #2A1C75 -599.37%, #5639B7 81.13%), #C4C4C4;
+    border-radius: 3px;
+}
+.ad, .news2, .discount {
+    position: absolute;
+    width: 346px;
+    height: 324px;
+    top: 18px;
     background: #FFFFFF;
     box-shadow: 0px 0px 35px #D5D5E3;
     border-radius: 5px;
 }
-
+.ad {
+    position: absolute;
+    left: 389px;
+}
+.ads {
+    position: absolute;
+    top: 23px;
+    left: 20px;
+    font-family: Gotham Pro;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0.02em;
+    color: #449ED1;
+}
+.head {
+    position: absolute;
+    top: 50px;
+    left: 19px;
+    font-family: Google Sans;
+    font-size: 24px;
+    line-height: 31px;
+    letter-spacing: 0.05em;
+    color: #333333;
+}
+.textbox {
+    position: absolute;
+    top: 130px;
+    left: 21px;
+    font-family: Proxima Nova Semibold;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.04em;
+    color: #333333;
+}
+.footer {
+    position: absolute;
+    top: 292px;
+    left: 21px;
+    font-family: Proxima Nova Semibold;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.04em;
+    color: #AFAFAF;
+}
+.news2 {
+    position: absolute;
+    left: 793px;
+}
+.news2 .textbox {
+    position: absolute;
+    top: 158px;
+}
+.news2 .ads {
+    color: #EB5757;
+}
+.discount {
+    position: absolute;
+    left: 1198px;
+}
+.discount .textbox {
+    position: absolute;
+    top: 158px;
+}
+.discount .ads {
+    color: #E8B92A;;
+}
+.main-content3 {
+    height: 508px;
+    width: 1920px;
+    margin: 0px auto;
+    position: relative;
+}
+.btnbutton button {
+    position: absolute;
+    width: 107px;
+    height: 38px;
+    left: 1439px;
+    top: 29px;
+    border-radius: 21px;
+    font-family: Proxima Nova;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgb(85, 57, 182);
+    border: 1px solid rgb(85, 57, 182);
+}
+.ublock {
+    position: absolute;
+    width: 346px;
+    height: 325px;
+    left: 389px;
+    top: -2.5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.sigma {
+    width: 346px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.sigmapool {
+    font-family: Proxima Nova;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.05em;
+    color: #2F80ED;
+}
+.date {
+    font-family: Proxima Nova Regular;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.05em;
+    color: #AFAFAF;
+}
+.sigma_text {
+    height: 97px;
+    font-family: Proxima Nova Semibold;
+    font-size: 14px;
+    line-height: 17.3px;
+    letter-spacing: 0.04em;
+    color: #333333;
+}
+.sigma_text span {
+    color: #2F80ED;
+}
+.sigma_photo {
+    width: 346px;
+    height: 157px;
+    background-image: url(../images/sigma.png);
+    filter: drop-shadow(0px 0px 35px #D5D5E3);
+    border-radius: 5px;
+}
+.mini-content2 > div:nth-child(2) .sigma_photo {
+    background-image: url(../images/sigma2.png);
+} 
+.mini-content2 > div:nth-child(2) {
+    position: absolute;
+    left: 793px;
+}
+.mini-content2 > div:nth-child(3) .sigma_photo {
+    background-image: url(../images/sigma3.png);
+} 
+.mini-content2 > div:nth-child(3) {
+    position: absolute;
+    left: 1199px;
+}
+.main-footer {
+    margin: 0px auto;
+    width: 1920px;
+    height: 123px;
+    background: #FFFFFF;
+    position: relative;
+}
+.footer-menu {
+    width: 1920px;
+    height: 23px;
+    position: relative;
+}
+.footer-menu .btc {
+    font-family: Proxima Nova;
+    font-size: 14px;
+    line-height: 17px;
+    color: #333333;
+    position: absolute;
+    top: 18px;
+    left: 410px;
+    border: 1.5px solid #CCD4DC;
+    border-radius: 5px;
+}
+.footer-menu .btc::after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background-image: url(../images/triangle3.png);
+    background-repeat: no-repeat;
+}
+.footer-menu .nav {
+    font-family: Proxima Nova;
+    font-size: 14px;
+    line-height: 17px;
+    left: 996px;
+}
+.footer-menu li a {
+    color: #333333;
+}
+.main-footer .line {
+    position: absolute;
+    top: 85px;
+    background: #CCD4DC;   
+}
+.footer-text {
+    position: absolute;
+    top: 95px;
+    left: 389px;
+    font-family: Proxima Nova Regular;
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0.05em;
+    color: #333333;
+    opacity: 0.6;
+}
