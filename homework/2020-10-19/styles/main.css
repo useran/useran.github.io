@@ -27,12 +27,12 @@ img {
 .cloud1 {
   width: 13vw;
   height: 4.35vw;
-  left:-16.82vw;
+  left:-16.84vw;
 }
 .cloud2 {
   width: 24.28vw;
   height: 4.61vw;
-  right:-19.21vw;
+  right:-19.23vw;
 }
 .comingsoon {
   position: relative;
@@ -128,7 +128,7 @@ span {
   height: 31.86vw;
   position: absolute;
   top: 1.37vw;
-  left:12.08vw;
+  left:12.06vw;
   z-index: 1;
 }
 .image {
