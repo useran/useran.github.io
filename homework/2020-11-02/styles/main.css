@@ -1,0 +1,327 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('../fonts/font/fontello.woff');
+}
+html, body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+header {
+  height: 400px;
+  width: 920px;
+  margin: 0 auto;
+  background-image: url(../images/headpic.png);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+  position: relative;
+}
+.emptydiv {
+  width: 80%;
+  height: 20%;
+}
+.headtitle {
+  width: 30%;
+  height: 60%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 2.5rem;
+  padding-left: 20px;
+  color: white;
+}
+pre {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 0;
+  font-size: 1.5rem;
+}
+p {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 0.8rem;
+}
+hr {
+  margin: 15px 0;
+  width: 15%;
+}
+nav {
+  width: 920px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: #333;
+  border-top: 1px solid #ffa806;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+}
+nav a {
+  display:inline-block;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 0.7rem;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+li a:hover {
+  background-color: #111;
+}
+li a:focus {
+  background-color: #ffa806;
+}
+main {
+  margin: 0 auto;
+  min-height: 720px;
+  width: 920px;
+  position: relative;
+}
+.one {
+  margin: 30px 0 10px 0;
+  height: 150px;
+  width: 920px;
+  box-sizing: border-box;
+  border-left:5px solid #ccc;
+  display: flex;
+  align-items: center;
+  background-color: rgb(244, 244, 249);
+  position: relative;
+}
+.one:before {
+  color: #ccc;
+  content: "\201C";
+  font-size: 120px;
+  padding-left: 15px;
+}
+.one blockquote {
+  margin-left: 20px;
+  color: lightslategray;
+}
+.two {
+  margin: 0 auto;
+  height: 280px;
+  width: 920px;
+  position: relative;
+}
+.cast {
+  position: absolute;
+  left: 0px;
+  top: 15px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1.8rem;
+  color: #333333;
+}
+.line {
+  position: absolute;
+  width: 920px;
+  height: 1.5px;
+  left: 0px;
+  top: 60px;
+  background-color: rgb(145, 145, 145);
+}
+.thline {
+  position: absolute;
+  width: 184px;
+  height: 5px;
+  left: 0px;
+  top: 58px;
+  background-color: #ffa806;
+  border-radius: 3px;
+}
+.group-photos {
+  height: 150px;
+  width: 920px;
+  display: flex;
+  justify-content: space-around;
+}
+.two .group-photos {
+  position: absolute;
+  height: 150px;
+  width: 920px;
+  top: 80px;
+  left: 0;
+}
+.photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-size: cover;
+  border: 2px solid rgb(145, 145, 145);
+  box-shadow: 0px 0px 15px #D5D5E3;
+}
+.two .photo1 {
+  background-image: url(../images/Anya.jpg);
+}
+.two .photo2 {
+  background-image: url(../images/Harry.jpg);
+}
+.two .photo3 {
+  background-image: url(../images/Christiane.jpg);
+}
+.naming {
+  color: rgb(167, 166, 166);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1rem;
+  width: 120px;
+}
+.photo1 + .naming {
+  position: absolute;
+  top: 110px;
+  left: 95px;
+  text-align: center;
+}
+.photo2 + .naming {
+  position: absolute;
+  top: 110px;
+  left: 400px;
+  text-align: center;
+}
+.photo3 + .naming {
+  position: absolute;
+  top: 110px;
+  left: 707px;
+  text-align: center;
+}
+.three {
+  margin: 0 auto;
+  height: 170px;
+  width: 920px;
+  position: relative;
+}
+.three .photo1 {
+  background-image: url(../images/Marielle.jpg);
+}
+.three .photo2 {
+  background-image: url(../images/Thomas.jpg);
+}
+.three .photo3 {
+  background-image: url(../images/Marcin_Dorociński.jpg);
+}
+.three .photo1 + .naming {
+  position: absolute;
+  top: 110px;
+  left: 95px;
+  text-align: center;
+}
+.three .photo2 + .naming {
+  position: absolute;
+  top: 110px;
+  left: 400px;
+  text-align: center;
+}
+.three .photo3 + .naming {
+  position: absolute;
+  top: 110px;
+  left: 707px;
+  text-align: center;
+}
+.four {
+  margin: 0 auto;
+  height: 90px;
+  width: 920px;
+  position: relative;
+}
+.four .thline {
+  position: absolute;
+  left: 552px;
+}
+.five {
+  margin: 0 auto;
+  margin-bottom: 30px;
+  height: 350px;
+  width: 920px;
+  position: relative;
+  background-color: rgb(245, 243, 243);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.location {
+  width: 80%;
+  height: 80%;
+  background-image: url(../images/world_map.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.loc::before {
+  font-family: 'Fontello';
+  content: '\e07a';
+  font-size: 40px;
+  color:#ffa806;
+}
+.loc1 {
+  position: absolute;
+  left: 160px;
+  top: 70px;
+}
+.loc2 {
+  position: absolute;
+  left: 360px;
+  top: 20px;
+}
+.loc3 {
+  position: absolute;
+  left: 330px;
+  top: 32px;
+}
+.loc4 {
+  position: absolute;
+  left: 160px;
+  top: 170px;
+}
+.loc5 {
+  position: absolute;
+  left: 660px;
+  top: 200px;
+}
+.loc6 {
+  position: absolute;
+  left: 670px;
+  top: 100px;
+}
+footer {
+  margin: 0 auto;
+  height: 50px;
+  width: 920px;
+  position: relative;
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer nav a:hover {
+  background-color: #333;
+}
+footer nav {
+  width: 80%;
+  display: flex;
+  justify-content: flex-end;
+  border: none;
+}
+.icons {
+  width: 15%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.ic {
+  font-family: 'Fontello';
+  font-size: 25px;
+  color:white;
+}
+.face::before {
+  content: '\e0d6';
+}
+.inst::before {
+  content: '\e0de';
+}
+.twit::before {
+  content: '\e0e6';
+}
