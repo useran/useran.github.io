@@ -8,7 +8,7 @@ body {
   background-image: url(../images/wer.jpeg);
   background-position: center;
   background-size: cover;
-  border: none;
+  border: 14px solid khaki;
   border-radius: 0%;
   opacity: 0;
   transform: rotate(0deg);
@@ -19,7 +19,7 @@ body {
 }
 .picture:hover {
   opacity: 1;
-  border: 4px solid green;
+  border: 14px solid green;
   border-radius: 5%;
   transform: rotate(180deg);
 }
