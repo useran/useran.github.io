@@ -93,7 +93,7 @@ h3 {
 }
 .book:after {
   content:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus assumenda, veritatis magnam nemo quo dolorem esse facere alias sit vitae reprehenderit quos qui sint! Ratione voluptatibus doloribus rem cum vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum, eius assumenda corrupti accusantium ex aperiam eligendi adipisci repudiandae culpa vel id laborum quam consectetur nostrum nihil optio dolor vitae fugit.Lorem. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus quibusdam exercitationem corporis tenetur eius, nobis atque ratione necessitatibus tempora enim amet eos ipsa illo hic quasi sequi, minima, alias quo.';
-  width: 400px;
+  width: 350px;
   height: 400px;
   font-size: 1.1rem;
   display: block;
@@ -102,5 +102,5 @@ h3 {
   left: 75px;
 }
 .book:hover {
-  width: 500px;
+  width: 450px;
 }
