@@ -1,0 +1,106 @@
+body {
+  width: 100vw;
+  height: 100vh;
+}
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.button {
+  width: 50%;
+  height: 100%;
+  background-color: lightblue;
+  position: relative;
+}
+.books {
+  width: 50%;
+  height: 100%;
+  background-color: lightgray;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left:20px;
+}
+button {
+  width: 200px;
+  height: 60px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  background-color: #ffd000;
+  border: 2px solid #ffd000;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: 0px 6px 0px #f7a817;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: box-shadow ease 0.3s,
+              top ease 0.3s;
+  overflow: hidden;
+}
+button::before {
+  content: '';
+  width: 100px;
+  height: 60px;
+  display: block;
+  position: absolute;
+  left: -150px;
+  top: 0px;
+  background-color: white;
+  transform: skewX(60deg);
+  filter: blur(45px);
+  z-index: 1;
+  transition: left ease 0.6s;
+}
+button:active {
+  position: absolute;
+  box-shadow: 0 2px 0 #f7a817;
+  top: 51%; 
+}
+button:hover:before {
+  left: 300px;
+}
+.book {
+  width: 70px;
+  height: 500px;
+  border: 1px solid cadetblue;
+  box-sizing: border-box;
+  position: relative;
+  transition: width 2s ease-in-out 0.3s;
+  overflow: hidden;
+}
+h2 {
+  width: 100px;
+  transform: rotate(270deg);
+  position: absolute;
+  left: -15px;
+  bottom: 0;
+  margin-bottom: 45px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1.4rem;
+  color: chocolate;
+}
+h3 {
+  width: 90px;
+  position: absolute;
+  left: 75px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1.2rem;
+  color: rgb(43, 42, 42);
+}
+.book:after {
+  content:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus assumenda, veritatis magnam nemo quo dolorem esse facere alias sit vitae reprehenderit quos qui sint! Ratione voluptatibus doloribus rem cum vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum, eius assumenda corrupti accusantium ex aperiam eligendi adipisci repudiandae culpa vel id laborum quam consectetur nostrum nihil optio dolor vitae fugit.Lorem. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus quibusdam exercitationem corporis tenetur eius, nobis atque ratione necessitatibus tempora enim amet eos ipsa illo hic quasi sequi, minima, alias quo.';
+  width: 400px;
+  height: 400px;
+  font-size: 1.1rem;
+  display: block;
+  position: absolute;
+  top: 70px;
+  left: 75px;
+}
+.book:hover {
+  width: 500px;
+}
