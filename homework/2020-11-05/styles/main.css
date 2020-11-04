@@ -67,10 +67,14 @@ button:hover:before {
   width: 70px;
   height: 500px;
   border: 1px solid cadetblue;
+  border-right: none;
   box-sizing: border-box;
   position: relative;
   transition: width 2s ease-in-out 0.3s;
   overflow: hidden;
+}
+.books > .book:last-child {
+  border-right: 1px solid cadetblue;
 }
 h2 {
   width: 100px;
