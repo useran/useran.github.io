@@ -1,6 +1,6 @@
 @keyframes clock {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(-90deg);
   }
   100% {
     transform: rotate(360deg);
@@ -21,6 +21,7 @@ body {
   position: relative;
 }
 hr {
+  transform: rotate(-90deg);
   width: 25%;
   position: absolute;
   top: 190px;
@@ -28,5 +29,5 @@ hr {
   transform-origin: top left;
 }
 .main:hover hr {
-  animation: clock 60s infinite steps(60);
+  animation: clock 65s infinite steps(80);
 }
