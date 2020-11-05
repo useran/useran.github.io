@@ -1,0 +1,32 @@
+@keyframes clock {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+body {
+  background-color: khaki;
+}
+.main {
+  width: 400px;
+  height: 400px;
+  margin: 210px auto;
+  background-image: url(../images/watch.png);
+  background-position: center;
+  background-size: cover;
+  border: 14px solid khaki;
+  border-radius: 0%;  
+  position: relative;
+}
+hr {
+  width: 25%;
+  position: absolute;
+  top: 190px;
+  left: 200px;
+  transform-origin: top left;
+}
+.main:hover hr {
+  animation: clock 60s infinite steps(60);
+}
