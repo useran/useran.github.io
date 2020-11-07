@@ -8,7 +8,7 @@
   }
   5% {
     left: 100px;
-    top: 172px;
+    top: 170px;
     height: 50px;
     width: 63px;
   }
@@ -123,11 +123,12 @@
 }
 body {
   background-color: khaki;
+  height: 100%;
 }
 .wrapper {
   width: 800px;
   height: 600px;
-  margin: 210px auto;
+  margin: 25px auto;
   background-color: aquamarine;
   display: flex;
   flex-direction: column;
