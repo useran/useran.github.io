@@ -1,0 +1,180 @@
+@keyframes ball {
+  0% {
+    left: 100px;
+    top: 50px;
+    height: 60px;
+    width: 60px;
+
+  }
+  5% {
+    left: 100px;
+    top: 172px;
+    height: 50px;
+    width: 63px;
+  }
+  10% {
+    left: 180px;
+    top: 70px;
+    height: 60px;
+    width: 60px;
+    
+  }
+  15% {
+    left: 260px;
+    top: 143px;
+    height: 50px;
+    width: 63px;
+  }
+  20% {
+    left: 335px;
+    top: 50px;
+    height: 60px;
+    width: 60px;
+  }
+  25% {
+    left: 420px;
+    top: 112px;
+    height: 50px;
+    width: 63px;
+  }
+  30% {
+    left: 500px;
+    top: 30px;
+    height: 60px;
+    width: 60px;
+  }
+  35% {
+    left: 580px;
+    top: 80px;
+    height: 50px;
+    width: 63px;
+  }
+  40% {
+    left: 660px;
+    top: 5px;
+    height: 60px;
+    width: 60px;
+  }
+  45% {
+    left: 740px;
+    top: 62px;
+    height: 50px;
+    width: 63px;
+  }
+  50% {
+    left: 740px;
+    top: 5px;
+    height: 60px;
+    width: 60px;
+  }
+  60% {
+    left: 740px;
+    top: 470px;
+    height: 50px;
+    width: 63px;
+  }
+  65% {
+    left: 660px;
+    top: 370px;
+    height: 60px;
+    width: 60px;
+  }
+  70% {
+    left: 580px;
+    top: 442px;
+    height: 50px;
+    width: 63px;
+  }
+  75% {
+    left: 500px;
+    top: 330px;
+    height: 60px;
+    width: 60px;
+  }
+  80% {
+    left: 420px;
+    top: 410px;
+    height: 50px;
+    width: 63px;
+  }
+  85% {
+    left: 335px;
+    top: 320px;
+    height: 60px;
+    width: 60px;
+  }
+  90% {
+    left: 260px;
+    top: 379px;
+    height: 50px;
+    width: 63px;
+  }
+  95% {
+    left: 180px;
+    top: 300px;
+    height: 60px;
+    width: 60px;
+  }
+  100% {
+    left: 100px;
+    top: 363px;
+    height: 50px;
+    width: 63px;
+  }
+}
+body {
+  background-color: khaki;
+}
+.wrapper {
+  width: 800px;
+  height: 600px;
+  margin: 210px auto;
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  padding: 50px;
+}
+.stairs {
+  margin: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  text-align: center;
+  vertical-align: middle;
+}
+.steps {
+  width: 100px;
+  border: 3px solid rgb(107, 107, 107);
+  padding-top: 10px;
+}
+.wrapper > .stairs:nth-child(3) {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.step1 {
+  height: 52px;
+}
+.step2 {
+  height: 79px;
+}
+.step3 {
+  height: 111px;
+}
+.step4 {
+  height: 143px;
+}
+.step5 {
+  height: 160px;
+}
+.ball {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: yellowgreen;
+  position: absolute;
+  left: 100px;
+  top: 50px;
+  animation: ball 10s cubic-bezier(0, 0, 1, 1) infinite;
+}
