@@ -27,25 +27,25 @@
 }
 .frame1 {
   position: absolute;
-  top: 100px;
+  top: 85px;
   left: 600px;
   width: 300px;
   height:100px;
   border: 3px solid lightblue;
   border-radius: 50%;
   opacity: 0;
-  animation: circles 2s 1.8s infinite;
+  animation: circles 2s 1.7s infinite;
 }
 .frame2 {
   position: absolute;
   top: 60px;
   left: 550px;
   width: 400px;
-  height:200px;
+  height:150px;
   border: 3px solid lightblue;
   border-radius: 50%;
   opacity: 0;
-  animation: circles 2s 1.8s infinite;
+  animation: circles 2s 1.7s infinite;
 }
 @keyframes circles {
   0% {
