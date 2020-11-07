@@ -12,12 +12,11 @@
     height: 50px;
     width: 63px;
   }
-  10% {
+  10% {  
     left: 180px;
     top: 70px;
     height: 60px;
     width: 60px;
-    
   }
   15% {
     left: 260px;
@@ -87,7 +86,7 @@
   }
   75% {
     left: 500px;
-    top: 330px;
+    top: 350px;
     height: 60px;
     width: 60px;
   }
@@ -142,7 +141,6 @@ body {
   align-items: flex-end;
   justify-content: space-around;
   text-align: center;
-  vertical-align: middle;
 }
 .steps {
   width: 100px;
@@ -176,5 +174,5 @@ body {
   position: absolute;
   left: 100px;
   top: 50px;
-  animation: ball 10s cubic-bezier(0, 0, 1, 1) infinite;
+  animation: ball 10s ease infinite;
 }
