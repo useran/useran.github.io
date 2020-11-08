@@ -1,0 +1,34 @@
+$side_measure: 110px;
+$row_count: 5;
+$column_count: 5;
+body {
+    height: 100vh;
+    width: 100vw;
+}
+.wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: azure;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.row {
+    margin: 0px auto;
+    min-width: 700px;
+    min-height: 140px;
+    box-sizing: border-box;
+    background-color: cadetblue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    
+}
+.item {
+    height: $side_measure;
+    width: $side_measure;
+    border: 3px solid white;
+}
+
