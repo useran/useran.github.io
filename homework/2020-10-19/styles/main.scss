@@ -1,52 +1,46 @@
+%main_font {
+    font-family: 'Lato', sans-serif;
+    color:rgb(38, 107, 151);
+}
+$text_shadow: 0.1625vw 0.195vw 0vw rgba(0,0,0,0.17);
+
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap rel="stylesheet">');
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap%27");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap%27');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:ital,wght@0,400;1,500&display=swap" rel="stylesheet');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Roboto:ital,wght@0,400;1,500&display=swap" rel="stylesheet');
-.subscribe {
-  font-family: 'Lato', sans-serif;
-  color: #266b97;
-}
-
 html {
   min-height: 100vh;
 }
-
 body {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #b9d6ef), color-stop(30.22vw, #b9d6ef), color-stop(30.22vw, #ddecfa), color-stop(30.45vw, #ddecfa), color-stop(30.45vw, #327dad), color-stop(31.03vw, #327dad), color-stop(31.03vw, #266b97), color-stop(50.715vw, #266b97));
-  background: linear-gradient(to bottom, #b9d6ef 0, #b9d6ef 30.22vw, #ddecfa 30.22vw, #ddecfa 30.45vw, #327dad 30.45vw, #327dad 31.03vw, #266b97 31.03vw, #266b97 50.715vw);
+  background: linear-gradient(to bottom,rgb(185,214,239) 0, rgb(185,214,239) 30.22vw, rgb(221, 236, 250) 30.22vw,rgb(221, 236, 250) 30.45vw, rgb(50, 125, 173) 30.45vw,  rgb(50, 125, 173) 31.03vw,  rgb(38, 107, 151) 31.03vw, rgb(38, 107, 151)50.715vw);
   min-height: 50.715vw;
-  background-color: #266b97;
+  background-color:rgb(38, 107, 151);
 }
-
 img {
   max-width: 100%;
   max-height: 100%;
 }
-
 .clouds {
   position: relative;
   width: 13vw;
   margin: 0 auto;
   height: 4.09vw;
 }
-
 .clouds > div {
   position: absolute;
   margin: 0 auto;
 }
-
 .cloud1 {
   width: 13vw;
   height: 4.35vw;
-  left: -16.84vw;
+  left:-16.84vw;
 }
-
 .cloud2 {
   width: 24.28vw;
   height: 4.61vw;
-  right: -19.23vw;
+  right:-19.23vw;
 }
-
 .comingsoon {
   position: relative;
   font-family: 'Raleway', sans-serif;
@@ -55,36 +49,32 @@ img {
   color: white;
   margin: 0 auto;
 }
-
 .comingsoon > div {
   position: absolute;
   font-size: 4.5vw;
   line-height: 9.7vw;
-  left: 6.69vw;
-  text-shadow: 0.1625vw 0.195vw 0vw rgba(0, 0, 0, 0.17);
+  left:6.69vw;
+  text-shadow: $text_shadow;
   letter-spacing: 0.071vw;
 }
-
 span {
   letter-spacing: 0.29vw;
 }
-
 .subscribe {
+  @extend %main_font;
   position: relative;
   font-family: 'Lato', sans-serif;
   width: 45.51vw;
   height: 1.95vw;
-  color: #266b97;
+  color:rgb(38, 107, 151);
   margin: 0 auto;
 }
-
 .subscribe > div {
   position: absolute;
   font-size: 0.91vw;
   line-height: 2.4vw;
-  left: 13.42vw;
+  left:13.42vw;
 }
-
 .form {
   position: relative;
   margin: 0 auto;
@@ -94,12 +84,10 @@ span {
   border: none;
   border-radius: 0.13vw;
 }
-
 .form input[type=text] {
   position: absolute;
-  background-image: -webkit-linear-gradient(90deg, #f0f0f0 0%, #ebebeb 100%);
-  -webkit-box-shadow: inset 0.0195vw 0.085vw 0.26vw 0.0585vw rgba(29, 26, 22, 0.2);
-          box-shadow: inset 0.0195vw 0.085vw 0.26vw 0.0585vw rgba(29, 26, 22, 0.2);
+  background-image: -webkit-linear-gradient(90deg, rgb(240,240,240) 0%, rgb(235, 235, 235) 100%);
+  box-shadow: inset 0.0195vw 0.085vw 0.26vw 0.0585vw rgba(29, 26, 22, 0.2);
   padding-left: 0.754vw;
   padding-top: 0.04vw;
   left: 11.60vw;
@@ -111,12 +99,10 @@ span {
   border-radius: 0.19vw;
   letter-spacing: 0.019vw;
 }
-
 .form button {
   position: absolute;
-  background-image: -webkit-linear-gradient(90deg, #f39f0d 20%, #f7c83b 100%);
-  -webkit-box-shadow: inset 0vw 0.13vw 0vw 0vw #f7aa27;
-          box-shadow: inset 0vw 0.13vw 0vw 0vw #f7aa27;
+  background-image: -webkit-linear-gradient(90deg, rgb(243, 159, 13) 20%, rgb(247, 200, 59) 100%);
+  box-shadow: inset 0vw 0.13vw 0vw 0vw rgb(247, 170, 39);
   color: white;
   padding-top: 0.16vw;
   letter-spacing: 0.013vw;
@@ -131,7 +117,6 @@ span {
   border: none;
   border-radius: 0.195vw;
 }
-
 .content {
   position: relative;
   margin: 0 auto;
@@ -139,29 +124,25 @@ span {
   width: 45.51vw;
   height: 33.16vw;
 }
-
 .content > div:first-child {
   width: 3.25vw;
   height: 3.25vw;
   position: absolute;
   top: 12.65vw;
-  left: 10.43vw;
+  left:10.43vw;
 }
-
 .content > div:nth-child(2) {
   width: 27.31vw;
   height: 31.86vw;
   position: absolute;
   top: 1.37vw;
-  left: 12.06vw;
+  left:12.06vw;
   z-index: 1;
 }
-
 .image {
   width: 33.16vw;
   height: 31.99vw;
 }
-
 .numbers {
   position: absolute;
   top: 16.4vw;
@@ -173,32 +154,27 @@ span {
   margin: 0 auto;
   text-align: center;
 }
-
 .numbers > div:nth-child(2n-1) {
   width: 4.55vw;
   height: 4.55vw;
   line-height: 3.17;
-  color: #266b97;
-  background-color: #b9d6ef;
+  color: rgb(38, 107, 151);
+  background-color: rgb(185,214,239);
   border-radius: 50%;
 }
-
 .days {
   position: absolute;
   left: 0.6vw;
 }
-
 .hours {
   position: absolute;
   left: 7.94vw;
   letter-spacing: 0.026vw;
 }
-
 .mins {
   position: absolute;
   left: 15.02vw;
 }
-
 .numbers > div:nth-child(2n) {
   top: 4.85vw;
   color: white;
@@ -209,22 +185,18 @@ span {
   line-height: 1.243;
   font-weight: 700;
 }
-
 .word1 {
   position: absolute;
   left: 0.85vw;
   letter-spacing: 0.107vw;
 }
-
 .word2 {
   position: absolute;
   left: 7.41vw;
   letter-spacing: 0.123vw;
 }
-
 .word3 {
   position: absolute;
   left: 15.34vw;
   letter-spacing: 0.0195vw;
 }
-/*# sourceMappingURL=main.css.map */
