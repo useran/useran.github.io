@@ -1,6 +1,15 @@
 @-webkit-keyframes step11 {
   0% {
+    top: 168px;
+    height: 52px;
+  }
+  12% {
     top: 362px;
+    height: 160px;
+  }
+  91% {
+    top: 362px;
+    height: 160px;
   }
   100% {
     top: 167px;
@@ -10,7 +19,16 @@
 
 @keyframes step11 {
   0% {
+    top: 168px;
+    height: 52px;
+  }
+  12% {
     top: 362px;
+    height: 160px;
+  }
+  91% {
+    top: 362px;
+    height: 160px;
   }
   100% {
     top: 167px;
@@ -20,181 +38,177 @@
 
 @-webkit-keyframes step21 {
   0% {
+    top: 142px;
+    height: 79px;
+  }
+  12% {
     top: 380px;
+    height: 143px;
+  }
+  72% {
+    top: 380px;
+    height: 143px;
+  }
+  84% {
+    top: 142px;
+    height: 79px;
   }
   100% {
-    top: 140px;
+    top: 142px;
     height: 79px;
   }
 }
 
 @keyframes step21 {
   0% {
+    top: 142px;
+    height: 79px;
+  }
+  12% {
     top: 380px;
+    height: 143px;
+  }
+  72% {
+    top: 380px;
+    height: 143px;
+  }
+  84% {
+    top: 142px;
+    height: 79px;
   }
   100% {
-    top: 140px;
+    top: 142px;
     height: 79px;
   }
 }
 
 @-webkit-keyframes step31 {
   0% {
+    top: 111px;
+    height: 111px;
+  }
+  12% {
     top: 410px;
+    height: 111px;
+  }
+  52% {
+    top: 410px;
+    height: 111px;
+  }
+  64% {
+    top: 111px;
+    height: 111px;
   }
   100% {
-    top: 108px;
+    top: 111px;
     height: 111px;
   }
 }
 
 @keyframes step31 {
   0% {
+    top: 111px;
+    height: 111px;
+  }
+  12% {
     top: 410px;
+    height: 111px;
+  }
+  52% {
+    top: 410px;
+    height: 111px;
+  }
+  64% {
+    top: 111px;
+    height: 111px;
   }
   100% {
-    top: 108px;
+    top: 111px;
     height: 111px;
   }
 }
 
 @-webkit-keyframes step41 {
   0% {
+    top: 79px;
+    height: 143px;
+  }
+  12% {
     top: 442px;
+    height: 79px;
+  }
+  32% {
+    top: 442px;
+    height: 79px;
+  }
+  44% {
+    top: 79px;
+    height: 143px;
   }
   100% {
-    top: 76px;
+    top: 79px;
     height: 143px;
   }
 }
 
 @keyframes step41 {
   0% {
+    top: 79px;
+    height: 143px;
+  }
+  12% {
     top: 442px;
+    height: 79px;
+  }
+  32% {
+    top: 442px;
+    height: 79px;
+  }
+  44% {
+    top: 79px;
+    height: 143px;
   }
   100% {
-    top: 76px;
+    top: 79px;
     height: 143px;
   }
 }
 
 @-webkit-keyframes step51 {
   0% {
+    top: 61px;
+    height: 160px;
+  }
+  12% {
     top: 470px;
+    height: 52px;
+  }
+  22% {
+    top: 61px;
+    height: 160px;
   }
   100% {
-    top: 58px;
+    top: 61px;
     height: 160px;
   }
 }
 
 @keyframes step51 {
   0% {
-    top: 470px;
-  }
-  100% {
-    top: 58px;
+    top: 61px;
     height: 160px;
   }
-}
-
-@-webkit-keyframes step1 {
-  0% {
-    top: 167px;
-  }
-  100% {
-    top: 362px;
-    height: 160px;
-  }
-}
-
-@keyframes step1 {
-  0% {
-    top: 167px;
-  }
-  100% {
-    top: 362px;
-    height: 160px;
-  }
-}
-
-@-webkit-keyframes step2 {
-  0% {
-    top: 140px;
-  }
-  100% {
-    top: 380px;
-    height: 143px;
-  }
-}
-
-@keyframes step2 {
-  0% {
-    top: 140px;
-  }
-  100% {
-    top: 380px;
-    height: 143px;
-  }
-}
-
-@-webkit-keyframes step3 {
-  0% {
-    top: 108px;
-  }
-  100% {
-    top: 410px;
-    height: 111px;
-  }
-}
-
-@keyframes step3 {
-  0% {
-    top: 108px;
-  }
-  100% {
-    top: 410px;
-    height: 111px;
-  }
-}
-
-@-webkit-keyframes step4 {
-  0% {
-    top: 76px;
-  }
-  100% {
-    top: 442px;
-    height: 79px;
-  }
-}
-
-@keyframes step4 {
-  0% {
-    top: 76px;
-  }
-  100% {
-    top: 442px;
-    height: 79px;
-  }
-}
-
-@-webkit-keyframes step5 {
-  0% {
-    top: 58px;
-  }
-  100% {
+  12% {
     top: 470px;
     height: 52px;
   }
-}
-
-@keyframes step5 {
-  0% {
-    top: 58px;
+  22% {
+    top: 61px;
+    height: 160px;
   }
   100% {
-    top: 470px;
-    height: 52px;
+    top: 61px;
+    height: 160px;
   }
 }
 
@@ -487,8 +501,8 @@ body {
   top: 168px;
   left: 0px;
   height: 52px;
-  -webkit-animation: step1 0.8s ease 0.3s forwards, step11 0.5s ease 7.6s forwards;
-          animation: step1 0.8s ease 0.3s forwards, step11 0.5s ease 7.6s forwards;
+  -webkit-animation: step11 8s ease 0.3s infinite forwards;
+          animation: step11 8s ease 0.3s infinite forwards;
 }
 
 .step2 {
@@ -496,8 +510,8 @@ body {
   top: 142px;
   left: 162px;
   height: 79px;
-  -webkit-animation: step2 0.8s ease 1.12s forwards, step21 0.8s ease 6.9s forwards;
-          animation: step2 0.8s ease 1.12s forwards, step21 0.8s ease 6.9s forwards;
+  -webkit-animation: step21 8s ease 1.12s infinite forwards;
+          animation: step21 8s ease 1.12s infinite forwards;
 }
 
 .step3 {
@@ -505,8 +519,8 @@ body {
   top: 111px;
   left: 324px;
   height: 111px;
-  -webkit-animation: step3 0.8s ease 1.92s forwards, step31 0.8s ease 6.1s forwards;
-          animation: step3 0.8s ease 1.92s forwards, step31 0.8s ease 6.1s forwards;
+  -webkit-animation: step31 8s ease 1.92s infinite forwards;
+          animation: step31 8s ease 1.92s infinite forwards;
 }
 
 .step4 {
@@ -514,8 +528,8 @@ body {
   top: 79px;
   left: 486px;
   height: 143px;
-  -webkit-animation: step4 0.8s ease 2.72s forwards, step41 0.8s ease 5.28s forwards;
-          animation: step4 0.8s ease 2.72s forwards, step41 0.8s ease 5.28s forwards;
+  -webkit-animation: step41 8s ease 2.72s infinite forwards;
+          animation: step41 8s ease 2.72s infinite forwards;
 }
 
 .step5 {
@@ -523,8 +537,8 @@ body {
   top: 61px;
   right: 0px;
   height: 160px;
-  -webkit-animation: step5 0.8s ease 3.52s forwards, step51 0.8s ease 4.48s forwards;
-          animation: step5 0.8s ease 3.52s forwards, step51 0.8s ease 4.48s forwards;
+  -webkit-animation: step51 8s ease 3.52s infinite forwards;
+          animation: step51 8s ease 3.52s infinite forwards;
 }
 
 .ball {
@@ -535,8 +549,8 @@ body {
   position: absolute;
   left: 100px;
   top: 50px;
-  -webkit-animation: ball 8s ease;
-          animation: ball 8s ease;
+  -webkit-animation: ball 8s ease infinite;
+          animation: ball 8s ease infinite;
   z-index: 1;
 }
 /*# sourceMappingURL=main.css.map */
