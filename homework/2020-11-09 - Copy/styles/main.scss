@@ -1,11 +1,19 @@
-$side_measure: 110px;
-/* $row_count: 5;
-$column_count: 5; */
+$side_measure: 50px;
+$row_count: 5;
+$column_count: 5;
+
 body {
     height: 100vh;
     width: 100vw;
 }
+%square {
+    shape-outside: inset(50px 50px 50px 50px);
+    clip-path: inset(50px 50px 50px 50px);
+}
 .wrapper {
+@extend %square;
+}
+/* .wrapper {
     width: 100%;
     height: 100%;
     background-color: azure;
@@ -13,6 +21,7 @@ body {
     flex-direction: column;
     justify-content: center;
 }
+
 .row {
     margin: 0px auto;
     min-width: 700px;
@@ -21,12 +30,11 @@ body {
     background-color: cadetblue;
     display: flex;
     justify-content: space-around;
-    align-items: center;
-
-    & > .item {
-        height: $side_measure;
-        width: $side_measure;
-        border: 3px solid white;
-    }
+    align-items: center;  
 }
+.item {
+    height: $side_measure;
+    width: $side_measure;
+    border: 3px solid white;
+} */
 
