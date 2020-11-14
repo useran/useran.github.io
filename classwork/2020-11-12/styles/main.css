@@ -1,0 +1,19 @@
+.wrapper {
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 5fr 3fr 100px;
+      grid-template-rows: 5fr 3fr 100px;
+  text-align: center;
+}
+
+.wrapper > div:nth-child(3) {
+  background-color: #ffc400;
+}
+
+.wrapper > div {
+  border: 1px solid black;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,6 +1,6 @@
 $side_measure: 50px;
-$row_count: 10;
-$column_count: 10;
+$row_count: 5;
+$column_count: 6;
 
 body {
     height: 100vh;
@@ -14,12 +14,20 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.main-1, .main-2, .main-3, .main-4, .main-5, .main-6, .main-7, .main-8, .main-9, .main-10 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}         
+
+    & > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+/*         & > div {
+            border-right: 20px solid white;
+            border-bottom: 20px solid white;
+            width: $side_measure;
+            height: $side_measure;
+            background-image: url(../images/S1.png);  */
+    }
+}        
 @for $j from 1 through $column_count {
     .main-#{$j} { 
         @for $i from 1 through $row_count {

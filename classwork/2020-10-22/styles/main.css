@@ -11,8 +11,9 @@
 .card1, .card2, .card3, .card4 {
     width: 100px;
     height: 150px;
-    border: 1px solid rgb(252, 12, 44);
-    background-color: tomato;
+    border: 1px solid rgb(247, 143, 7);
+    background-color: rgb(240, 186, 10);
+    border-radius: 10px;
 }
 .deck1 {
     position: absolute;
@@ -47,11 +48,8 @@
     left: 0px;
 }
 .main > div:hover > div {
-    top: -20px;
-    transform: rotateY(180deg);
-    background: content-box radial-gradient(crimson, skyblue);
+    top: -40px;
     z-index: 1;
-    border: none;
 }
 .main > div:hover p {
    visibility: hidden;
