@@ -1,5 +1,4 @@
 .main {
-  width: 100vw;
   max-width: 1920px;
   max-height: 1910px;
   background-color: #FCFCFC;
@@ -14,13 +13,13 @@
 
 .main > div:nth-child(2) {
   width: 100%;
-  min-height: 83px;
+  height: 83px;
   background-color: white;
   margin: 0 auto;
 }
 
 .wrapper {
-  max-width: 1116px;
+  max-width: 1111px;
   height: 36px;
   margin: 0 auto;
   display: -webkit-box;
@@ -51,9 +50,6 @@
   font-size: 14px;
   line-height: 16px;
   color: #4F4F4F;
-}
-
-.sub-wrap-1 .contact {
   margin-right: 20px;
 }
 
@@ -155,7 +151,7 @@
   position: absolute;
   width: 30px;
   height: 30px;
-  top: 70px;
+  top: 100px;
   left: -50px;
   border: 1px solid #E8E8EE;
   background-image: url(../images/arrow-1.png);
@@ -169,7 +165,7 @@
   position: absolute;
   width: 30px;
   height: 30px;
-  top: 70px;
+  top: 100px;
   right: -50px;
   border: 1px solid #E8E8EE;
   background-image: url(../images/arrow-2.png);
@@ -230,13 +226,13 @@
 
 .line {
   margin: 27px auto;
-  max-width: 1110px;
+  max-width: 1111px;
   height: 1px;
   background-color: #E8E8EE;
 }
 
 .wrapper-1 {
-  max-width: 1116px;
+  max-width: 1111px;
   max-height: 36px;
   background-color: #F2F2F2;
   margin: 0 auto;
@@ -332,7 +328,7 @@
 
 .wrapper-2 {
   max-width: 1111px;
-  max-height: auto;
+  height: auto;
   margin: 20px auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -354,7 +350,7 @@
 }
 
 .wrapper-3 {
-  max-width: 1116px;
+  max-width: 1111px;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -377,42 +373,7 @@
   line-height: 2.7;
 }
 
-@media only screen and (min-width: 1111px) {
-  .main {
-    max-width: 1111px;
-  }
-}
-
-@media only screen and (min-width: 1012px) {
-  .main .header > .wrapper > .sub-wrap-2 .search-bar {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .main > .wrapper > div {
-    margin: 5px auto;
-    padding: 0;
-  }
-  .main .wrapper-1 > div:nth-child(2) {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .main .wrapper-1 > div:nth-child(3) {
-    display: none;
-  }
-  .main > .wrapper-1 > div:nth-child(2) {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .main > .wrapper > div {
-    margin: 5px auto;
-    padding: 0;
-  }
-}
-
-@media only screen and (min-width: 360px) and (max-width: 1012px) {
+@media only screen and (max-width: 1111px) {
   .main > .wrapper > div {
     margin: 5px auto;
     padding: 0;
@@ -431,9 +392,6 @@
     display: none;
   }
   .main > .wrapper::after {
-    display: none;
-  }
-  .main > .wrapper > div:nth-child(3) {
     display: none;
   }
   .main > .wrapper-2 > div {
@@ -469,43 +427,36 @@
   .main > div {
     min-width: 360px;
   }
-  .main > .wrapper > div {
-    margin: 5px auto;
-    padding: 0;
-  }
   .main > .wrapper > div:nth-child(3) {
     display: none;
   }
-  .main > .header > .wrapper > .sub-wrap-2 .menu-pic {
-    min-width: 110px;
-    margin-left: 20px;
-  }
-  .main > .header > .wrapper > .sub-wrap-2 .button {
-    margin-right: 10px;
-  }
-  .main > .header:nth-child(1) > .wrapper > .sub-wrap-1 .login {
-    margin-right: 11px;
-  }
-  .main > .wrapper::before {
-    display: none;
-  }
-  .main > .wrapper::after {
-    display: none;
-  }
-  .main > .wrapper-2 > div {
-    margin: 10px auto;
-  }
-  .main > .wrapper-1 > div:nth-child(2) {
-    display: none;
-  }
-  .main > .wrapper-1 .icons {
+}
+
+@media only screen and (min-width: 1012px) {
+  .main .header > .wrapper > .sub-wrap-2 .search-bar {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-right: 20px;
   }
-  .main > .wrapper-1 > div:first-child {
-    margin-left: 10px;
+  .main .wrapper-1 > div:nth-child(2) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .main .wrapper-1 > div:nth-child(3) {
+    display: none;
+  }
+  .main > .wrapper-1 > div:nth-child(2) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 1111px) {
+  .main {
+    max-width: 1111px;
+    margin: 0 auto;
   }
 }
 /*# sourceMappingURL=main.css.map */
