@@ -1,6 +1,6 @@
 .main{
     max-width: 1920px;
-    max-height: 1910px;
+    height: 1910px;
     background-color:#FCFCFC;
     margin: 0 auto;
 }
@@ -257,7 +257,7 @@
 @media only screen and (max-width: 1111px){
     .main {     
         & > .wrapper > div{
-            margin: 5px auto;
+            margin: 7px auto;
             padding: 0;
         }
         & > .header > .wrapper > .sub-wrap-2{
@@ -308,6 +308,10 @@
         }
         & > .wrapper > div:nth-child(3){
             display: none;
+        }
+        & > .wrapper > div{
+            margin: 7px auto;
+            padding: 0;
         }
     }
 }
