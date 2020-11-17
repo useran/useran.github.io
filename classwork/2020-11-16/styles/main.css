@@ -7,7 +7,7 @@
 }
 
 .side-bar {
-  width: 60px;
+  min-width: 0px;
   height: 100%;
   position: relative;
   display: -webkit-box;
@@ -20,7 +20,7 @@
   width: 30px;
   height: 30px;
   top: 190px;
-  left: 10px;
+  left: 0px;
   border: 1px solid #E8E8EE;
   background-image: url(../images/arrow-1.png);
   background-repeat: no-repeat;
@@ -33,7 +33,7 @@
   width: 30px;
   height: 30px;
   top: 190px;
-  right: 10px;
+  right: 0px;
   border: 1px solid #E8E8EE;
   background-image: url(../images/arrow-2.png);
   background-repeat: no-repeat;
@@ -117,8 +117,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -189,7 +189,7 @@
 
 .main > .wrapper {
   margin: 0 auto;
-  padding-top: 25px;
+  padding: 10px 10px;
   height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -202,15 +202,12 @@
   position: relative;
 }
 
-.main > .wrapper > div:nth-child(3) {
-  display: none;
-}
-
 .main > .wrapper > div {
   min-width: 357.88px;
   min-height: 169px;
   background-color: #FF9191;
   border-radius: 5px;
+  margin: 5px auto;
   color: white;
 }
 
@@ -410,44 +407,16 @@
   .mainer .side-bar {
     display: none;
   }
-  .main {
-    max-width: 1073px;
-  }
-  .main > .wrapper > div {
-    margin: 7px auto;
-    padding: 0;
-  }
-  .main > .wrapper-1 > div:nth-child(2) {
-    display: none;
-  }
-  .main > .wrapper-1 .icons {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-right: 20px;
-  }
-  .main > .wrapper-1 > div:first-child {
-    margin-left: 10px;
-  }
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 464px) {
   .main {
     min-width: 360px;
   }
-  .main > .wrapper > div {
-    margin: 7px auto;
-    padding: 0;
-  }
 }
 
-@media only screen and (min-width: 1116px) {
+@media only screen and (min-width: 1111px) {
   .main .header > .wrapper > .sub-wrap-2 .search-bar {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .main > .wrapper > div:nth-child(3) {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -469,7 +438,7 @@
 
 @media only screen and (min-width: 1215px) {
   .mainer {
-    max-width: 1215px;
+    max-width: 1200px;
   }
   .main {
     max-width: 1111px;
