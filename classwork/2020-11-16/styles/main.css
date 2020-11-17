@@ -128,7 +128,9 @@
 }
 
 .header:nth-child(2) .wrapper .sub-wrap-2 .menu-pic {
-  width: 180px;
+  margin-left: 20px;
+  max-width: 180px;
+  min-width: 40px;
   height: 19px;
   background-image: url(../images/menu-options.png);
   background-repeat: no-repeat;
@@ -371,6 +373,7 @@
 }
 
 .wrapper-2 .item {
+  margin: 0 auto;
   width: 253px;
   height: 400px;
   margin-bottom: 30px;
@@ -413,10 +416,6 @@
   .main > .wrapper > div {
     margin: 7px auto;
     padding: 0;
-  }
-  .main > .header > .wrapper > .sub-wrap-2 .menu-pic {
-    width: 40px;
-    margin-left: 20px;
   }
   .main > .wrapper-1 > div:nth-child(2) {
     display: none;
