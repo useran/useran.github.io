@@ -72,17 +72,6 @@
       flex-wrap: nowrap;
 }
 
-.wrapper0 {
-  max-width: 1215px;
-  height: auto;
-  margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-}
-
 .sub-wrap-1 {
   height: 100%;
   width: 100%;
@@ -411,6 +400,11 @@
 }
 
 @media only screen and (max-width: 400px) {
+  .mainer {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    overflow-x: auto;
+  }
   .main {
     min-width: 360px;
   }
