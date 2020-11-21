@@ -1,0 +1,144 @@
+@-webkit-keyframes star-dancing {
+  0% {
+    -webkit-transform: scale(0.99);
+            transform: scale(0.99);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes star-dancing {
+  0% {
+    -webkit-transform: scale(0.99);
+            transform: scale(0.99);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes broom-dancing {
+  0% {
+    -webkit-transform: rotateX(35deg);
+            transform: rotateX(35deg);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}
+
+@keyframes broom-dancing {
+  0% {
+    -webkit-transform: rotateX(35deg);
+            transform: rotateX(35deg);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}
+
+@-webkit-keyframes broom-dancing2 {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(35deg);
+            transform: rotateX(35deg);
+  }
+}
+
+@keyframes broom-dancing2 {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(35deg);
+            transform: rotateX(35deg);
+  }
+}
+
+body {
+  height: 100vh;
+}
+
+.main {
+  height: 100%;
+  background-image: url(../images/night.png);
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main:hover .pic .stars:not(:hover) {
+  fill: #fc9b0a;
+}
+
+.main .pic svg {
+  width: 1000px;
+  height: 1000px;
+}
+
+.main .pic svg .stars {
+  fill: #f7d40a;
+}
+
+.main .pic svg .star3 {
+  stroke: #ff5100;
+  stroke-width: 1.5;
+  -webkit-animation: star-dancing 1.6s ease-in-out infinite alternate;
+          animation: star-dancing 1.6s ease-in-out infinite alternate;
+}
+
+.main .pic svg .star2 {
+  stroke: rgba(255, 51, 0, 0.342);
+  stroke-width: 2;
+  -webkit-animation: star-dancing 1.8s ease-in-out infinite alternate;
+          animation: star-dancing 1.8s ease-in-out infinite alternate;
+}
+
+.main .pic svg .star1 {
+  stroke: #b27320;
+  stroke-width: 2;
+  -webkit-animation: star-dancing 1.4s ease-in-out infinite alternate;
+          animation: star-dancing 1.4s ease-in-out infinite alternate;
+}
+
+.main .pic svg .star4 {
+  stroke: #ff6600;
+  stroke-width: 3;
+  -webkit-animation: star-dancing 1s ease-in-out infinite alternate;
+          animation: star-dancing 1s ease-in-out infinite alternate;
+}
+
+.main .pic svg .broom {
+  fill: burlywood;
+  -webkit-transform: rotateX(35deg);
+          transform: rotateX(35deg);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+}
+
+.main .pic svg:hover .broom {
+  -webkit-animation: broom-dancing 0.5s ease-out forwards;
+          animation: broom-dancing 0.5s ease-out forwards;
+}
+
+.main .pic svg:not(:hover) .broom {
+  -webkit-animation: broom-dancing2 1s ease-in-out forwards;
+          animation: broom-dancing2 1s ease-in-out forwards;
+}
+/*# sourceMappingURL=main.css.map */
