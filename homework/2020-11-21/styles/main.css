@@ -138,7 +138,7 @@ body {
 }
 
 .main .pic svg:not(:hover) .broom {
-  -webkit-animation: broom-dancing2 1s ease-in-out forwards;
-          animation: broom-dancing2 1s ease-in-out forwards;
+  -webkit-animation: broom-dancing2 1s ease-out forwards;
+          animation: broom-dancing2 1s ease-out forwards;
 }
 /*# sourceMappingURL=main.css.map */

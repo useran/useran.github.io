@@ -79,7 +79,7 @@ body{
             }
             &:not(:hover){
                 .broom{
-                    animation: broom-dancing2 1s ease-in-out forwards;
+                    animation: broom-dancing2 1s ease-out forwards;
                 }
             }
         }
