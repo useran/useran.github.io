@@ -1,0 +1,10 @@
+let addDiv= '<div id="rect"></div><div id="rect2"></div>';
+let newVar= document.querySelector('.subclass');
+newVar.innerHTML = addDiv;
+newVar.style.backgroundColor = 'yellow';
+document.getElementById('rect').style.backgroundColor = 'blue';
+document.getElementById('rect2').style.backgroundColor = 'yellow';
+document.getElementById('rect').style.width = '500px';
+document.getElementById('rect').style.height = '100px';
+document.getElementById('rect2').style.width = '500px';
+document.getElementById('rect2').style.height = '100px';
