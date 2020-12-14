@@ -1,0 +1,12 @@
+.main > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main div > div {
+  border: 1px solid black;
+  width: 70px;
+  height: 50px;
+}
+/*# sourceMappingURL=main.css.map */
