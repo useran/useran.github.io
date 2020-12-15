@@ -1,4 +1,82 @@
-const textEl = document.querySelector('.txtar');
+const btn5El = document.querySelector('.btn5');
+
+const btn1El = document.querySelector('.btn1');
+  const btn2El = document.querySelector('.btn2');
+  const btn3El = document.querySelector('.btn3');
+  const btn4El = document.querySelector('.btn4');
+
+  btn1El.addEventListener('click', (e) => { 
+    btn2El.style.backgroundColor = 'yellow';
+    btn3El.style.backgroundColor = 'yellow';
+    btn4El.style.backgroundColor = 'yellow';
+    e.target.style.backgroundColor = 'blue';
+  });
+
+  btn2El.addEventListener('click', (e) => { 
+    btn1El.style.backgroundColor = 'yellow';
+    btn3El.style.backgroundColor = 'yellow';
+    btn4El.style.backgroundColor = 'yellow';
+    e.target.style.backgroundColor = 'blue';
+  });
+
+  btn3El.addEventListener('click', (e) => { 
+    btn2El.style.backgroundColor = 'yellow';
+    btn1El.style.backgroundColor = 'yellow';
+    btn4El.style.backgroundColor = 'yellow';
+    e.target.style.backgroundColor = 'blue';
+  });
+
+  btn4El.addEventListener('click', (e) => { 
+    btn1El.style.backgroundColor = 'yellow';
+    btn2El.style.backgroundColor = 'yellow';
+    btn3El.style.backgroundColor = 'yellow';
+    e.target.style.backgroundColor = 'blue';
+  });
+
+const chooseOper = () =>{
+  let outcome = null;
+    
+  const int1El = document.querySelector('.input1');
+  const int2El = document.querySelector('.input2');
+  const outEl = document.querySelector('.forth');
+
+  if (btn1El.style.backgroundColor === 'blue'){
+    outcome = Number(int1El.value) + Number(int2El.value);
+    outEl.innerHTML = outcome;
+
+  } else if (btn2El.style.backgroundColor === 'blue'){
+    outcome = Number(int1El.value) - Number(int2El.value);
+    outEl.innerHTML = outcome;
+
+  } else if (btn3El.style.backgroundColor === 'blue'){
+    outcome = Number(int1El.value) * Number(int2El.value);
+    outEl.innerHTML = outcome;
+
+  } else if (btn4El.style.backgroundColor === 'blue'){
+    outcome = Number(int1El.value) / Number(int2El.value);
+    outEl.innerHTML = outcome;
+    
+  } else alert('Please make your choice!')
+}
+
+btn5El.addEventListener('click', chooseOper);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* const textEl = document.querySelector('.txtar');
 const btnEl = document.querySelector('.btn');
 const outEl = document.querySelector('.output');
 const outEl2 = document.querySelector('.output2');
@@ -66,3 +144,4 @@ const outPutInput = () =>{
 //adding an EventListener to the button
 btnEl.addEventListener('click', outPutInput);
 
+ */
