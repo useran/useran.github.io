@@ -1,13 +1,13 @@
 const mainEl = document.querySelector('.main');
 
-//function for creating a new div
+//function for creating a new div in certain div
 const addDiv = (idElem, str) => {
   let newDiv = document.createElement('div');
   newDiv.innerHTML = str;
   document.getElementById(idElem).appendChild(newDiv);
 }
 
-//function for creating a board
+//function for creating a board - drawing a grid
 const chessDesk = () =>{
   const arr = [];
   let str = '';
@@ -21,7 +21,7 @@ const chessDesk = () =>{
 }
 chessDesk();
 
-//function for filling out cells in the board
+//function for filling out cells with color
 const fillDesk = (color) =>{
   for (let i=0; i<8; i++){
     for (let j=1; j<9; j++){
@@ -50,12 +50,11 @@ const fillFigDesk = () =>{
         document.getElementById(`${i}${j}`).innerHTML = figBlack[figBlack.length-1];
       } else if (i === 6){
         document.getElementById(`${i}${j}`).innerHTML = figWhite[figWhite.length-1];
-      } 
-    }
+      } else document.getElementById(`${i}${j}`).innerHTML = '';
+    } 
   }
 }
 fillFigDesk();
-
 
 //creating numbers & letters aside the board
 const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
@@ -66,31 +65,21 @@ for (let i=0; i<8; i++){
 }
 for (let j=1; j<9; j++){
   let i = 8;
-  document.getElementById(`${i}${j}`).innerHTML =letters[j-1];
+  document.getElementById(`${i}${j}`).innerHTML = letters[j-1];
 }
 
 //drawing borders for the board
 for (let i=0; i<8; i++){
-  let j = 1;
-  document.getElementById(`${i}${j}`).style.borderLeftColor = 'black';
+  document.getElementById(`${i}1`).style.borderLeftColor = 'black';
+  document.getElementById(`${i}8`).style.borderRightColor = 'black';
 }
 
 for (let j=1; j<9; j++){
-  let i = 0;
-  document.getElementById(`${i}${j}`).style.borderTopColor = 'black';
+  document.getElementById(`0${j}`).style.borderTopColor = 'black';
+  document.getElementById(`8${j}`).style.borderTopColor = 'black';
 }
 
-for (let i=0; i<8; i++){
-  let j = 8;
-  document.getElementById(`${i}${j}`).style.borderRightColor = 'black';
-}
-
-for (let j=1; j<9; j++){
-  let i = 7;
-  document.getElementById(`${i}${j}`).style.borderBottomColor = 'black';
-}
-
-//creating EventListener
+//creating EventListener to calculate address of the cells
 mainEl.addEventListener('click', (e) => {
   let ourChoice = e.target.id;
   
@@ -99,11 +88,17 @@ mainEl.addEventListener('click', (e) => {
   let hours = timeClick.getHours();
   let min = timeClick.getMinutes();
   let sec = timeClick.getSeconds();
-  timeClick = `${hours}:${min}:${sec}`;
+  if (hours<10) {
+    timeClick = `0${hours}:${min}:${sec}`;    
+  } else if (min<10){
+    timeClick = `${hours}:0${min}:${sec}`;
+  } else if (sec<10){
+    timeClick = `${hours}:${min}:0${sec}`;
+  } else timeClick = `${hours}:${min}:${sec}`;
 
+  //calculating address of the cell
   let row = null;
   let col = null;
-  //calculating address of the cell
   for (let i=0; i<8; i++){
     for (let j=1; j<9; j++){
       if (`${i}${j}` === ourChoice){
