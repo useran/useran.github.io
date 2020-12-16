@@ -9,7 +9,6 @@ const addDiv = (idElem, str) => {
 
 //function for creating a board - drawing a grid
 const chessDesk = () =>{
-  const arr = [];
   let str = '';
   for (let i=0; i<9; i++){
     for (let j=0; j<9; j++){
