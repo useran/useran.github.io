@@ -14,7 +14,7 @@ const chessDesk = () =>{
     for (let j=0; j<9; j++){
       str = `${str}<div class='elem' id='${i}${j}'></div>`;
     }
-    addDiv('mainer', `${str}`);
+    addDiv('mainer', str);
     str = '';    
   }
 }
@@ -59,12 +59,10 @@ fillFigDesk();
 const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
 
 for (let i=0; i<8; i++){
-  let j = 0;
-  document.getElementById(`${i}${j}`).innerHTML = 8-i;
+  document.getElementById(`${i}0`).innerHTML = 8-i;
 }
 for (let j=1; j<9; j++){
-  let i = 8;
-  document.getElementById(`${i}${j}`).innerHTML = letters[j-1];
+  document.getElementById(`8${j}`).innerHTML = letters[j-1];
 }
 
 //drawing borders for the board
