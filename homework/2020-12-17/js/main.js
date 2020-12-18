@@ -26,29 +26,33 @@ const fillDesk = (color) =>{
     for (let j=1; j<9; j++){
       if ((j % 2 == 0) && (i % 2 == 0)){
         document.getElementById(`${i}${j}`).style.backgroundColor = color;
-      } 
-      if ((j % 2 !== 0) && (i % 2 !== 0)){
+      } else if ((j % 2 !== 0) && (i % 2 !== 0)){
         document.getElementById(`${i}${j}`).style.backgroundColor = color;
-      }
+      } else document.getElementById(`${i}${j}`).style.backgroundColor = 'RGB(251, 206, 156)';
     }
   }
 }
-fillDesk('lightgrey');
+fillDesk('orange');
+
 
 //function for filling out the board with figures
 const fillFigDesk = () =>{
   const figBlack = ['&#x265C;','&#x265E;','&#x265D;','&#x265B;', '&#x265A;','&#x265D;','&#x265E;','&#x265C;','&#x265F;'];
   const figWhite = ['&#x2656;','&#x2658;','&#x2657;','&#x2655;','&#x2654;','&#x2657;','&#x2658;','&#x2656;', '&#x2659;'];
+
   for (let i=0; i<9; i++){
     for (let j=1; j<9; j++){
       if (i === 0){
         document.getElementById(`${i}${j}`).innerHTML = figBlack[j-1];
       } else if (i === 7){
-        document.getElementById(`${i}${j}`).innerHTML = figWhite[j-1];
+        document.getElementById(`${i}${j}`).innerHTML = figBlack[j-1];
+        document.getElementById(`${i}${j}`).style.color = 'white';
+
       } else if (i === 1){
         document.getElementById(`${i}${j}`).innerHTML = figBlack[figBlack.length-1];
       } else if (i === 6){
-        document.getElementById(`${i}${j}`).innerHTML = figWhite[figWhite.length-1];
+        document.getElementById(`${i}${j}`).innerHTML = figBlack[figWhite.length-1];
+        document.getElementById(`${i}${j}`).style.color = 'white';
       } else document.getElementById(`${i}${j}`).innerHTML = '';
     } 
   }
