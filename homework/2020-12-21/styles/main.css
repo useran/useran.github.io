@@ -1,0 +1,137 @@
+@-webkit-keyframes left {
+  0% {
+    left: 650px;
+  }
+  100% {
+    left: 70px;
+  }
+}
+
+@keyframes left {
+  0% {
+    left: 650px;
+  }
+  100% {
+    left: 70px;
+  }
+}
+
+@-webkit-keyframes right {
+  0% {
+    right: 650px;
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+  100% {
+    right: 70px;
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+}
+
+@keyframes right {
+  0% {
+    right: 650px;
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+  100% {
+    right: 70px;
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+}
+
+.main {
+  width: 1400px;
+  height: 300px;
+  border: 1px solid black;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.buttons {
+  width: 1400px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  margin: 0 auto;
+}
+
+.btn-left, .btn-right, .btn-light {
+  width: 100px;
+  border-radius: 5px;
+  background-color: lightskyblue;
+  border: 1px solid lightslategrey;
+  margin: 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.btn-light1 {
+  background-color: orange;
+  width: 100px;
+  border-radius: 5px;
+  border: 1px solid lightslategrey;
+  margin: 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.train {
+  position: absolute;
+  width: 260px;
+  height: 200px;
+  background-image: url(../images/train3.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.light {
+  visibility: hidden;
+}
+
+.light1 {
+  position: absolute;
+  left: 34.5px;
+  top: 47.2%;
+  width: 20px;
+  height: 20px;
+  background-image: url(../images/circle.png);
+  visibility: visible;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-transform: skew(0deg, -10deg);
+          transform: skew(0deg, -10deg);
+  -webkit-transform: rotateY(60deg);
+          transform: rotateY(60deg);
+}
+
+.left {
+  -webkit-animation: left 3s linear forwards;
+          animation: left 3s linear forwards;
+}
+
+.right {
+  -webkit-animation: right 3s linear forwards;
+          animation: right 3s linear forwards;
+}
+/*# sourceMappingURL=main.css.map */
