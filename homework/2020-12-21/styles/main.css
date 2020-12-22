@@ -1,6 +1,29 @@
+@-webkit-keyframes right {
+  0% {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+  100% {
+    left: 1200px;
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+}
+
+@keyframes right {
+  0% {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+  100% {
+    left: 1200px;
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+}
+
 @-webkit-keyframes left {
   0% {
-    left: 650px;
   }
   100% {
     left: 70px;
@@ -9,36 +32,9 @@
 
 @keyframes left {
   0% {
-    left: 650px;
   }
   100% {
     left: 70px;
-  }
-}
-
-@-webkit-keyframes right {
-  0% {
-    right: 650px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-  100% {
-    right: 70px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-}
-
-@keyframes right {
-  0% {
-    right: 650px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-  100% {
-    right: 70px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
   }
 }
 
@@ -98,11 +94,16 @@
 .train {
   position: absolute;
   width: 260px;
+  left: 70px;
   height: 200px;
   background-image: url(../images/train3.png);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+  -webkit-animation: right 10s linear forwards;
+          animation: right 10s linear forwards;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
 }
 
 .light {
@@ -126,12 +127,12 @@
 }
 
 .left {
-  -webkit-animation: left 3s linear forwards;
-          animation: left 3s linear forwards;
+  -webkit-animation: left 10s linear forwards;
+          animation: left 10s linear forwards;
 }
 
 .right {
-  -webkit-animation: right 3s linear forwards;
-          animation: right 3s linear forwards;
+  -webkit-animation: right 10s linear forwards;
+          animation: right 10s linear forwards;
 }
 /*# sourceMappingURL=main.css.map */

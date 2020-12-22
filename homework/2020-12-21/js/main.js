@@ -5,14 +5,28 @@ const trainElLight = document.querySelector('.btn-light');
 const trainLight = document.querySelector('.light');
 const mainEl = document.querySelector('.main');
 
+//time calculation for movement to the right
+const timeCalcRight = (left, duration) => {
+  return (duration - (left-70) * duration / 1130);
+} 
+
+//time calculation for movement to the left
+const timeCalcLeft = (left, duration) => {
+  return ((left-70) * duration / 1130);
+} 
+
+//function to check if the animation is running
 const checkAnimState = element => {
-  return (element.style.animationPlayState ==='paused') ? element.style.animationPlayState = 'running' : element.style.animationPlayState = 'paused';
+  return ((element.style.animationPlayState ==='paused') || (getComputedStyle(element).animationPlayState === 'paused')) ? element.style.animationPlayState = 'running' : element.style.animationPlayState = 'paused';
 }
 
+//function to move left
 const moveLeft = () => {
   if (trainEl.classList.contains('right')){
+    trainEl.style.left = getComputedStyle(trainEl).left;
     trainEl.classList.remove('right');
     trainEl.classList.add('left');
+    trainEl.style.animationDuration = `${timeCalcLeft(trainEl.getBoundingClientRect().left, 10)}s`;
     trainEl.style.animationPlayState = 'running';
   } else if (trainEl.classList.contains('left')) {
     checkAnimState(trainEl);
@@ -21,10 +35,13 @@ const moveLeft = () => {
   }
 }
 
+//function to move right
 const moveRight = () => {
   if (trainEl.classList.contains('left')){
+    trainEl.style.left = getComputedStyle(trainEl).left;
     trainEl.classList.remove('left');
     trainEl.classList.add('right');
+    trainEl.style.animationDuration = `${timeCalcRight(trainEl.getBoundingClientRect().left, 10)}s`;
     trainEl.style.animationPlayState = 'running';
   } else if (trainEl.classList.contains('right')) {
     checkAnimState(trainEl);
@@ -33,32 +50,43 @@ const moveRight = () => {
   }
 }
 
+//mouse click listener
 mainEl.addEventListener('mousedown', (e) => {
-  if (e.button === 0){
-    moveLeft();
-  }
-  if (e.button === 2){
-    moveRight();
+  switch (e.button){
+    case 0:
+      moveLeft();
+      break;
+    case 2:
+      moveRight();
+      break;
   }
 })
 
+//keyboard listener
 document.addEventListener('keydown', e => {
-  if (e.code == 'ArrowLeft') {
-    moveLeft();
-  }
-  if (e.key == 'ArrowRight'){
-    moveRight();
-  }
-  if(e.code == 'KeyF'){
-    trainLight.classList.toggle('light1');
-    trainElLight.classList.toggle('btn-light1');
+  switch (e.code){
+    case 'ArrowLeft':
+      moveLeft();
+      break;
+    case 'ArrowRight':
+      moveRight();
+      break;
+    case 'KeyF':
+      lightOnOff();
+      break;
   }
 })
 
-leftBtn.addEventListener('click', moveLeft);
-rightBtn.addEventListener('click', moveRight);
-
-trainElLight.addEventListener('click', () => {
+//function for On/Off the light button
+const lightOnOff = () => {
   trainLight.classList.toggle('light1');
   trainElLight.classList.toggle('btn-light1');
-});
+  if (trainElLight.classList.contains('btn-light1')){
+    trainElLight.value = 'Light ON';
+  } else trainElLight.value = 'Light Off';
+}
+
+//EventListeners for right/left and light buttons
+leftBtn.addEventListener('click', moveLeft);
+rightBtn.addEventListener('click', moveRight);
+trainElLight.addEventListener('click', lightOnOff);
