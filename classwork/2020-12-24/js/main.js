@@ -37,7 +37,7 @@ const setCountDown = () => {
     let diff = currTime.diff(timeNow) - 7200000;
     let newDiff = moment(diff).format('HH:mm:ss');
     
-    if (newDiff === '00:00:00') {
+    if ((newDiff === '00:00:00') && (diff <= 0)) {
       clearInterval(countDown);
       document.getElementById('countset').innerHTML = "Time is up!";
       circleEl.style.animationPlayState = 'paused';
