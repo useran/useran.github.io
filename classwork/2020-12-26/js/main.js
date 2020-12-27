@@ -123,7 +123,7 @@ const moveUp = () => {
   } else alert('No other way!');
 }
 
-////calculating the move Down
+//calculating the move Down
 const moveDown = () => {
   let i = currI;
   let j = currJ;
