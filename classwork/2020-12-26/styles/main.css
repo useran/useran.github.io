@@ -20,13 +20,19 @@
   display: flex;
 }
 
+.wrap {
+  margin-top: 20px;
+  padding: 0;
+}
+
 .color {
   background-color: orange;
 }
 
 .main {
   width: auto;
-  height: 300px;
+  margin: 20px;
+  height: 260px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
