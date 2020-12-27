@@ -1,66 +1,110 @@
-const inputEl = document.querySelector('#timeset');
-const btnEl = document.querySelector('.btn');
-const btnElStop = document.querySelector('.stop');
-const timeOutPut = document.querySelector('.countdown');
-const circleEl = document.querySelector('.circle-icon2');
-btnEl.disabled = true;
-
-let countDown = 0;
-
-const setCountDown = () => {
-
-  let currTime = moment();
-
-  btnEl.classList.toggle('play');
-  btnEl.classList.toggle('stop');
-
-
-  if (btnEl.classList.contains('play')){
-    btnEl.value = 'Pause';
-    circleEl.style.animationPlayState = 'running';
-    
-    if ((countDown >= 1) && (document.getElementById('countset').innerHTML !== 'Time is up!')){
-      currTime.add(document.getElementById('countset').innerHTML.split(':')[0], 'hours');
-      currTime.add(document.getElementById('countset').innerHTML.split(':')[1], 'minutes');
-      currTime.add(document.getElementById('countset').innerHTML.split(':')[2], 'seconds');
-    
-    } else {
-      currTime.add(inputEl.value.split(':')[0], 'hours');
-      currTime.add(inputEl.value.split(':')[1], 'minutes');
-      currTime.add(inputEl.value.split(':')[2], 'seconds');
+const randomInt = (min, max) => {
+  let rand = min + Math.random() * (max + 1 - min);
+  return Math.floor(rand);
+}
+//1
+const newMatr = (rows, columns, min, max) => {
+  const newArr = []
+  for (let i=0; i<rows; i++){
+    newArr[i] = [];
+    for (let j=0; j<columns; j++){
+    newArr[i][j] = randomInt(min, max);
     }
-  
-    countDown = setInterval(() => {
-    
-    let timeNow = moment();
-    
-    let diff = currTime.diff(timeNow) - 7200000;
-    let newDiff = moment(diff).format('HH:mm:ss');
-    
-    if (newDiff === '00:00:00') {
-      clearInterval(countDown);
-      document.getElementById('countset').innerHTML = "Time is up!";
-      circleEl.style.animationPlayState = 'paused';
-      btnEl.value = 'Start';
-      btnEl.classList.remove('play');
-      btnEl.classList.add('stop');
-    } else document.getElementById('countset').innerHTML = newDiff;
-
-    }, 1000);
-  } else if (btnEl.classList.contains('stop')) {
-    clearInterval(countDown);
-    btnEl.value = 'Start';
-    circleEl.style.animationPlayState = 'paused';
   }
+  return newArr;
+}
+//2
+const clearArray = arr => {
+  for (let i=0; i<arr.length; i++){
+    for (let j=0; j<arr[0].length; j++){
+      arr[i][j] = 0;
+    }
+  }
+  return arr;
+}
+let newMatrix = clearArray(newMatr(5, 5, 0, 10));
 
+//3
+const count = arr => {
+  let total = 0;
+  arr.forEach(item => {
+    item.forEach(e => {
+      if (e !== 0){
+        total += 1;
+      }
+    });
+  });
+  return total;
+}
+//4,5
+const mainEl = document.querySelector('.main');
+
+const addDiv = (idElem, str) => {
+  let newDiv = document.createElement('div');
+  newDiv.innerHTML = str;
+  document.getElementById(idElem).appendChild(newDiv);
 }
 
-inputEl.addEventListener('input', (e) => {
-  if (e.target.value !== ""){
-    btnEl.disabled = false;
-    btnEl.addEventListener('click', setCountDown);
-  } else {
-    btnEl.disabled = true;
-    btnEl.removeEventListener('click', setCountDown);
+const matrDraw = arr => {
+  let str = '';
+  for (let i=0; i<arr.length; i++){
+    for (let j=0; j<arr[0].length; j++){
+      if (arr[i][j] === 0){
+       str = `${str}<div class='elem' style='color:white' id='${i}${j}'></div>`;
+      } else str = `${str}<div class='elem' style= 'color:black id='${i}${j}'></div>`;
+    } 
+    addDiv('mainer', str);
+    str = ''; 
   }
+}
+mainEl.innerHTML = `Filled cells: ${count(newMatrix)}`;
+matrDraw(newMatrix);
+document.getElementById(`00`).classList.add('color');
+
+
+const newRender = () => {
+  let currI;
+  let currJ;
+  for (let i=0; i<newMatrix.length; i++){
+    for (let j=0; j<newMatrix[0].length; j++){
+      if (newMatrix[i][j] === 0) {
+      document.getElementById(`${i}${j}`).classList.remove('color');
+      } else { 
+      document.getElementById(`${i}${j}`).classList.add('color');
+      }
+    }
+  }
+  clearArray(newMatrix);
+}
+
+mainEl.addEventListener('click', e => {
+  let iEl = e.target.id.charAt(0);
+  let jEl = e.target.id.charAt(1);
+  newMatrix[iEl][jEl] = 1;
+  newRender();
 });
+
+const moveRight = () => {
+  /* let currEl = newRender(); */
+  let iEl = Number(currPos.id.charAt(0));
+  let jEl = Number(currPos.id.charAt(1));
+  document.getElementById(`${iEl}${jEl+1}`).classList.add('color');
+}
+
+//keyboard listener
+document.addEventListener('keydown', e => {
+  switch (e.code){
+    case 'ArrowLeft':
+      moveLeft();
+      break;
+    case 'ArrowRight':
+      moveRight();
+      break;
+    case 'ArrowUp':
+      moveUp();
+      break;
+    case 'ArrowDown':
+      moveDown();
+      break;
+  }
+})

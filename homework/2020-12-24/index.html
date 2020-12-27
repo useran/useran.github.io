@@ -3,20 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
+  <title>timer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
   <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body>
-  <div class="wrapper">
-    <div id ='mainer' class="main"></div>
-    <div class="buttons">
-      <input type="button" class="btn btn-1" value="Up">
-      <input type="button" class="btn btn-2" value="Down">
-      <input type="button" class="btn btn-3" value="Left">
-      <input type="button" class="btn btn-4" value="Right">
+    <div class="main">
+      <div id="countset" class="countdown">00:00:00</div>
+      <div class="timing">
+        <div class="timeset">
+          <form>
+            <input id="timeset" type="time" step="1">
+          </form>
+        </div>
+        <div class="start">
+          <input type="button" class="btn stop" value="Start"></button>
+          <div class="circle-icon2"></div>
+        </div>
+      </div>
     </div>
-  </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
