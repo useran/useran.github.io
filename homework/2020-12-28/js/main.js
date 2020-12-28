@@ -93,10 +93,8 @@ const moveRight = () => {
     currI = 0;
     currJ = 0;
   } 
-  
   let i = currI;
   let j = currJ;
-  
   if (j<newMatrix.length-1){
   document.getElementById(`${i}${j+1}`).classList.add('color');
   document.getElementById(`${i}${j}`).classList.remove('color');
