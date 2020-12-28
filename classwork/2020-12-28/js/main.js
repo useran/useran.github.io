@@ -66,7 +66,7 @@ const matrDraw = arr => {
 }
 matrDraw(newMatrix);
 wrapEl.innerHTML = `Filled cells: ${count(newMatrix)}`;
-document.getElementById(`00`).classList.add('color');
+
 let currI;
 let currJ;
 
@@ -89,14 +89,8 @@ const newRender = () => {
 
 //calculating the move Right
 const moveRight = () => {
-  if ((!currI) && (!currJ)){
-    currI = 0;
-    currJ = 0;
-  } 
-  
   let i = currI;
   let j = currJ;
-  
   if (j<newMatrix.length-1){
   document.getElementById(`${i}${j+1}`).classList.add('color');
   document.getElementById(`${i}${j}`).classList.remove('color');
@@ -107,10 +101,6 @@ const moveRight = () => {
 
 //calculating the move Left
 const moveLeft = () => {
-  if ((!currI) && (!currJ)){
-    currI = 0;
-    currJ = 0;
-  } 
   let i = currI;
   let j = currJ;
   if (j>0){
@@ -123,10 +113,6 @@ const moveLeft = () => {
 
 //calculating the move UP
 const moveUp = () => {
-  if ((!currI) && (!currJ)){
-    currI = 0;
-    currJ = 0;
-  } 
   let i = currI;
   let j = currJ;
   if (i>0){
@@ -139,10 +125,6 @@ const moveUp = () => {
 
 //calculating the move Down
 const moveDown = () => {
-  if ((!currI) && (!currJ)){
-    currI = 0;
-    currJ = 0;
-  } 
   let i = currI;
   let j = currJ;
   if (i<newMatrix.length - 1){
