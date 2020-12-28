@@ -65,8 +65,12 @@ const matrDraw = arr => {
   }
 }
 matrDraw(newMatrix);
-wrapEl.innerHTML = `Filled cells: ${count(newMatrix)}`;
+
 document.getElementById(`00`).classList.add('color');
+newMatrix[0][0] = 1;
+wrapEl.innerHTML = `Filled cells: ${count(newMatrix)}`;
+clearArray(newMatrix);
+
 let currI;
 let currJ;
 
