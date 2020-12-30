@@ -103,10 +103,7 @@ const moveRight = () => {
   } 
   let i = currI;
   let j = currJ;
-  
   checkForMoves(i, j+1);
-
-
   if (j<newMatrix.length-1) {
     if (document.getElementById(`${i}${j+1}`).classList.contains('color2')){
       btnRightEl.disabled = true;
@@ -161,10 +158,7 @@ const moveLeft = () => {
   } 
   let i = currI;
   let j = currJ;
-
   checkForMoves(i, j-1);
-
-
   if (j>0){
     if (document.getElementById(`${i}${j-1}`).classList.contains('color2')){
       btnLeftEl.disabled = true;
@@ -212,10 +206,7 @@ const moveUp = () => {
   } 
   let i = currI;
   let j = currJ;
-
   checkForMoves(i-1, j);
- 
-
   if (i>0) {
     if (document.getElementById(`${i-1}${j}`).classList.contains('color2')){
       btnUpEl.disabled = true;
@@ -270,9 +261,7 @@ const moveDown = () => {
   } 
   let i = currI;
   let j = currJ;
-
   checkForMoves(i+1, j);
-
   if (i<newMatrix.length - 1){
     if (document.getElementById(`${i+1}${j}`).classList.contains('color2')){
       btnDownEl.disabled = true;
@@ -326,7 +315,6 @@ const checkGameOver = () =>{
 }
 
 const checkForMoves = (i, j) => {
-
   if (i > 3) {
     btnDownEl.disabled = true;
     btnDownEl.style.backgroundColor = 'gray';
@@ -339,7 +327,6 @@ const checkForMoves = (i, j) => {
     btnDownEl.style.backgroundColor = 'brown';
     btnUpEl.style.backgroundColor = 'brown';
   }
-
   if (j < 1) {
     btnLeftEl.disabled = true;
     btnLeftEl.style.backgroundColor = 'gray';
@@ -353,31 +340,6 @@ const checkForMoves = (i, j) => {
     btnLeftEl.style.backgroundColor = 'brown';
   }
 }
-
-//keyboard listener
-document.addEventListener('keydown', e => {
-  switch (e.code){
-    case 'ArrowLeft':
-      moveLeft();
-      break;
-    case 'ArrowRight':
-      moveRight();
-      break;
-    case 'ArrowUp':
-      moveUp();
-      break;
-    case 'ArrowDown':
-      moveDown();
-      break;
-  }
-})
-
-/* mainEl.addEventListener('click', e => {
-  let iEl = e.target.id.charAt(0);
-  let jEl = e.target.id.charAt(1);
-  newMatrix[iEl][jEl] = 1;
-  newRender();
-}); */
 
 btnUpEl.addEventListener('click', moveUp);
 btnDownEl.addEventListener('click', moveDown);
