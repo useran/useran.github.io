@@ -43,6 +43,7 @@ const btnUpEl = document.querySelector('.btn-1');
 const btnDownEl = document.querySelector('.btn-2');
 const btnLeftEl = document.querySelector('.btn-3');
 const btnRightEl = document.querySelector('.btn-4');
+const timerEl = document.querySelector('.wrap2');
 
 //function to create a div
 const addDiv = (idElem, str) => {
@@ -68,6 +69,7 @@ matrDraw(newMatrix);
 
 document.getElementById(`00`).classList.add('color');
 newMatrix[0][0] = 1;
+let moveCounts = 1;
 btnUpEl.disabled = true;
 btnUpEl.style.backgroundColor = 'gray';
 btnLeftEl.disabled = true;
@@ -75,8 +77,8 @@ btnLeftEl.style.backgroundColor = 'gray';
 wrapEl.innerHTML = `Filled cells: ${count(newMatrix)}`;
 clearArray(newMatrix);
 
-let currI;
-let currJ;
+let currI = 0;
+let currJ = 0;
 
 //function to redraw the field
 const newRender = () => {
@@ -86,8 +88,6 @@ const newRender = () => {
       document.getElementById(`${i}${j}`).classList.remove('color');
       } else { 
       document.getElementById(`${i}${j}`).classList.add('color');
-      currI = i;
-      currJ = j;
       }
     }
   } 
@@ -97,13 +97,10 @@ const newRender = () => {
 
 //calculating the move Right
 const moveRight = () => {
-  if ((!currI) && (!currJ)){
-    currI = 0;
-    currJ = 0;
-  } 
   let i = currI;
   let j = currJ;
   checkForMoves(i, j+1);
+  moveCounts = count(newMatrix);
   if (j<newMatrix.length-1) {
     if (document.getElementById(`${i}${j+1}`).classList.contains('color2')){
       btnRightEl.disabled = true;
@@ -152,12 +149,9 @@ const moveRight = () => {
 
 //calculating the move Left
 const moveLeft = () => {
-  if ((!currI) && (!currJ)){
-    currI = 0;
-    currJ = 0;
-  } 
   let i = currI;
   let j = currJ;
+  moveCounts = count(newMatrix);
   checkForMoves(i, j-1);
   if (j>0){
     if (document.getElementById(`${i}${j-1}`).classList.contains('color2')){
@@ -180,17 +174,24 @@ const moveLeft = () => {
         btnLeftEl.disabled = true;
         btnLeftEl.style.backgroundColor = 'gray';
       }
-      if (newMatrix[i-1][j-1] === 2){
-        btnUpEl.disabled = true;
-        btnUpEl.style.backgroundColor = 'gray';
-      } else {
-        btnUpEl.disabled = false;
-        btnUpEl.style.backgroundColor = 'brown';
+      if (i>0){
+        if (newMatrix[i-1][j-1] === 2){
+          btnUpEl.disabled = true;
+          btnUpEl.style.backgroundColor = 'gray';
+        } else {
+          btnUpEl.disabled = false;
+          btnUpEl.style.backgroundColor = 'brown';
+        }
       }
-      if ((j>0) && (i<4) && (newMatrix[i+1][j-1] === 2)){
-        btnDownEl.disabled = true;
-        btnDownEl.style.backgroundColor = 'gray';
-      } 
+      if ((j>0) && (i<4)){
+        if (newMatrix[i+1][j-1] === 2){
+          btnDownEl.disabled = true;
+          btnDownEl.style.backgroundColor = 'gray';
+        } else {
+          btnDownEl.disabled = false;
+          btnDownEl.style.backgroundColor = 'brown';
+        }
+      }
       currI = i;
       currJ = j-1;
     }
@@ -200,13 +201,10 @@ const moveLeft = () => {
 
 //calculating the move UP
 const moveUp = () => {
-  if ((!currI) && (!currJ)){
-    currI = 0;
-    currJ = 0;
-  } 
   let i = currI;
   let j = currJ;
   checkForMoves(i-1, j);
+  moveCounts = count(newMatrix);
   if (i>0) {
     if (document.getElementById(`${i-1}${j}`).classList.contains('color2')){
       btnUpEl.disabled = true;
@@ -255,13 +253,10 @@ const moveUp = () => {
 
 //calculating the move Down
 const moveDown = () => {
-  if ((!currI) && (!currJ)){
-    currI = 0;
-    currJ = 0;
-  } 
   let i = currI;
   let j = currJ;
   checkForMoves(i+1, j);
+  moveCounts = count(newMatrix);
   if (i<newMatrix.length - 1){
     if (document.getElementById(`${i+1}${j}`).classList.contains('color2')){
       btnDownEl.disabled = true;
@@ -292,7 +287,7 @@ const moveDown = () => {
           btnRightEl.style.backgroundColor = 'brown';
         }
       }
-      if (j>1){
+      if ((j>0) && (i<4)){
         if (newMatrix[i+1][j-1] === 2){
         btnLeftEl.disabled = true;
         btnLeftEl.style.backgroundColor = 'gray';
@@ -309,11 +304,19 @@ const moveDown = () => {
 }
 
 const checkGameOver = () =>{
-  if ((btnLeftEl.disabled === true) && (btnRightEl.disabled === true) && (btnUpEl.disabled === true) && (btnDownEl.disabled === true)){
+  if ((btnLeftEl.disabled === true) && (btnRightEl.disabled === true) && (btnUpEl.disabled === true) && (btnDownEl.disabled === true)) {
     wrapEl.innerHTML = 'Game over!!!';
-  } else wrapEl.innerHTML = `Filled cells: ${count(newMatrix)}`;
+    clearTimeout(countDown);
+    timerEl.innerHTML = '00:00:00.0';  
+  } else if ((moveCounts !== moveCounts + 1) && (timerEl.innerHTML === '00:00:00.0')){
+    wrapEl.innerHTML = 'Game over!!!';
+  } else {
+    wrapEl.innerHTML = `Filled cells: ${count(newMatrix)}`;
+    clearTimeout(countDown);
+    destTime = moment('00:00:10.0', 'HH:mm:ss.S');
+    setCountDown();
+  }
 }
-
 const checkForMoves = (i, j) => {
   if (i > 3) {
     btnDownEl.disabled = true;
@@ -340,6 +343,34 @@ const checkForMoves = (i, j) => {
     btnLeftEl.style.backgroundColor = 'brown';
   }
 }
+
+let destTime = moment('00:00:10.0', 'HH:mm:ss.S');
+
+const timer = () => {
+  let timeFlag;
+  destTime.subtract(100, 'ms');
+  timerEl.innerHTML = destTime.format('HH:mm:ss.S');   
+  if (destTime.format('HH:mm:ss.S') === '00:00:00.0'){
+    timeFlag = true;
+    wrapEl.innerHTML = 'Game over!!!';
+    btnLeftEl.disabled = true; 
+    btnLeftEl.style.backgroundColor = 'gray';
+    btnRightEl.disabled = true; 
+    btnRightEl.style.backgroundColor = 'gray'; 
+    btnUpEl.disabled = true; 
+    btnUpEl.style.backgroundColor = 'gray'; 
+    btnDownEl.disabled = true;
+    btnDownEl.style.backgroundColor = 'gray';
+  }
+  if (timeFlag){
+    clearTimeout(countDown);
+  } else countDown = setTimeout(timer, 100);
+}
+
+const setCountDown = () => {
+  let countDown = setTimeout(timer, 100);
+}
+setCountDown();
 
 btnUpEl.addEventListener('click', moveUp);
 btnDownEl.addEventListener('click', moveDown);
