@@ -75,10 +75,9 @@ btnUpEl.style.backgroundColor = 'gray';
 btnLeftEl.disabled = true;
 btnLeftEl.style.backgroundColor = 'gray';
 wrapEl.innerHTML = `Filled cells: ${count(newMatrix)}`;
-clearArray(newMatrix);
 
-let i = 0;
-let j = 0;
+let currI = 0;
+let currJ = 0;
 
 //function to redraw the field
 const newRender = () => {
@@ -95,119 +94,156 @@ const newRender = () => {
   clearArray(newMatrix);
 }
 
-//assigning position of the cell
-const assignNewPos = (y, x) => {
-  document.getElementById(`${i+y}${j+x}`).classList.add('color');
-  document.getElementById(`${i}${j}`).classList.remove('color');
-  document.getElementById(`${i}${j}`).classList.add('color2');
-  newMatrix[i][j] = 2;
-  newMatrix[i+y][j+x] = 1;
-  i = i+y;
-  j = j+x;
-}
-
-//searching for next moves
 const checkForMoves = (i, j) => {
-  if (i+1 > 3) {
+  if (i > 3) {
     btnDownEl.disabled = true;
     btnDownEl.style.backgroundColor = 'gray';
-  } else if (i-1 < 1) {
+  } else if (i < 1) {
     btnUpEl.disabled = true;
     btnUpEl.style.backgroundColor = 'gray';
   } else {
+    btnDownEl.disabled = false;
     btnUpEl.disabled = false;
+    btnDownEl.style.backgroundColor = 'brown';
     btnUpEl.style.backgroundColor = 'brown';
   }
-  if (j-1 < 1) {
+  if (j < 1) {
     btnLeftEl.disabled = true;
     btnLeftEl.style.backgroundColor = 'gray';
-  } else if (j+1 > 3){
+  } else if (j > 3){
     btnRightEl.disabled = true;
     btnRightEl.style.backgroundColor = 'gray';
   } else {
+    btnRightEl.disabled = false;
     btnLeftEl.disabled = false;
+    btnRightEl.style.backgroundColor = 'brown';
     btnLeftEl.style.backgroundColor = 'brown';
   }
-  if (i>0){
-    if (newMatrix[i-1][j] === 2){
-    btnUpEl.disabled = true;
-    btnUpEl.style.backgroundColor = 'gray';
-    } else {
-    btnUpEl.disabled = false;
-    btnUpEl.style.backgroundColor = 'brown';
-    }
-  }
-  if (i<4){
-    if (newMatrix[i+1][j] === 2){
+}
+
+//functions for checking the moves available
+const checkForMoveDown = (i, j) => {
+  if (i<5 && newMatrix[i][j] === 2){
     btnDownEl.disabled = true;
     btnDownEl.style.backgroundColor = 'gray';
-    } else {
-    btnDownEl.disabled = false;
-    btnDownEl.style.backgroundColor = 'brown';
-    }
+    return false;
+  } else return true;
+}
+const checkForMoveUp = (i, j) => {
+  if (i>0 && newMatrix[i][j] === 2){
+    btnUpEl.disabled = true;
+    btnUpEl.style.backgroundColor = 'gray';
+    return false;
+  } else {
+    btnUpEl.disabled = false;
+    btnUpEl.style.backgroundColor = 'brown';
+    return true;
   }
-  if (j<4){
-    if (newMatrix[i][j+1] === 2){
-      btnRightEl.disabled = true;
-      btnRightEl.style.backgroundColor = 'gray';
-    } else {
-      btnRightEl.disabled = false;
-      btnRightEl.style.backgroundColor = 'brown';
-    }
-  }
-  if (j>0){
-    if (newMatrix[i][j-1] === 2){
+}
+const checkForMoveLeft = (i, j) => {
+  if (j>0 && newMatrix[i][j] === 2){
     btnLeftEl.disabled = true;
     btnLeftEl.style.backgroundColor = 'gray';
-    } else {
+    return false;
+  } else {
     btnLeftEl.disabled = false;
     btnLeftEl.style.backgroundColor = 'brown';
-    }
+    return true;
   }
+}
+const checkForMoveRight = (i, j) => {
+  if (j<5 && newMatrix[i][j] === 2){
+    btnRightEl.disabled = true;
+    btnRightEl.style.backgroundColor = 'gray';
+    return false;
+  } else return true;
+}
+
+//assigning new position and painting the cells
+const assignNewPos = (y, x) => {
+  document.getElementById(`${currI+y}${currJ+x}`).classList.add('color');
+  document.getElementById(`${currI}${currJ}`).classList.remove('color');
+  document.getElementById(`${currI}${currJ}`).classList.add('color2');
+  newMatrix[currI][currJ] = 2;
+  newMatrix[currI+y][currJ+x] = 1;
+  currI = currI+y;
+  currJ = currJ+x;
 }
 
 //calculating the move Right
 const moveRight = () => {
   moveCounts = count(newMatrix);
-  assignNewPos(0, 1);
-  checkForMoves(i, j);
+  checkForMoves(currI, currJ+1);
+  if (newMatrix[currI][currJ] === 2){
+    btnLeftEl.disabled = true;
+    btnLeftEl.style.backgroundColor = 'gray';
+  } else {
+    btnLeftEl.disabled = false;
+    btnLeftEl.style.backgroundColor = 'brown';
+  }
+  if (checkForMoveRight(currI, currJ+1)){
+    assignNewPos(0, 1);
+  }
   checkGameOver();
 }
 
 //calculating the move Left
 const moveLeft = () => {
   moveCounts = count(newMatrix);
-  assignNewPos(0, -1);
-  checkForMoves(i, j);
+  checkForMoves(currI, currJ-1);
+  if (newMatrix[currI][currJ] === 2){
+    btnRightEl.disabled = true;
+    btnRightEl.style.backgroundColor = 'gray';
+  } else {
+    btnRightEl.disabled = false;
+    btnRightEl.style.backgroundColor = 'brown';
+  }
+  if (checkForMoveLeft(currI, currJ-1)){
+    assignNewPos(0, -1);
+  }
   checkGameOver();
 }
 
 //calculating the move UP
 const moveUp = () => {
   moveCounts = count(newMatrix);
-  assignNewPos(-1, 0);
-  checkForMoves(i, j);
+  checkForMoves(currI-1, currJ);
+  if (newMatrix[currI][currJ] === 2){
+    btnDownEl.disabled = true;
+    btnDownEl.style.backgroundColor = 'gray';
+  } else {
+    btnDownEl.disabled = false;
+    btnDownEl.style.backgroundColor = 'brown';
+  }
+  if (checkForMoveUp(currI-1, currJ)){
+    assignNewPos(-1, 0);
+  }
   checkGameOver();
 }
 
 //calculating the move Down
 const moveDown = () => {
   moveCounts = count(newMatrix);
-  assignNewPos(1, 0);
-  checkForMoves(i, j);
+  checkForMoves(currI+1, currJ);
+  if (newMatrix[currI][currJ] === 2){
+    btnUpEl.disabled = true;
+    btnUpEl.style.backgroundColor = 'gray';
+  } else {
+    btnUpEl.disabled = false;
+    btnUpEl.style.backgroundColor = 'brown';
+  }
+  if (checkForMoveDown(currI+1, currJ)){
+    assignNewPos(1, 0);
+  }
   checkGameOver();
 }
 
 //checking for Game Over
 const checkGameOver = () =>{
-  if ((btnLeftEl.disabled === true) && (btnRightEl.disabled === true) && (btnUpEl.disabled === true) && (btnDownEl.disabled === true) && (count(newMatrix) !== 25)) {
+  if ((btnLeftEl.disabled === true) && (btnRightEl.disabled === true) && (btnUpEl.disabled === true) && (btnDownEl.disabled === true)) {
     wrapEl.innerHTML = 'Game over!!!';
     clearTimeout(countDown);
     timerEl.innerHTML = '00:00:00.0';  
-  } else if (count(newMatrix) === 25){
-    wrapEl.innerHTML = 'You won!!!';
-    clearTimeout(countDown);
-    timerEl.innerHTML = '00:00:00.0';
   } else if ((moveCounts !== moveCounts + 1) && (timerEl.innerHTML === '00:00:00.0')){
     wrapEl.innerHTML = 'Game over!!!';
   } else {
@@ -218,7 +254,7 @@ const checkGameOver = () =>{
   }
 }
 
-//setting up a timer
+//setting up timer
 let destTime = moment('00:00:10.0', 'HH:mm:ss.S');
 
 const timer = () => {
@@ -247,6 +283,7 @@ const setCountDown = () => {
 }
 setCountDown();
 
+//adding listeners
 btnUpEl.addEventListener('click', moveUp);
 btnDownEl.addEventListener('click', moveDown);
 btnLeftEl.addEventListener('click', moveLeft);
