@@ -247,6 +247,32 @@ const setCountDown = () => {
 }
 setCountDown();
 
+//keyboard listener
+document.addEventListener('keydown', e => {
+  switch (e.code){
+    case 'ArrowLeft':
+      if (newMatrix[i][j-1] !== 2) {
+        moveLeft();
+      }
+      break;
+    case 'ArrowRight':
+      if (newMatrix[i][j+1] !== 2) {
+        moveRight();
+      }
+      break;
+    case 'ArrowUp':
+      if (newMatrix[i-1][j] !== 2) {
+        moveUp();
+      }
+      break;
+    case 'ArrowDown':
+      if (newMatrix[i+1][j] !== 2) {
+        moveDown();
+      }
+      break;
+  }
+})
+
 btnUpEl.addEventListener('click', moveUp);
 btnDownEl.addEventListener('click', moveDown);
 btnLeftEl.addEventListener('click', moveLeft);
