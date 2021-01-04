@@ -1,0 +1,49 @@
+.wrapper{
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.circles-container{
+  width: 50px;
+  height: 150px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+.circles{
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+.circle11{
+  background-color: red;
+}
+.circle21{
+  background-color: yellow;
+}
+.circle31{
+  background-color: green;
+}
+.buttons{
+  margin: 20px;
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
+}
+.btn{
+  width: 40px;
+  height: 30px;
+  border: 1px solid black;
+}
+.btn-1{
+  background-color: red;
+}
+.btn-2{
+  background-color: yellow;
+}
+.btn-3{
+  background-color: green;
+}
