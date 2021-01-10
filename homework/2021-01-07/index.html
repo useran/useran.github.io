@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+    <div class="current-time"></div>
+    <div class="main"></div>
+    <div class="modal">
+      <div class="mod-content">
+        <span class="close">&times;</span>
+        <p>Please choose the time:</p>
+        <input id="timeset" type="time" min="09:00" max="18:00">
+        <input type="button" class="btn" value="Ok">
+        <!-- <input type="button" class="btn btn-21" value="Cancel"> -->
+        <span class="checkValid">Suggestion not to take the place</span>
+      </div>
+      
+    </div>
+    <div class="modal modal2">
+      <div class="mod-content">
+        <span class="close close2">&times;</span>
+        <p>Do you want to release the place?</p>
+        <input type="button" class="btn btn-1" value="Yes">
+        <input type="button" class="btn btn-2" value="No">
+        <p class = "timeOutPut"></p>
+      </div>
+    </div>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+</body>
+</html>

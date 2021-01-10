@@ -1,0 +1,179 @@
+html, body {
+  height: 100%;
+}
+
+.main > div {
+  margin: 2px;
+  min-height: 50px;
+  min-width: 50px;
+  font-size: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 5px;
+  text-align: center;
+  border: 1px solid black;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.elem1 {
+  min-width: 20px;
+  min-height: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-top: 5px;
+  margin-bottom: 5px;
+  color: orange;
+  text-align: center;
+  border-radius: 50%;
+  background-color: darkslategray;
+}
+
+.elem2 {
+  height: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+}
+
+.main {
+  height: calc(100% - 30px);
+  padding: 30px;
+  /* border: 10px solid gray; */
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.current-time {
+  height: 30px;
+  background-color: orange;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 12px;
+}
+
+.modal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  display: none;
+}
+
+.mod-content {
+  font-size: 90%;
+  height: 25%;
+  width: 25%;
+  max-height: 100px;
+  max-width: 400px;
+  min-height: 100px;
+  min-width: 200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-color: darkolivegreen;
+  border-radius: 10px;
+  padding: 20px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white;
+}
+
+.close {
+  color: white;
+  position: absolute;
+  right: 15px;
+  top: 7px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+input[type=time] {
+  height: 20%;
+  width: 25%;
+  min-width: 70px;
+  max-height: 30px;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 5px;
+  font-size: 100%;
+}
+
+.btn {
+  height: 30%;
+  width: 15%;
+  max-height: 40px;
+  padding: 5px;
+  text-align: center;
+  background-color: orange;
+  border: none;
+  border-radius: 5px;
+  font-size: 110%;
+}
+
+.btn-1, .btn-2 {
+  margin-right: 10px;
+}
+
+.modal2 {
+  display: none;
+}
+
+p {
+  margin-top: 10px;
+  padding: 0;
+  font-size: 100%;
+}
+
+.color {
+  background-color: gray;
+  color: white;
+}
+
+.checkValid {
+  position: absolute;
+  left: 20px;
+  top: 105px;
+  display: none;
+}
+
+.rotate {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+/*# sourceMappingURL=main.css.map */
