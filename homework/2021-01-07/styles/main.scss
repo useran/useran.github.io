@@ -74,6 +74,15 @@ html, body{
   transform: translate(-50%, -50%);
   color: white;
 }
+.input-cols{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 32px;
+  top: 5px;
+  font-size: 12px;
+  display: flex;
+}
 .close {
   color: white;
   position: absolute;

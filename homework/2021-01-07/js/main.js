@@ -14,7 +14,7 @@ const checkEl = document.querySelector('.checkValid');
 
 btnModEl.disabled = true;
 //number of places available in parkinglot
-const parkingLots = 50;
+const parkingLots = 19;
 
 let timeNow = moment();
 let timeCount = [];
@@ -26,32 +26,6 @@ function Lot(id, occp, setTime, leftTime, useTime){
   this.setTime = setTime;
   this.leftTime = leftTime;
   this.usedTime = useTime;
-}
-//function-constructor of timer-object - used here to determine how much time of booking has passed
-function Timer(id){
-  this.id = id;
-  this.timeUsed = () => {
-    arrOfLots[id].occupied = true;
-    let timeSet = moment('00:00:00', 'HH:mm:ss');
-    destTime[id] = moment(`${timeVal}`, 'HH:mm');
-    arrOfLots[id].setTime = destTime[id].format('HH:mm');
-
-    timeCount[id] = setInterval(() => {
-      arrOfLots[id].usedTime = timeSet.add(1000, 'ms').format('HH:mm:ss');
-      if (moment().format('HH:mm') === arrOfLots[id].setTime){
-        arrOfLots[id].occupied = false;
-        clearInterval(timeCount[id]);
-        timersCount.splice(id, 1);
-      }
-      drawOfLots(parkingLots);
-    }, 1000);
-
-    countOfOccp(arrOfLots);
-    countOfAvb();
-    modEl.style.display = 'none';
-    btnModEl.disabled = true;
-    inputEl.value = '';
-  }
 }
 //filling an array with objects
 const arrOfLots = [];
@@ -149,6 +123,7 @@ document.addEventListener('click', (e) => {
         modEl2.style.display = 'block';
         let currTime = moment();
         arrOfLots[id].leftTime = moment(destTime[id] - currTime).utc().format('HH:mm:ss');
+        arrOfLots[id].usedTime = moment(currTime - arrOfLots[id].fixedTime).utc().format('HH:mm:ss');
         timeOutEl.innerHTML = `Time Used: ${arrOfLots[id].usedTime} | Time Left: ${arrOfLots[id].leftTime}`;
         btnMod2El.addEventListener('click', clearLot);
         btnMod3El.addEventListener('click', () => {
@@ -156,13 +131,17 @@ document.addEventListener('click', (e) => {
         });
       } else {
         modEl.style.display = 'block';
-/*         btnMod21El.addEventListener('click', ()=>{
-          modEl.style.display = 'none';
-        }); */
         btnModEl.addEventListener('click', () => {
-          timer = new Timer(id);
-          timer.timeUsed();
-          timersCount[id] = timer;
+          arrOfLots[id].occupied = true;
+          destTime[id] = moment(`${timeVal}`, 'HH:mm');
+          arrOfLots[id].setTime = destTime[id].format('HH:mm');
+          arrOfLots[id].fixedTime = moment();
+          drawOfLots(parkingLots);
+          countOfOccp(arrOfLots);
+          countOfAvb();
+          modEl.style.display = 'none';
+          btnModEl.disabled = true;
+          inputEl.value = '';
         });
       }
     }
