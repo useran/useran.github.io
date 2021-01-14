@@ -119,3 +119,226 @@ if ((findMaxSum(matrix) !== matrix.length-1) && (findMaxSum(matrix) !== 0)){  //
 }
 
 console.table(matrix3);
+
+
+//
+const wrapEl = document.querySelector('.wrapper');
+const headEl = document.querySelector('.header');
+const btnModEl = document.querySelector('.btn');
+const inputEl = document.querySelector('#timeset');
+const modEl = document.querySelector('.modal');
+const modCloseEl = document.querySelector('.close');
+btnModEl.disabled = true;
+
+const parkingLots = 52;
+
+let timeNow = moment();
+
+let realTime = setInterval(() => {
+  headEl.innerHTML = `Current time:${moment().format('HH:mm:ss')} Available places:${countOfAvb()}`;
+}, 1000);
+
+
+function Lot(id, occp, time){
+  this.id = id;
+  this.occupied = occp;
+  this.time = time;
+}
+
+const arrOfLots = [];
+for (let i=0; i<parkingLots; i++){
+  arrOfLots.push(new Lot(i, false, timeNow.format('H:mm:ss')));
+}
+
+const drawOfLots = parkingLots => {
+  let str = '';
+  for (let i=0; i<parkingLots; i++){
+    str = `${str}<div class='elem' id='${i}'>${arrOfLots[i].id}<br>Available</div>`;
+  } 
+  wrapEl.innerHTML = str;
+}
+drawOfLots(parkingLots);
+
+const countOfOccp = (arr) =>{
+  let total = 0;
+  arr.forEach(item => {
+    if (item.occupied){
+      total += 1;
+    }
+  });
+  return total;
+}
+
+const countOfAvb = () => parkingLots - countOfOccp(arrOfLots);
+
+/* const infoRender = (parkingLots) => {
+  for (let i=0; i<parkingLots; i++){
+    if (arrOfLots[i].occupied){
+    document.getElementById(`${i}`).innerHTML = `${arrOfLots[i].id}<br> Occupied: ${arrOfLots[i].occupied}<br>Time:${arrOfLots[i].time}`;
+    } else document.getElementById(`${i}`).innerHTML = `${arrOfLots[i].id}<br> Occupied: ${arrOfLots[i].occupied}`;
+  }
+} */
+
+/* infoRender(parkingLots); */
+
+modCloseEl.addEventListener('click', () => {
+  modEl.style.display = 'none';
+});
+
+let idNum;
+
+
+document.addEventListener('click', (e) => {
+  for (let i=0; i<parkingLots; i++){
+    if (e.target.id == `${i}`){
+      modEl.style.display = 'block';
+      idNum = Number(e.target.id);
+    }
+  }
+  if (e.target == modEl){
+    modEl.style.display = 'none';
+  }
+});
+
+btnModEl.addEventListener('click', () => {
+  let destTime = moment(`${inputEl.value}`, 'HH:mm:ss');  
+  countDown = setInterval(() => {
+    let timeNow2 = moment();
+    if (moment(destTime).isBefore(timeNow2)){
+      destTime.add(1, 'd');
+    }
+    let diffTime = moment(destTime.diff(timeNow2)).utc();
+    if (diffTime < 1000) {
+      clearInterval(countDown);
+      arrOfLots[idNum].occupied = false;
+      document.getElementById(`${idNum}`).innerHTML = `${arrOfLots[idNum].id}<br> Available!`;
+    } else{
+      arrOfLots[idNum].occupied = true;
+      arrOfLots[idNum].time = diffTime.format('HH:mm:ss');
+      document.getElementById(`${idNum}`).innerHTML = `${arrOfLots[idNum].id}<br> Occupied!<br>Set: ${inputEl.value}<br>Left:${arrOfLots[idNum].time}`;
+    }       
+  }, 1000);
+  countOfOccp(arrOfLots);
+  countOfAvb();
+  modEl.style.display = 'none';
+});
+
+inputEl.addEventListener('input', (e) => {
+  if (e.target.value !== ""){
+    btnModEl.disabled = false;
+  } else {
+    btnModEl.disabled = true;
+  }
+});
+
+
+/* const wrapEl = document.querySelector('.wrapper');
+const headEl = document.querySelector('.header');
+const btnModEl = document.querySelector('.btn');
+const inputEl = document.querySelector('#timeset');
+const modEl = document.querySelector('.modal');
+const modCloseEl = document.querySelector('.close');
+btnModEl.disabled = true;
+
+const parkingLots = 52;
+
+let timeNow = moment();
+
+let realTime = setInterval(() => {
+  headEl.innerHTML = `Current time:${moment().format('HH:mm:ss')} Available places:${countOfAvb()}`;
+}, 1000);
+
+
+function Lot(id, occp, time){
+  this.id = id;
+  this.occupied = occp;
+  this.time = time;
+}
+
+const arrOfLots = [];
+for (let i=0; i<parkingLots; i++){
+  arrOfLots.push(new Lot(i, false, timeNow.format('H:mm:ss')));
+}
+
+const drawOfLots = parkingLots => {
+  let str = '';
+  for (let i=0; i<parkingLots; i++){
+    str = `${str}<div class='elem' id='${i}'>${arrOfLots[i].id}<br>Available</div>`;
+  } 
+  wrapEl.innerHTML = str;
+}
+drawOfLots(parkingLots);
+
+const countOfOccp = (arr) =>{
+  let total = 0;
+  arr.forEach(item => {
+    if (item.occupied){
+      total += 1;
+    }
+  });
+  return total;
+}
+
+const countOfAvb = () => parkingLots - countOfOccp(arrOfLots);
+
+
+modCloseEl.addEventListener('click', () => {
+  modEl.style.display = 'none';
+});
+
+
+let idNum;
+let timeVal;
+
+document.addEventListener('click', (e) => {
+  let idEl = e.target.id; 
+  for (let i=0; i<parkingLots; i++){
+    if (idEl === `${i}`){
+      modEl.style.display = 'block';
+      idNum = Number(idEl);
+    }
+  }
+  if (e.target == modEl){
+    modEl.style.display = 'none';
+  }
+});
+
+inputEl.addEventListener('input', (e) => {
+  timeVal = e.target.value;
+  if (e.target.value !== ""){
+    btnModEl.disabled = false;
+    destTime = moment(`${timeVal}`, 'HH:mm:ss');
+  } else {
+    btnModEl.disabled = true;
+  }
+});
+let destTime;
+
+const setCountDown = () =>{
+  
+  countDown = setInterval(() => {
+    
+    
+    let timeNow2 = moment();
+     
+    if (moment(destTime).isBefore(timeNow2)){
+      destTime.add(1, 'd');
+    }
+
+    let diffTime = moment(destTime.diff(timeNow2)).utc();
+
+    if (diffTime < 1000) {
+      clearInterval(countDown);
+      arrOfLots[idNum].occupied = false;
+      document.getElementById(`${idNum}`).innerHTML = `${idNum}<br>Available`;
+    } else{
+      arrOfLots[idNum].occupied = true;
+      arrOfLots[idNum].time = diffTime.format('HH:mm:ss');
+      document.getElementById(`${idNum}`).innerHTML = `${idNum}<br>Occupied<br>Set: ${timeVal}<br>Left: ${diffTime.format('HH:mm:ss')}`;
+    }       
+  }, 1000);
+  modEl.style.display = 'none';
+  countOfOccp(arrOfLots);
+  countOfAvb();
+}
+btnModEl.addEventListener('click', setCountDown); */
