@@ -44,93 +44,477 @@ fillCardArr(arrCardTypes, 'b', false, true, false, false);
 fillCardArr(arrCardTypes, 'c', false, true, false, true);
 
 
-const checkForPlace = (arr, i) => {
-
-  if ((arr[arr.length-1][0].left === true && arr[arr.length-2][0].right === true) || (arr[arr.length-1][0].top === true && arr[arr.length-2][0].bottom === true)) {
-    document.getElementById(`${i}`).classList.add('color');
-  } else {
-    document.getElementById(`${i}`).classList.remove('color');
-    document.getElementById(`${i}`).classList.add('color2');
-  }
-  //typeA
-  /* if (i>0 && document.getElementById(`${i-1}`).classList.contains('typea')){
-    if (arr[arr.length-1][0].left === false) {
+const checkForPlace = (arr2, i) => {
+  if (i===0){
+    if (arr2[i][0].left === true || arr2[i][0].top === true){
       document.getElementById(`${i}`).classList.remove('color');
       document.getElementById(`${i}`).classList.add('color2');
     } else {
+      document.getElementById(`${i}`).classList.remove('color2');
       document.getElementById(`${i}`).classList.add('color');
     }
   }
-  if (i<63 && document.getElementById(`${i+1}`).classList.contains('typea')){
-    document.getElementById(`${i}`).classList.remove('color');
-    document.getElementById(`${i}`).classList.add('color2');
+  if (i===7){
+      if (arr2[i][0].right === true || arr2[i][0].top === true){
+        document.getElementById(`${i}`).classList.remove('color');
+        document.getElementById(`${i}`).classList.add('color2');
+      } else {
+        document.getElementById(`${i}`).classList.remove('color2');
+        document.getElementById(`${i}`).classList.add('color');
+      }
   }
-  if (i>7 && document.getElementById(`${i-8}`).classList.contains('typea')){
-    if (arr[arr.length-1][0].top === false) {
+  if (i===56){
+    if (arr2[i][0].left === true || arr2[i][0].bottom === true){
       document.getElementById(`${i}`).classList.remove('color');
       document.getElementById(`${i}`).classList.add('color2');
     } else {
+      document.getElementById(`${i}`).classList.remove('color2');
       document.getElementById(`${i}`).classList.add('color');
     }
   }
-  if (i<56 && document.getElementById(`${i+8}`).classList.contains('typea')){
-    document.getElementById(`${i}`).classList.remove('color');
-    document.getElementById(`${i}`).classList.add('color2');
-  }
-
-  //typeB
-  if (i>0 && document.getElementById(`${i-1}`).classList.contains('typeb')){
-    if (arr[arr.length-1][0].left === false) {
+  if (i===63){
+    if (arr2[i][0].right === true || arr2[i][0].bottom === true){
       document.getElementById(`${i}`).classList.remove('color');
       document.getElementById(`${i}`).classList.add('color2');
     } else {
+      document.getElementById(`${i}`).classList.remove('color2');
       document.getElementById(`${i}`).classList.add('color');
-    }
-  }
-  if (i<63 && document.getElementById(`${i+1}`).classList.contains('typeb')){
-    document.getElementById(`${i}`).classList.remove('color');
-    document.getElementById(`${i}`).classList.add('color2');
-  }
-  if (i>7 && document.getElementById(`${i-8}`).classList.contains('typeb')){
-    document.getElementById(`${i}`).classList.remove('color');
-    document.getElementById(`${i}`).classList.add('color2');
-  }
-  if (i<56 && document.getElementById(`${i+8}`).classList.contains('typeb')){
-    document.getElementById(`${i}`).classList.remove('color');
-    document.getElementById(`${i}`).classList.add('color2');
+    } 
   }
 
-  //typeC
-  if (i>0 && document.getElementById(`${i-1}`).classList.contains('typec')){
-    if (arr[arr.length-1][0].left === false) {
-      document.getElementById(`${i}`).classList.remove('color');
-      document.getElementById(`${i}`).classList.add('color2');
+  if (i>0 && i<7) {
+    if (document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')){
+      if (arr2[i-1][0].right === true && arr2[i][0].left === true && arr2[i][0].top === false) {
+        document.getElementById(`${i}`).classList.remove('color2');
+        document.getElementById(`${i}`).classList.add('color');
+      } else {
+        document.getElementById(`${i}`).classList.remove('color');
+        document.getElementById(`${i}`).classList.add('color2');
+      }
     } else {
-      document.getElementById(`${i}`).classList.add('color');
+      if (document.getElementById(`${i}`).classList.contains('typec')){
+        if (arr2[i][0].left === true){
+          document.getElementById(`${i}`).classList.remove('color2');
+          document.getElementById(`${i}`).classList.add('color');
+        } else {
+          document.getElementById(`${i}`).classList.remove('color');
+          document.getElementById(`${i}`).classList.add('color2');
+        }
+      }
+      if (document.getElementById(`${i}`).classList.contains('typeb')){
+        if (arr2[i][0].bottom === true || arr2[i][0].right === true || arr2[i][0].left === true){
+          document.getElementById(`${i}`).classList.remove('color2');
+          document.getElementById(`${i}`).classList.add('color');
+        } else {
+          document.getElementById(`${i}`).classList.remove('color');
+          document.getElementById(`${i}`).classList.add('color2');
+        }
+      }
+      if (document.getElementById(`${i}`).classList.contains('typea')){
+        if (arr2[i][0].bottom === true && arr2[i][0].left === true || arr2[i][0].bottom === true && arr2[i][0].right === true){
+          document.getElementById(`${i}`).classList.remove('color2');
+          document.getElementById(`${i}`).classList.add('color');
+        } else {
+          document.getElementById(`${i}`).classList.remove('color');
+          document.getElementById(`${i}`).classList.add('color2');
+        }
+      }
     }
-  }
-  if (i<63 && document.getElementById(`${i+1}`).classList.contains('typec')){
-    if (arr[arr.length-1][0].right === false) {
-      document.getElementById(`${i}`).classList.remove('color');
-      document.getElementById(`${i}`).classList.add('color2');
+  } 
+  
+  if(i>8 && i<16 || i>16 && i<24 || i>24 && i<32 || i>31 && i<40 || i>40 && i<48 || i>48 && i<56){
+      if (document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')){
+        if (arr2[i-1][0].right === true && arr2[i][0].left === true) {
+          document.getElementById(`${i}`).classList.remove('color2');
+          document.getElementById(`${i}`).classList.add('color');
+        } else {
+          document.getElementById(`${i}`).classList.remove('color');
+          document.getElementById(`${i}`).classList.add('color2');
+        }
+      }
+    }
+
+  if (i>56 && i<63){
+    if (document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec')){
+        if (arr2[i+1][0].left === true && arr2[i][0].right === true && arr2[i][0].bottom === false) {
+          document.getElementById(`${i}`).classList.remove('color2');
+          document.getElementById(`${i}`).classList.add('color');
+        } else {
+          document.getElementById(`${i}`).classList.remove('color');
+          document.getElementById(`${i}`).classList.add('color2');
+        }
     } else {
-      document.getElementById(`${i}`).classList.add('color');
+      if (document.getElementById(`${i}`).classList.contains('typec')){
+        if (arr2[i][0].left === true){
+          document.getElementById(`${i}`).classList.remove('color2');
+          document.getElementById(`${i}`).classList.add('color');
+        }else {
+          document.getElementById(`${i}`).classList.remove('color');
+          document.getElementById(`${i}`).classList.add('color2');
+        }
+      }
+      if (document.getElementById(`${i}`).classList.contains('typeb')){
+        if (arr2[i][0].top === true || arr2[i][0].left === true || arr2[i][0].right === true){
+          document.getElementById(`${i}`).classList.remove('color2');
+          document.getElementById(`${i}`).classList.add('color');
+        }else {
+          document.getElementById(`${i}`).classList.remove('color');
+          document.getElementById(`${i}`).classList.add('color2');
+        }
+      }
+      if (document.getElementById(`${i}`).classList.contains('typea')){
+        if (arr2[i][0].top === true && arr2[i][0].left === true || arr2[i][0].top === true && arr2[i][0].right === true){
+          document.getElementById(`${i}`).classList.remove('color2');
+          document.getElementById(`${i}`).classList.add('color');
+        }else {
+          document.getElementById(`${i}`).classList.remove('color');
+          document.getElementById(`${i}`).classList.add('color2');
+        }
+      }
     }
-  }
-  if (i>7 && document.getElementById(`${i-8}`).classList.contains('typec')){
-    if (arr[arr.length-1][0].right === false) {
-      document.getElementById(`${i}`).classList.remove('color');
-      document.getElementById(`${i}`).classList.add('color2');
-    } else {
-      document.getElementById(`${i}`).classList.add('color');
+  } 
+  
+  if(i<55 && i>47 || i<47 && i>39 || i<39 && i>31 || i<31 && i>23 || i<23 && i>15 || i<15 && i>7){
+    if (document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec')){
+      if (arr2[i+1][0].left === true && arr2[i][0].right === true) {
+        document.getElementById(`${i}`).classList.remove('color2');
+        document.getElementById(`${i}`).classList.add('color');
+      } else {
+        document.getElementById(`${i}`).classList.remove('color');
+        document.getElementById(`${i}`).classList.add('color2');
+      }
     }
-  }
-  if (i<56 && document.getElementById(`${i+8}`).classList.contains('typec')){
-    document.getElementById(`${i}`).classList.remove('color');
-    document.getElementById(`${i}`).classList.add('color2');
   }
 
-  */
+  if (i>7 && i%8 === 0 && i<56){
+    if (document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec')){
+        if (arr2[i-8][0].bottom === true && arr2[i][0].top === true && arr2[i][0].left === false) {
+          document.getElementById(`${i}`).classList.remove('color2');
+          document.getElementById(`${i}`).classList.add('color');
+        } else {
+          document.getElementById(`${i}`).classList.remove('color');
+          document.getElementById(`${i}`).classList.add('color2');
+        }
+    } else {
+      if (document.getElementById(`${i}`).classList.contains('typec')){
+        if (arr2[i][0].bottom === true){
+          document.getElementById(`${i}`).classList.remove('color2');
+          document.getElementById(`${i}`).classList.add('color');
+        } else {
+          document.getElementById(`${i}`).classList.remove('color');
+          document.getElementById(`${i}`).classList.add('color2');
+        }
+      } else if (document.getElementById(`${i}`).classList.contains('typeb')){
+          if (arr2[i][0].top === true || arr2[i][0].bottom === true || arr2[i][0].right === true){
+            document.getElementById(`${i}`).classList.remove('color2');
+            document.getElementById(`${i}`).classList.add('color');
+          } else {
+            document.getElementById(`${i}`).classList.remove('color');
+            document.getElementById(`${i}`).classList.add('color2');
+          }
+        
+      } else if (document.getElementById(`${i}`).classList.contains('typea')){
+          if ((arr2[i][0].top === true && arr2[i][0].right === true) || (arr2[i][0].bottom === true && arr2[i][0].right === true)){
+            document.getElementById(`${i}`).classList.remove('color2');
+            document.getElementById(`${i}`).classList.add('color');
+          } else {
+          document.getElementById(`${i}`).classList.remove('color');
+          document.getElementById(`${i}`).classList.add('color2');
+          }
+      }
+    }
+  } 
+  
+  if (i>7 && i%8 !==0 && (i+1)%8 !==0){
+    if (document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec')){
+      if (arr2[i-8][0].bottom === true && arr2[i][0].top === true) {
+        document.getElementById(`${i}`).classList.remove('color2');
+        document.getElementById(`${i}`).classList.add('color');
+      } else {
+        document.getElementById(`${i}`).classList.remove('color');
+        document.getElementById(`${i}`).classList.add('color2');
+      }
+    }
+  }
+
+  if (i<56 && i>7 && i%8!==0 && ((i+1)%8 === 0)){
+    if (document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec')){
+        if (arr2[i+8][0].top === true && arr2[i][0].bottom === true && arr2[i][0].right === false) {
+          document.getElementById(`${i}`).classList.remove('color2');
+          document.getElementById(`${i}`).classList.add('color');
+        } else {
+          document.getElementById(`${i}`).classList.remove('color');
+          document.getElementById(`${i}`).classList.add('color2');
+        }
+    } else {
+      if (document.getElementById(`${i}`).classList.contains('typec')){
+          if (arr2[i][0].bottom === true){
+            document.getElementById(`${i}`).classList.remove('color2');
+            document.getElementById(`${i}`).classList.add('color');
+          } else {
+            document.getElementById(`${i}`).classList.remove('color');
+            document.getElementById(`${i}`).classList.add('color2');
+          }
+      } else if (document.getElementById(`${i}`).classList.contains('typeb')){
+          if (arr2[i][0].top === true || arr2[i][0].bottom === true || arr2[i][0].left === true){
+            document.getElementById(`${i}`).classList.remove('color2');
+            document.getElementById(`${i}`).classList.add('color');
+          } else {
+            document.getElementById(`${i}`).classList.remove('color');
+            document.getElementById(`${i}`).classList.add('color2');
+          }
+      } else if (document.getElementById(`${i}`).classList.contains('typea')){
+          if (arr2[i][0].top === true && arr2[i][0].left === true || arr2[i][0].bottom === true && arr2[i][0].left === true){
+            document.getElementById(`${i}`).classList.remove('color2');
+            document.getElementById(`${i}`).classList.add('color');
+          } else {
+            document.getElementById(`${i}`).classList.remove('color');
+            document.getElementById(`${i}`).classList.add('color2');
+          }
+      }
+    }
+  } 
+  
+  if(i<56 && i>8 && i%8 !==0 && (i+1)%8 !==0){
+    if (document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec')){
+      if (arr2[i+8][0].top === true && arr2[i][0].bottom === true) {
+        document.getElementById(`${i}`).classList.remove('color2');
+        document.getElementById(`${i}`).classList.add('color');
+      } else {
+        document.getElementById(`${i}`).classList.remove('color');
+        document.getElementById(`${i}`).classList.add('color2');
+      }
+    }
+  }
+}
+
+const checkForPlaceBefore = (arr, arr2, i) => {
+  if (i>0) {
+    if (document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')){
+      if (arr2[i-1][0].right === true && arr[arr.length-1][0].left === true) {
+        document.getElementById(`${i}`).classList.remove('color2');
+        document.getElementById(`${i}`).classList.add('color');
+      } else {
+        document.getElementById(`${i}`).classList.remove('color');
+        document.getElementById(`${i}`).classList.add('color2');
+      }
+    }
+  }
+  if (i<63){
+    if (document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec')){
+      if (arr2[i+1][0].left === true && arr[arr.length-1][0].right === true) {
+        document.getElementById(`${i}`).classList.remove('color2');
+        document.getElementById(`${i}`).classList.add('color');
+      } else {
+        document.getElementById(`${i}`).classList.remove('color');
+        document.getElementById(`${i}`).classList.add('color2');
+      }
+    }
+  }
+  if (i>7){
+    if (document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec')){
+      if (arr2[i-8][0].bottom === true && arr[arr.length-1][0].top === true) {
+        document.getElementById(`${i}`).classList.remove('color2');
+        document.getElementById(`${i}`).classList.add('color');
+      } else {
+        document.getElementById(`${i}`).classList.remove('color');
+        document.getElementById(`${i}`).classList.add('color2');
+      }
+    }
+  }
+  if (i<56){
+    if (document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec')){
+      if (arr2[i+8][0].top === true && arr[arr.length-1][0].bottom === true) {
+        document.getElementById(`${i}`).classList.remove('color2');
+        document.getElementById(`${i}`).classList.add('color');
+      } else {
+        document.getElementById(`${i}`).classList.remove('color');
+        document.getElementById(`${i}`).classList.add('color2');
+      }
+    }
+  }
+}
+
+const checkForBordersBefore = (arr2, arr, i) => {
+  if (i===7){
+    if (arr[arr.length-1][0].right === true || arr[arr.length-1][0].top === true) {
+      document.getElementById(`${i}`).classList.remove('color');
+      document.getElementById(`${i}`).classList.add('color2');
+    } else {
+      document.getElementById(`${i}`).classList.remove('color2');
+      document.getElementById(`${i}`).classList.add('color');
+    }
+  }
+  if (i===0){
+    if (arr[arr.length-1][0].left === true || arr[arr.length-1][0].top === true) {
+      document.getElementById(`${i}`).classList.remove('color');
+      document.getElementById(`${i}`).classList.add('color2');
+    } else {
+      document.getElementById(`${i}`).classList.remove('color2');
+      document.getElementById(`${i}`).classList.add('color');
+    }
+  }
+  if (i===63){
+    if (arr[arr.length-1][0].right === true || arr[arr.length-1][0].bottom === true) {
+      document.getElementById(`${i}`).classList.remove('color');
+      document.getElementById(`${i}`).classList.add('color2');
+    } else {
+      document.getElementById(`${i}`).classList.remove('color2');
+      document.getElementById(`${i}`).classList.add('color');
+    }
+  }
+  if (i===56){
+    if (arr[arr.length-1][0].left === true || arr[arr.length-1][0].bottom === true ) {
+      document.getElementById(`${i}`).classList.remove('color');
+      document.getElementById(`${i}`).classList.add('color2');
+    } else {
+      document.getElementById(`${i}`).classList.remove('color2');
+      document.getElementById(`${i}`).classList.add('color');
+    }
+  }
+    if(i<56 && i>7 && i%8 ===0){
+    if (document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec')){
+      if (arr2[i+8][0].top === true && arr[arr.length-1][0].bottom === true) {
+        document.getElementById(`${i}`).classList.remove('color2');
+        document.getElementById(`${i}`).classList.add('color');
+      } else {
+        document.getElementById(`${i}`).classList.remove('color');
+        document.getElementById(`${i}`).classList.add('color2');
+      }
+    }
+    if (document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec')){
+      if (arr2[i-8][0].bottom === true && arr[arr.length-1][0].top === true) {
+        document.getElementById(`${i}`).classList.remove('color2');
+        document.getElementById(`${i}`).classList.add('color');
+      } else {
+        document.getElementById(`${i}`).classList.remove('color');
+        document.getElementById(`${i}`).classList.add('color2');
+      }
+    }
+    if (document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec')){
+      if (arr2[i+1][0].left === true && arr[arr.length-1][0].right === true) {
+        document.getElementById(`${i}`).classList.remove('color2');
+        document.getElementById(`${i}`).classList.add('color');
+      } else {
+        document.getElementById(`${i}`).classList.remove('color');
+        document.getElementById(`${i}`).classList.add('color2');
+      }
+    }
+    if (!(document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec')) && !(document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec')) && !(document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec'))){
+      if (arr[arr.length-1][0].left === true) {
+        document.getElementById(`${i}`).classList.remove('color');
+        document.getElementById(`${i}`).classList.add('color2');
+      } else {
+        document.getElementById(`${i}`).classList.remove('color2');
+        document.getElementById(`${i}`).classList.add('color');
+      }
+    }
+  }
+
+  if(i<56 && i>7 && (i+1)%8 ===0){
+    if (document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec')){
+      if (arr2[i+8][0].top === true && arr[arr.length-1][0].bottom === true) {
+        document.getElementById(`${i}`).classList.remove('color2');
+        document.getElementById(`${i}`).classList.add('color');
+      } else {
+        document.getElementById(`${i}`).classList.remove('color');
+        document.getElementById(`${i}`).classList.add('color2');
+      }
+    } 
+    if (document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec')){
+      if (arr2[i-8][0].bottom === true && arr[arr.length-1][0].top === true) {
+        document.getElementById(`${i}`).classList.remove('color2');
+        document.getElementById(`${i}`).classList.add('color');
+      } else {
+        document.getElementById(`${i}`).classList.remove('color');
+        document.getElementById(`${i}`).classList.add('color2');
+      }
+    } 
+    if (document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')){
+      if (arr2[i-1][0].right === true && arr[arr.length-1][0].left === true) {
+        document.getElementById(`${i}`).classList.remove('color2');
+        document.getElementById(`${i}`).classList.add('color');
+      } else {
+        document.getElementById(`${i}`).classList.remove('color');
+        document.getElementById(`${i}`).classList.add('color2');
+      }
+    }
+    if (!(document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')) && !(document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec')) && !(document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec'))){
+      if (arr[arr.length-1][0].right === true) {
+        document.getElementById(`${i}`).classList.remove('color');
+        document.getElementById(`${i}`).classList.add('color2');
+      } else {
+        document.getElementById(`${i}`).classList.remove('color2');
+        document.getElementById(`${i}`).classList.add('color');
+      }
+    }
+  }
+
+  if(i<7 && i>0){
+    if (document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec')){
+      if (arr2[i+8][0].top === true && arr[arr.length-1][0].bottom === true) {
+        document.getElementById(`${i}`).classList.remove('color2');
+        document.getElementById(`${i}`).classList.add('color');
+      } else {
+        document.getElementById(`${i}`).classList.remove('color');
+        document.getElementById(`${i}`).classList.add('color2');
+      }
+    } 
+    if (document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec')){
+      if (arr2[i+1][0].left === true && arr[arr.length-1][0].right === true) {
+        document.getElementById(`${i}`).classList.remove('color2');
+        document.getElementById(`${i}`).classList.add('color');
+      } else {
+        document.getElementById(`${i}`).classList.remove('color');
+        document.getElementById(`${i}`).classList.add('color2');
+      }
+    } 
+    if (document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')){
+      if (arr2[i-1][0].right === true && arr[arr.length-1][0].left === true) {
+        document.getElementById(`${i}`).classList.remove('color2');
+        document.getElementById(`${i}`).classList.add('color');
+      } 
+    }
+  }
+
+  if(i<63 && i>56){
+    if (document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec')){
+      if (arr2[i-8][0].bottom === true && arr[arr.length-1][0].top === true) {
+        document.getElementById(`${i}`).classList.remove('color2');
+        document.getElementById(`${i}`).classList.add('color');
+      } else {
+        document.getElementById(`${i}`).classList.remove('color');
+        document.getElementById(`${i}`).classList.add('color2');
+      }
+    } 
+    if (document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec')){
+      if (arr2[i+1][0].left === true && arr[arr.length-1][0].right === true) {
+        document.getElementById(`${i}`).classList.remove('color2');
+        document.getElementById(`${i}`).classList.add('color');
+      } else {
+        document.getElementById(`${i}`).classList.remove('color');
+        document.getElementById(`${i}`).classList.add('color2');
+      }
+    } 
+    if (document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')){
+      if (arr2[i-1][0].right === true && arr[arr.length-1][0].left === true) {
+        document.getElementById(`${i}`).classList.remove('color2');
+        document.getElementById(`${i}`).classList.add('color');
+      } else {
+        document.getElementById(`${i}`).classList.remove('color');
+        document.getElementById(`${i}`).classList.add('color2');
+      }
+    }
+    if (!(document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')) && !(document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec')) && !(document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec'))){
+      if (arr[arr.length-1][0].bottom === true) {
+        document.getElementById(`${i}`).classList.remove('color');
+        document.getElementById(`${i}`).classList.add('color2');
+      } else {
+        document.getElementById(`${i}`).classList.remove('color2');
+        document.getElementById(`${i}`).classList.add('color');
+      }
+    }
+  }
 }
 
 let shuffledCardDeck = [];
@@ -177,94 +561,78 @@ const countOfCards = (arr) =>{
   return arr.length;
 }
 cardStatusEl.innerHTML = countOfCards(shuffledCardDeck);
-const tempArrPos = [];
+let tempArrPos = [];
 const gridFill = (arr, i) => {
   if (arr[arr.length-1][0].name === 'a'){
 /*     checkForPlace(shuffledCardDeck, i); */
     document.getElementById(`${i}`).classList.add('typea');
-    tempArrPos.push(arr.pop());
+    tempArrPos[i] = arr.pop();
     console.log(tempArrPos);
 
     cardDeckEl.innerHTML = drawOfCardDeck(arr);
     cardStatusEl.innerHTML = countOfCards(arr);
     document.getElementById(`${i}`).removeEventListener('click', eventListForDiv);
+    document.getElementById(`${i}`).addEventListener('click', rotateFunc);
   } else if (arr[arr.length-1][0].name === 'b'){
 /*     checkForPlace(shuffledCardDeck, i); */
     document.getElementById(`${i}`).classList.add('typeb');
-    tempArrPos.push(arr.pop());
+    tempArrPos[i] = arr.pop();
     console.log(tempArrPos);
 
     cardDeckEl.innerHTML = drawOfCardDeck(arr);
     cardStatusEl.innerHTML = countOfCards(arr);
     document.getElementById(`${i}`).removeEventListener('click', eventListForDiv);
+    document.getElementById(`${i}`).addEventListener('click', rotateFunc);
   } else if (arr[arr.length-1][0].name === 'c'){
 /*     checkForPlace(shuffledCardDeck, i); */
     document.getElementById(`${i}`).classList.add('typec');
-    tempArrPos.push(arr.pop());
+    tempArrPos[i] = arr.pop();
     console.log(tempArrPos);
     cardDeckEl.innerHTML = drawOfCardDeck(arr);
     cardStatusEl.innerHTML = countOfCards(arr);
     document.getElementById(`${i}`).removeEventListener('click', eventListForDiv);
+    document.getElementById(`${i}`).addEventListener('click', rotateFunc);
   }
 }
 
-const rotateFunc = (arr, e) =>{
+const changePos = (arr, id, top, right, bottom, left) => {
+  arr[id][0].top = top;
+  arr[id][0].right = right;
+  arr[id][0].bottom = bottom;
+  arr[id][0].left = left;
+}
 
+const rotateFunc = (e) =>{
   if (document.getElementById(`${e.target.id}`).classList.contains('rotate90')){
     document.getElementById(`${e.target.id}`).classList.remove('rotate90');
     document.getElementById(`${e.target.id}`).classList.add('rotate180');
+    
     if (document.getElementById(`${e.target.id}`).classList.contains('typea')){
-      arr[arr.length-1][0].top = true;
-      arr[arr.length-1][0].right = false;
-      arr[arr.length-1][0].bottom = false;
-      arr[arr.length-1][0].left = true;
-      console.log(arr[arr.length-1]);
+      changePos(tempArrPos, Number(e.target.id), true, false, false, true);
     }
     if (document.getElementById(`${e.target.id}`).classList.contains('typeb')){
-      arr[arr.length-1][0].top = false;
-      arr[arr.length-1][0].right = false;
-      arr[arr.length-1][0].bottom = false;
-      arr[arr.length-1][0].left = true;
-      console.log(arr[arr.length-1]);
-
+      changePos(tempArrPos, Number(e.target.id), false, false, false, true);
     }
     if (document.getElementById(`${e.target.id}`).classList.contains('typec')){
-      arr[arr.length-1][0].top = false;
-      arr[arr.length-1][0].right = true;
-      arr[arr.length-1][0].bottom = false;
-      arr[arr.length-1][0].left = true;
-      console.log(arr[arr.length-1]);
-
+      changePos(tempArrPos, Number(e.target.id), false, true, false, true);
     }
+  
     checkForPlace(tempArrPos, Number(e.target.id));
 
   } else if (document.getElementById(`${e.target.id}`).classList.contains('rotate180')){
     document.getElementById(`${e.target.id}`).classList.remove('rotate180');
     document.getElementById(`${e.target.id}`).classList.add('rotate270');
+    
     if (document.getElementById(`${e.target.id}`).classList.contains('typea')){
-      arr[arr.length-1][0].top = true;
-      arr[arr.length-1][0].right = true;
-      arr[arr.length-1][0].bottom = false;
-      arr[arr.length-1][0].left = false;
-      console.log(arr[arr.length-1]);
-
+      changePos(tempArrPos, Number(e.target.id), true, true, false, false);
     }
     if (document.getElementById(`${e.target.id}`).classList.contains('typeb')){
-      arr[arr.length-1][0].top = true;
-      arr[arr.length-1][0].right = false;
-      arr[arr.length-1][0].bottom = false;
-      arr[arr.length-1][0].left = false;
-      console.log(arr[arr.length-1]);
-
+      changePos(tempArrPos, Number(e.target.id), true, false, false, false);
     }
     if (document.getElementById(`${e.target.id}`).classList.contains('typec')){
-      arr[arr.length-1][0].top = true;
-      arr[arr.length-1][0].right = false;
-      arr[arr.length-1][0].bottom = true;
-      arr[arr.length-1][0].left = false;
-      console.log(arr[arr.length-1]);
-
+      changePos(tempArrPos, Number(e.target.id), true, false, true, false);
     }
+  
     checkForPlace(tempArrPos, Number(e.target.id));
 
   } else if (document.getElementById(`${e.target.id}`).classList.contains('rotate270')){
@@ -272,87 +640,49 @@ const rotateFunc = (arr, e) =>{
     document.getElementById(`${e.target.id}`).classList.add('rotate360');
 
     if (document.getElementById(`${e.target.id}`).classList.contains('typea')){
-      arr[arr.length-1][0].top = false;
-      arr[arr.length-1][0].right = true;
-      arr[arr.length-1][0].bottom = true;
-      arr[arr.length-1][0].left = false;
-      console.log(arr[arr.length-1]);
-
+      changePos(tempArrPos, Number(e.target.id), false, true, true, false);
     }
     if (document.getElementById(`${e.target.id}`).classList.contains('typeb')){
-      arr[arr.length-1][0].top = false;
-      arr[arr.length-1][0].right = true;
-      arr[arr.length-1][0].bottom = false;
-      arr[arr.length-1][0].left = false;
-      console.log(arr[arr.length-1]);
-
+      changePos(tempArrPos, Number(e.target.id), false, true, false, false);
     }
     if (document.getElementById(`${e.target.id}`).classList.contains('typec')){
-      arr[arr.length-1][0].top = false;
-      arr[arr.length-1][0].right = true;
-      arr[arr.length-1][0].bottom = false;
-      arr[arr.length-1][0].left = true;
-      console.log(arr[arr.length-1]);
-
+      changePos(tempArrPos, Number(e.target.id), false, true, false, true);
     }
-
+    
     checkForPlace(tempArrPos, Number(e.target.id));
 
   } else if (document.getElementById(`${e.target.id}`).classList.contains('rotate360')) {
     document.getElementById(`${e.target.id}`).classList.remove('rotate360');
     document.getElementById(`${e.target.id}`).classList.add('rotate90');
+    
     if (document.getElementById(`${e.target.id}`).classList.contains('typea')){
-      arr[arr.length-1][0].top = false;
-      arr[arr.length-1][0].right = false;
-      arr[arr.length-1][0].bottom = true;
-      arr[arr.length-1][0].left = true;
-      console.log(arr[arr.length-1]);
-
+      changePos(tempArrPos, Number(e.target.id), false, false, true, true);
     }
     if (document.getElementById(`${e.target.id}`).classList.contains('typeb')){
-      arr[arr.length-1][0].top = false;
-      arr[arr.length-1][0].right = false;
-      arr[arr.length-1][0].bottom = true;
-      arr[arr.length-1][0].left = false;
-      console.log(arr[arr.length-1]);
-
+      changePos(tempArrPos, Number(e.target.id), false, false, true, false);
     }
     if (document.getElementById(`${e.target.id}`).classList.contains('typec')){
-      arr[arr.length-1][0].top = true;
-      arr[arr.length-1][0].right = false;
-      arr[arr.length-1][0].bottom = true;
-      arr[arr.length-1][0].left = false;
-      console.log(arr[arr.length-1]);
-
+      changePos(tempArrPos, Number(e.target.id), true, false, true, false);
     }
+    
     checkForPlace(tempArrPos, Number(e.target.id));
 
   } else {
     document.getElementById(`${e.target.id}`).classList.add('rotate90');
+    
     if (document.getElementById(`${e.target.id}`).classList.contains('typea')){
-      arr[arr.length-1][0].top = false;
-      arr[arr.length-1][0].right = false;
-      arr[arr.length-1][0].bottom = true;
-      arr[arr.length-1][0].left = true;
-      console.log(arr[arr.length-1]);
-
+      changePos(tempArrPos, Number(e.target.id), false, false, true, true);
+      console.log(tempArrPos);
     }
     if (document.getElementById(`${e.target.id}`).classList.contains('typeb')){
-      arr[arr.length-1][0].top = false;
-      arr[arr.length-1][0].right = false;
-      arr[arr.length-1][0].bottom = true;
-      arr[arr.length-1][0].left = false;
-      console.log(arr[arr.length-1]);
-
+      changePos(tempArrPos, Number(e.target.id), false, false, true, false);
+      console.log(tempArrPos);
     }
     if (document.getElementById(`${e.target.id}`).classList.contains('typec')){
-      arr[arr.length-1][0].top = true;
-      arr[arr.length-1][0].right = false;
-      arr[arr.length-1][0].bottom = true;
-      arr[arr.length-1][0].left = false;
-      console.log(arr[arr.length-1]);
-
+      changePos(tempArrPos, Number(e.target.id), true, false, true, false);
+      console.log(tempArrPos);
     }
+    
     checkForPlace(tempArrPos, Number(e.target.id));
   }
 }
@@ -361,22 +691,23 @@ const eventListForDiv = (e) => {
   for (let i=0; i<gridHeight*gridLength; i++){
     if (e.target.id === `${i}`){
       let id = Number(e.target.id);
-      checkForPlace(shuffledCardDeck, id);
+      checkForPlaceBefore(shuffledCardDeck, tempArrPos, id);
+      checkForBordersBefore(tempArrPos, shuffledCardDeck, id);
       gridFill(shuffledCardDeck, id);
     }
   }
 }
 
-const mouseFunc = (e) => {
+/* const mouseFunc = (e) => {
   switch (e.button){
     case 2:
     rotateFunc(tempArrPos, e);
     break;
   }
-}
+} */
 for (let i=0; i<gridHeight*gridLength; i++){
   document.getElementById(`${i}`).addEventListener('click', eventListForDiv);
-  document.getElementById(`${i}`).addEventListener('mousedown', mouseFunc);
+  /* document.getElementById(`${i}`).addEventListener('mousedown', mouseFunc); */
 }
 
 resetBtnEl.addEventListener('click', () => {
@@ -389,6 +720,6 @@ resetBtnEl.addEventListener('click', () => {
   cardDeckEl.innerHTML = drawOfCardDeck(shuffledCardDeck);
   for (let i=0; i<gridHeight*gridLength; i++){
     document.getElementById(`${i}`).addEventListener('click', eventListForDiv);
-    document.getElementById(`${i}`).addEventListener('mousedown', mouseFunc);
+/*     document.getElementById(`${i}`).addEventListener('mousedown', mouseFunc); */
   }
 })
