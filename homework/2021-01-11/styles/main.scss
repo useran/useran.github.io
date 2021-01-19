@@ -1,0 +1,92 @@
+html, body{
+  height: 100%;
+}
+.wrapper{
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main{
+  display: flex;
+  height: 70%;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+}
+.left-side{
+  width: 30%;
+  height: 480px;
+  background-color: lightgrey;
+  border: 1px solid rosybrown;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 18px;
+}
+.reset-btn{
+  width: 80px;
+  font-size: 14px;
+  border-radius: 2px;
+}
+.cards{
+  width: 200px;
+  height: 200px;
+  border: 1px solid silver;
+  position: relative;
+}
+.cards > div{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.status-block{
+  width: 80px;
+  height: 30px;
+  background-color: seashell;
+  padding: 6px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 16px;
+}
+.right-side{
+  display: grid;
+  column-gap: 0;
+  row-gap: 0;
+}
+.right-side > div {
+  width: 60px;
+  height: 60px;
+  box-sizing: border-box;
+}
+.color2{
+  border: 2px solid orangered;
+}
+.color{
+  border: 1px solid black;
+}
+.rotate90{
+  transform: rotate(90deg);
+}
+.rotate180{
+  transform: rotate(180deg);
+}
+.rotate270{
+  transform: rotate(270deg);
+}
+.typea{
+  background-image: url(../images/corner.png);
+}
+.typeb{
+  background-image: url(../images/impasse.png);
+}
+.typec{
+  background-image: url(../images/stick.png);
+}
