@@ -78,7 +78,7 @@ const checkForPlace = (arr2, xArr, i) => {
     }
   } else if( i>7 && i<56 && i%8!==0 && (i+1)%8 !==0){
     if ((document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')) && (document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec')) && (document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec')) && (document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec'))){
-      if ((arr2[i-1][0].right === xArr.left && xArr.top === arr2[i-8][0].bottom) || (arr2[i-1][0].right === xarr.left && xarr.bottom === arr2[i+8][0].top) || (arr2[i+1][0].left === xarr.right && xarr.top === arr2[i-8][0].bottom) || (arr2[i+1][0].left === xarr.right && xarr.bottom === arr2[i+8][0].top)) {
+      if ((arr2[i-1][0].right === xArr.left && xArr.top === arr2[i-8][0].bottom) || (arr2[i-1][0].right === xArr.left && xArr.bottom === arr2[i+8][0].top) || (arr2[i+1][0].left === xArr.right && xArr.top === arr2[i-8][0].bottom) || (arr2[i+1][0].left === xArr.right && xArr.bottom === arr2[i+8][0].top)) {
         document.getElementById(`${i}`).classList.remove('color2');
         document.getElementById(`${i}`).classList.add('color');
       } else {
@@ -86,7 +86,7 @@ const checkForPlace = (arr2, xArr, i) => {
         document.getElementById(`${i}`).classList.add('color2');
       }
     } else if ((document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')) && (document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec')) && (document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec'))){
-      if ((arr2[i-1][0].right === xarr.left && xarr.top === arr2[i-8][0].bottom) || (arr2[i+1][0].left === xarr.right && xarr.top === arr2[i-8][0].bottom)) {
+      if ((arr2[i-1][0].right === xArr.left && xArr.top === arr2[i-8][0].bottom) || (arr2[i+1][0].left === xArr.right && xArr.top === arr2[i-8][0].bottom)) {
         document.getElementById(`${i}`).classList.remove('color2');
         document.getElementById(`${i}`).classList.add('color');
       } else {
@@ -94,7 +94,7 @@ const checkForPlace = (arr2, xArr, i) => {
         document.getElementById(`${i}`).classList.add('color2');
       }
     } else if ((document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')) && (document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec')) && (document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec'))){
-      if ((arr2[i-1][0].right === xarr.left && xarr.bottom === arr2[i+8][0].top) || (arr2[i+1][0].left === xarr.right && xarr.bottom === arr2[i+8][0].top)) {
+      if ((arr2[i-1][0].right === xArr.left && xArr.bottom === arr2[i+8][0].top) || (arr2[i+1][0].left === xArr.right && xArr.bottom === arr2[i+8][0].top)) {
         document.getElementById(`${i}`).classList.remove('color2');
         document.getElementById(`${i}`).classList.add('color');
       } else {
@@ -102,7 +102,7 @@ const checkForPlace = (arr2, xArr, i) => {
         document.getElementById(`${i}`).classList.add('color2');
       }
     } else if ((document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')) && (document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec')) && (document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec'))){
-      if ((arr2[i-1][0].right === xarr.left && xarr.bottom === arr2[i+8][0].top) || (arr2[i-8][0].bottom === xarr.top && xarr.left === arr2[i-1][0].right)) {
+      if ((arr2[i-1][0].right === xArr.left && xArr.bottom === arr2[i+8][0].top) || (arr2[i-8][0].bottom === xArr.top && xArr.left === arr2[i-1][0].right)) {
         document.getElementById(`${i}`).classList.remove('color2');
         document.getElementById(`${i}`).classList.add('color');
       } else {
@@ -110,7 +110,7 @@ const checkForPlace = (arr2, xArr, i) => {
         document.getElementById(`${i}`).classList.add('color2');
       }
     } else if ((document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec')) && (document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec')) && (document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec'))){
-      if ((arr2[i+1][0].left === true && xarr.right === true && xarr.bottom === arr2[i+8][0].top) || (arr2[i-8][0].bottom === xarr.top && xarr.right === arr2[i+1][0].left)) {
+      if ((arr2[i+1][0].left === true && xArr.right === true && xArr.bottom === arr2[i+8][0].top) || (arr2[i-8][0].bottom === xArr.top && xArr.right === arr2[i+1][0].left)) {
         document.getElementById(`${i}`).classList.remove('color2');
         document.getElementById(`${i}`).classList.add('color');
       } else {
@@ -118,7 +118,7 @@ const checkForPlace = (arr2, xArr, i) => {
         document.getElementById(`${i}`).classList.add('color2');
       }
     } else if ((document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')) && (document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec'))){
-      if ((arr2[i-1][0].right === xarr.left && xarr.bottom === arr2[i+8][0].top)) {
+      if ((arr2[i-1][0].right === xArr.left && xArr.bottom === arr2[i+8][0].top)) {
         document.getElementById(`${i}`).classList.remove('color2');
         document.getElementById(`${i}`).classList.add('color');
       } else {
@@ -126,7 +126,7 @@ const checkForPlace = (arr2, xArr, i) => {
         document.getElementById(`${i}`).classList.add('color2');
       }
     } else if ((document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')) && (document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec'))){
-      if ((arr2[i-1][0].right === xarr.left && xarr.top === arr2[i-8][0].bottom)) {
+      if ((arr2[i-1][0].right === xArr.left && xArr.top === arr2[i-8][0].bottom)) {
         document.getElementById(`${i}`).classList.remove('color2');
         document.getElementById(`${i}`).classList.add('color');
       } else {
@@ -134,7 +134,7 @@ const checkForPlace = (arr2, xArr, i) => {
         document.getElementById(`${i}`).classList.add('color2');
       }
     } else if ((document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec')) && (document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec'))){
-      if ((arr2[i+1][0].left === xarr.right && xarr.bottom === arr2[i+8][0].top)) {
+      if ((arr2[i+1][0].left === xArr.right && xArr.bottom === arr2[i+8][0].top)) {
         document.getElementById(`${i}`).classList.remove('color2');
         document.getElementById(`${i}`).classList.add('color');
       } else {
@@ -142,7 +142,7 @@ const checkForPlace = (arr2, xArr, i) => {
         document.getElementById(`${i}`).classList.add('color2');
       }
     } else if ((document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec')) && (document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec'))){
-      if ((arr2[i+1][0].left === xarr.right || xarr.top === arr2[i-8][0].bottom)) {
+      if ((arr2[i+1][0].left === xArr.right || xArr.top === arr2[i-8][0].bottom)) {
         document.getElementById(`${i}`).classList.remove('color2');
         document.getElementById(`${i}`).classList.add('color');
       } else {
@@ -150,7 +150,7 @@ const checkForPlace = (arr2, xArr, i) => {
         document.getElementById(`${i}`).classList.add('color2');
       }
     } else if ((document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')) && (document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec'))){
-      if (arr2[i-1][0].right === xarr.left && arr2[i+1][0].left === xarr.right){
+      if (arr2[i-1][0].right === xArr.left && arr2[i+1][0].left === xArr.right){
         document.getElementById(`${i}`).classList.remove('color2');
         document.getElementById(`${i}`).classList.add('color');
       } else {
@@ -158,7 +158,7 @@ const checkForPlace = (arr2, xArr, i) => {
         document.getElementById(`${i}`).classList.add('color2');
       }
     } else if ((document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec')) && (document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec'))){
-      if (arr2[i-8][0].bottom === xarr.top && arr2[i+8][0].top === xarr.bottom){
+      if (arr2[i-8][0].bottom === xArr.top && arr2[i+8][0].top === xArr.bottom){
         document.getElementById(`${i}`).classList.remove('color2');
         document.getElementById(`${i}`).classList.add('color');
       } else {
@@ -166,7 +166,7 @@ const checkForPlace = (arr2, xArr, i) => {
         document.getElementById(`${i}`).classList.add('color2');
       }
     } else if ((document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec'))){
-      if (arr2[i-8][0].bottom === xarr.top) {
+      if (arr2[i-8][0].bottom === xArr.top) {
         document.getElementById(`${i}`).classList.remove('color2');
         document.getElementById(`${i}`).classList.add('color');
       } else {
@@ -174,7 +174,7 @@ const checkForPlace = (arr2, xArr, i) => {
         document.getElementById(`${i}`).classList.add('color2');
       }
     } else if ((document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec'))){
-      if (arr2[i+8][0].top === xarr.bottom) {
+      if (arr2[i+8][0].top === xArr.bottom) {
         document.getElementById(`${i}`).classList.remove('color2');
         document.getElementById(`${i}`).classList.add('color');
       } else {
@@ -182,7 +182,7 @@ const checkForPlace = (arr2, xArr, i) => {
         document.getElementById(`${i}`).classList.add('color2');
       }
     } else if ((document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec'))){
-      if (arr2[i+1][0].left === xarr.right) {
+      if (arr2[i+1][0].left === xArr.right) {
         document.getElementById(`${i}`).classList.remove('color2');
         document.getElementById(`${i}`).classList.add('color');
       } else {
@@ -190,7 +190,7 @@ const checkForPlace = (arr2, xArr, i) => {
         document.getElementById(`${i}`).classList.add('color2');
       }
     } else if ((document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec'))){
-      if (arr2[i-1][0].right === xarr.left) {
+      if (arr2[i-1][0].right === xArr.left) {
         document.getElementById(`${i}`).classList.remove('color2');
         document.getElementById(`${i}`).classList.add('color');
       } else {
@@ -203,7 +203,7 @@ const checkForPlace = (arr2, xArr, i) => {
     }
   } else if (i>56 && i<63) {
     if ((document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')) && (document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec')) && (document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec'))){
-      if ((arr2[i-1][0].right === xarr.left && xarr.top === arr2[i-8][0].bottom) || (arr2[i+1][0].left === xarr.right && xarr.top === arr2[i-8][0].bottom)) {
+      if ((arr2[i-1][0].right === xArr.left && xArr.top === arr2[i-8][0].bottom) || (arr2[i+1][0].left === xArr.right && xArr.top === arr2[i-8][0].bottom)) {
         document.getElementById(`${i}`).classList.remove('color2');
         document.getElementById(`${i}`).classList.add('color');
       } else {
@@ -211,7 +211,7 @@ const checkForPlace = (arr2, xArr, i) => {
         document.getElementById(`${i}`).classList.add('color2');
       }
     } else if ((document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')) && (document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec'))){
-      if ((arr2[i-1][0].right === xarr.left && xarr.top === arr2[i-8][0].bottom)) {
+      if ((arr2[i-1][0].right === xArr.left && xArr.top === arr2[i-8][0].bottom)) {
         document.getElementById(`${i}`).classList.remove('color2');
         document.getElementById(`${i}`).classList.add('color');
       } else {
@@ -219,7 +219,7 @@ const checkForPlace = (arr2, xArr, i) => {
         document.getElementById(`${i}`).classList.add('color2');
       }
     } else if ((document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec')) && (document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec'))){
-      if ((arr2[i+1][0].left === xarr.right && xarr.top === arr2[i-8][0].bottom)) {
+      if ((arr2[i+1][0].left === xArr.right && xArr.top === arr2[i-8][0].bottom)) {
         document.getElementById(`${i}`).classList.remove('color2');
         document.getElementById(`${i}`).classList.add('color');
       } else {
@@ -227,7 +227,7 @@ const checkForPlace = (arr2, xArr, i) => {
         document.getElementById(`${i}`).classList.add('color2');
       }
     } else if ((document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')) && (document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec'))){
-      if (arr2[i-1][0].right === xarr.left && arr2[i+1][0].left === xarr.right){
+      if (arr2[i-1][0].right === xArr.left && arr2[i+1][0].left === xArr.right){
         document.getElementById(`${i}`).classList.remove('color2');
         document.getElementById(`${i}`).classList.add('color');
       } else {
@@ -235,7 +235,7 @@ const checkForPlace = (arr2, xArr, i) => {
         document.getElementById(`${i}`).classList.add('color2');
       }
     } else if ((document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec'))){
-      if (arr2[i-8][0].bottom === xarr.top) {
+      if (arr2[i-8][0].bottom === xArr.top) {
         document.getElementById(`${i}`).classList.remove('color2');
         document.getElementById(`${i}`).classList.add('color');
       } else {
@@ -243,7 +243,7 @@ const checkForPlace = (arr2, xArr, i) => {
         document.getElementById(`${i}`).classList.add('color2');
       }
     } else if ((document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec'))){
-      if (arr2[i+1][0].left === xarr.right) {
+      if (arr2[i+1][0].left === xArr.right) {
         document.getElementById(`${i}`).classList.remove('color2');
         document.getElementById(`${i}`).classList.add('color');
       } else {
@@ -251,7 +251,7 @@ const checkForPlace = (arr2, xArr, i) => {
         document.getElementById(`${i}`).classList.add('color2');
       }
     } else if ((document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec'))){
-      if (arr2[i-1][0].right === xarr.left) {
+      if (arr2[i-1][0].right === xArr.left) {
         document.getElementById(`${i}`).classList.remove('color2');
         document.getElementById(`${i}`).classList.add('color');
       } else {
@@ -259,7 +259,7 @@ const checkForPlace = (arr2, xArr, i) => {
         document.getElementById(`${i}`).classList.add('color2');
       }
     } else {
-        if (xarr.bottom === true) {
+        if (xArr.bottom === true) {
         document.getElementById(`${i}`).classList.remove('color');
         document.getElementById(`${i}`).classList.add('color2');
       } else {
@@ -269,7 +269,7 @@ const checkForPlace = (arr2, xArr, i) => {
     }
    } else if (i>0 && i<7) {
     if ((document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')) && (document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec')) && (document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec'))){
-        if ((arr2[i-1][0].right === xarr.left && xarr.bottom === arr2[i+8][0].top) || (arr2[i+1][0].left === xarr.right && xarr.bottom === arr2[i+8][0].top)) {
+        if ((arr2[i-1][0].right === xArr.left && xArr.bottom === arr2[i+8][0].top) || (arr2[i+1][0].left === xArr.right && xArr.bottom === arr2[i+8][0].top)) {
           document.getElementById(`${i}`).classList.remove('color2');
           document.getElementById(`${i}`).classList.add('color');
         } else {
@@ -277,7 +277,7 @@ const checkForPlace = (arr2, xArr, i) => {
           document.getElementById(`${i}`).classList.add('color2');
         }
       } else if ((document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')) && (document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec'))){
-        if ((arr2[i-1][0].right === xarr.left && xarr.bottom === arr2[i+8][0].top)) {
+        if ((arr2[i-1][0].right === xArr.left && xArr.bottom === arr2[i+8][0].top)) {
           document.getElementById(`${i}`).classList.remove('color2');
           document.getElementById(`${i}`).classList.add('color');
         } else {
@@ -285,7 +285,7 @@ const checkForPlace = (arr2, xArr, i) => {
           document.getElementById(`${i}`).classList.add('color2');
         }
       } else if ((document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec')) && (document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec'))){
-        if ((arr2[i+1][0].left === xarr.right && xarr.bottom === arr2[i+8][0].top)) {
+        if ((arr2[i+1][0].left === xArr.right && xArr.bottom === arr2[i+8][0].top)) {
           document.getElementById(`${i}`).classList.remove('color2');
           document.getElementById(`${i}`).classList.add('color');
         } else {
@@ -293,7 +293,7 @@ const checkForPlace = (arr2, xArr, i) => {
           document.getElementById(`${i}`).classList.add('color2');
         }
       } else if ((document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')) && (document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec'))){
-        if (arr2[i-1][0].right === xarr.left && arr2[i+1][0].left === xarr.right){
+        if (arr2[i-1][0].right === xArr.left && arr2[i+1][0].left === xArr.right){
           document.getElementById(`${i}`).classList.remove('color2');
           document.getElementById(`${i}`).classList.add('color');
         } else {
@@ -301,7 +301,7 @@ const checkForPlace = (arr2, xArr, i) => {
           document.getElementById(`${i}`).classList.add('color2');
         }
       } else if ((document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec'))){
-        if (arr2[i+1][0].left === xarr.right) {
+        if (arr2[i+1][0].left === xArr.right) {
           document.getElementById(`${i}`).classList.remove('color2');
           document.getElementById(`${i}`).classList.add('color');
         } else {
@@ -309,7 +309,7 @@ const checkForPlace = (arr2, xArr, i) => {
           document.getElementById(`${i}`).classList.add('color2');
         }
       } else if ((document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec'))){
-        if (arr2[i+8][0].top === xarr.bottom) {
+        if (arr2[i+8][0].top === xArr.bottom) {
           document.getElementById(`${i}`).classList.remove('color2');
           document.getElementById(`${i}`).classList.add('color');
         } else {
@@ -317,7 +317,7 @@ const checkForPlace = (arr2, xArr, i) => {
           document.getElementById(`${i}`).classList.add('color2');
         }
       } else if ((document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec'))){
-        if (arr2[i-1][0].right === xarr.left) {
+        if (arr2[i-1][0].right === xArr.left) {
           document.getElementById(`${i}`).classList.remove('color2');
           document.getElementById(`${i}`).classList.add('color');
         } else {
@@ -325,7 +325,7 @@ const checkForPlace = (arr2, xArr, i) => {
           document.getElementById(`${i}`).classList.add('color2');
         }
       } else {
-        if (xarr.top === true) {
+        if (xArr.top === true) {
           document.getElementById(`${i}`).classList.remove('color');
           document.getElementById(`${i}`).classList.add('color2');
         } else {
@@ -335,7 +335,7 @@ const checkForPlace = (arr2, xArr, i) => {
       } 
     } else if (i>7 && i<56 && (i+1)%8===0){
         if ((document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')) && (document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec')) && (document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec'))){
-          if ((arr2[i-1][0].right === xarr.left && xarr.bottom === arr2[i+8][0].top) || (arr2[i-8][0].bottom === xarr.top && xarr.left === arr2[i-1][0].right)) {
+          if ((arr2[i-1][0].right === xArr.left && xArr.bottom === arr2[i+8][0].top) || (arr2[i-8][0].bottom === xArr.top && xArr.left === arr2[i-1][0].right)) {
             document.getElementById(`${i}`).classList.remove('color2');
             document.getElementById(`${i}`).classList.add('color');
           } else {
@@ -343,7 +343,7 @@ const checkForPlace = (arr2, xArr, i) => {
             document.getElementById(`${i}`).classList.add('color2');
           }
         }else if ((document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')) && (document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec'))){
-          if ((arr2[i-1][0].right === xarr.left && xarr.bottom === arr2[i+8][0].top)) {
+          if ((arr2[i-1][0].right === xArr.left && xArr.bottom === arr2[i+8][0].top)) {
             document.getElementById(`${i}`).classList.remove('color2');
             document.getElementById(`${i}`).classList.add('color');
           } else {
@@ -351,7 +351,7 @@ const checkForPlace = (arr2, xArr, i) => {
             document.getElementById(`${i}`).classList.add('color2');
           }
         } else if ((document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')) && (document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec'))){
-          if ((arr2[i-1][0].right === xarr.left && xarr.top === arr2[i-8][0].bottom)) {
+          if ((arr2[i-1][0].right === xArr.left && xArr.top === arr2[i-8][0].bottom)) {
             document.getElementById(`${i}`).classList.remove('color2');
             document.getElementById(`${i}`).classList.add('color');
           } else {
@@ -359,7 +359,7 @@ const checkForPlace = (arr2, xArr, i) => {
             document.getElementById(`${i}`).classList.add('color2');
           }
         } else if ((document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec')) && (document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec'))){
-            if (arr2[i-8][0].bottom === xarr.top && arr2[i+8][0].top === xarr.bottom){
+            if (arr2[i-8][0].bottom === xArr.top && arr2[i+8][0].top === xArr.bottom){
               document.getElementById(`${i}`).classList.remove('color2');
               document.getElementById(`${i}`).classList.add('color');
             } else {
@@ -367,7 +367,7 @@ const checkForPlace = (arr2, xArr, i) => {
               document.getElementById(`${i}`).classList.add('color2');
             }
           } else if ((document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec'))){
-            if (arr2[i-8][0].bottom === xarr.top) {
+            if (arr2[i-8][0].bottom === xArr.top) {
               document.getElementById(`${i}`).classList.remove('color2');
               document.getElementById(`${i}`).classList.add('color');
             } else {
@@ -375,7 +375,7 @@ const checkForPlace = (arr2, xArr, i) => {
               document.getElementById(`${i}`).classList.add('color2');
             }
           } else if ((document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec'))){
-            if (arr2[i+8][0].top === xarr.bottom) {
+            if (arr2[i+8][0].top === xArr.bottom) {
               document.getElementById(`${i}`).classList.remove('color2');
               document.getElementById(`${i}`).classList.add('color');
             } else {
@@ -383,7 +383,7 @@ const checkForPlace = (arr2, xArr, i) => {
               document.getElementById(`${i}`).classList.add('color2');
             }
           } else if ((document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec'))){
-            if (arr2[i-1][0].right === xarr.left) {
+            if (arr2[i-1][0].right === xArr.left) {
               document.getElementById(`${i}`).classList.remove('color2');
               document.getElementById(`${i}`).classList.add('color');
             } else {
@@ -391,7 +391,7 @@ const checkForPlace = (arr2, xArr, i) => {
               document.getElementById(`${i}`).classList.add('color2');
             }
           } else {
-            if (xarr.right === false) {
+            if (xArr.right === false) {
               document.getElementById(`${i}`).classList.remove('color2');
               document.getElementById(`${i}`).classList.add('color');
             } else {
@@ -401,7 +401,7 @@ const checkForPlace = (arr2, xArr, i) => {
           }
       } else if (i>7 && i<56 && i%8===0){
           if ((document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec')) && (document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec')) && (document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec'))){
-          if ((arr2[i+1][0].left === xarr.right && xarr.bottom === arr2[i+8][0].top) || (arr2[i-8][0].bottom === xarr.top && xarr.right === arr2[i+1][0].left)) {
+          if ((arr2[i+1][0].left === xArr.right && xArr.bottom === arr2[i+8][0].top) || (arr2[i-8][0].bottom === xArr.top && xArr.right === arr2[i+1][0].left)) {
             document.getElementById(`${i}`).classList.remove('color2');
             document.getElementById(`${i}`).classList.add('color');
           } else {
@@ -409,7 +409,7 @@ const checkForPlace = (arr2, xArr, i) => {
             document.getElementById(`${i}`).classList.add('color2');
           }
         } else if ((document.getElementById(`${i-1}`).classList.contains('typea') || document.getElementById(`${i-1}`).classList.contains('typeb') || document.getElementById(`${i-1}`).classList.contains('typec')) && (document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec'))){
-        if ((arr2[i-1][0].right === xarr.left && xarr.bottom === arr2[i+8][0].top)) {
+        if ((arr2[i-1][0].right === xArr.left && xArr.bottom === arr2[i+8][0].top)) {
           document.getElementById(`${i}`).classList.remove('color2');
           document.getElementById(`${i}`).classList.add('color');
         } else {
@@ -417,7 +417,7 @@ const checkForPlace = (arr2, xArr, i) => {
           document.getElementById(`${i}`).classList.add('color2');
         }
       } else if ((document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec')) && (document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec'))){
-        if ((arr2[i+1][0].left === xarr.right && xarr.bottom === arr2[i+8][0].top)) {
+        if ((arr2[i+1][0].left === xArr.right && xArr.bottom === arr2[i+8][0].top)) {
           document.getElementById(`${i}`).classList.remove('color2');
           document.getElementById(`${i}`).classList.add('color');
         } else {
@@ -425,7 +425,7 @@ const checkForPlace = (arr2, xArr, i) => {
           document.getElementById(`${i}`).classList.add('color2');
         }
       } else if ((document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec')) && (document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec'))){
-          if (arr2[i-8][0].bottom === xarr.top && arr2[i+8][0].top === xarr.bottom){
+          if (arr2[i-8][0].bottom === xArr.top && arr2[i+8][0].top === xArr.bottom){
             document.getElementById(`${i}`).classList.remove('color2');
             document.getElementById(`${i}`).classList.add('color');
           } else {
@@ -433,7 +433,7 @@ const checkForPlace = (arr2, xArr, i) => {
             document.getElementById(`${i}`).classList.add('color2');
           }
         } else if ((document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec')) && (document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec'))){
-          if ((arr2[i+1][0].left === xarr.right && xarr.top === arr2[i-8][0].bottom)) {
+          if ((arr2[i+1][0].left === xArr.right && xArr.top === arr2[i-8][0].bottom)) {
             document.getElementById(`${i}`).classList.remove('color2');
             document.getElementById(`${i}`).classList.add('color');
           } else {
@@ -441,7 +441,7 @@ const checkForPlace = (arr2, xArr, i) => {
             document.getElementById(`${i}`).classList.add('color2');
           }
         } else if ((document.getElementById(`${i-8}`).classList.contains('typea') || document.getElementById(`${i-8}`).classList.contains('typeb') || document.getElementById(`${i-8}`).classList.contains('typec'))){
-          if (arr2[i-8][0].bottom === xarr.top) {
+          if (arr2[i-8][0].bottom === xArr.top) {
             document.getElementById(`${i}`).classList.remove('color2');
             document.getElementById(`${i}`).classList.add('color');
           } else {
@@ -449,7 +449,7 @@ const checkForPlace = (arr2, xArr, i) => {
             document.getElementById(`${i}`).classList.add('color2');
           }
         } else if ((document.getElementById(`${i+8}`).classList.contains('typea') || document.getElementById(`${i+8}`).classList.contains('typeb') || document.getElementById(`${i+8}`).classList.contains('typec'))){
-          if (arr2[i+8][0].top === xarr.bottom) {
+          if (arr2[i+8][0].top === xArr.bottom) {
             document.getElementById(`${i}`).classList.remove('color2');
             document.getElementById(`${i}`).classList.add('color');
           } else {
@@ -457,7 +457,7 @@ const checkForPlace = (arr2, xArr, i) => {
             document.getElementById(`${i}`).classList.add('color2');
           }
         } else if ((document.getElementById(`${i+1}`).classList.contains('typea') || document.getElementById(`${i+1}`).classList.contains('typeb') || document.getElementById(`${i+1}`).classList.contains('typec'))){
-          if (arr2[i+1][0].left === xarr.right) {
+          if (arr2[i+1][0].left === xArr.right) {
             document.getElementById(`${i}`).classList.remove('color2');
             document.getElementById(`${i}`).classList.add('color');
           } else {
@@ -465,7 +465,7 @@ const checkForPlace = (arr2, xArr, i) => {
             document.getElementById(`${i}`).classList.add('color2');
           }
         } else {
-          if (xarr.left === false) {
+          if (xArr.left === false) {
             document.getElementById(`${i}`).classList.remove('color2');
             document.getElementById(`${i}`).classList.add('color');
           } else {
@@ -559,7 +559,6 @@ const rotateFunc = (e) =>{
   if (document.getElementById(`${e.target.id}`).classList.contains('rotate90')){
     document.getElementById(`${e.target.id}`).classList.remove('rotate90');
     document.getElementById(`${e.target.id}`).classList.add('rotate180');
-    
     if (document.getElementById(`${e.target.id}`).classList.contains('typea')){
       changePos(tempArrPos, Number(e.target.id), true, false, false, true);
     }
@@ -569,8 +568,7 @@ const rotateFunc = (e) =>{
     if (document.getElementById(`${e.target.id}`).classList.contains('typec')){
       changePos(tempArrPos, Number(e.target.id), false, true, false, true);
     }
-    checkForPlace(tempArrPos, tempArrPos[Number(e.target.id)][0], id);
-    
+    checkForPlace(tempArrPos, tempArrPos[Number(e.target.id)][0], Number(e.target.id));
   } else if (document.getElementById(`${e.target.id}`).classList.contains('rotate180')){
     document.getElementById(`${e.target.id}`).classList.remove('rotate180');
     document.getElementById(`${e.target.id}`).classList.add('rotate270');
@@ -584,12 +582,10 @@ const rotateFunc = (e) =>{
     if (document.getElementById(`${e.target.id}`).classList.contains('typec')){
       changePos(tempArrPos, Number(e.target.id), true, false, true, false);
     }
-    checkForPlace(tempArrPos, tempArrPos[Number(e.target.id)][0], id);
-
+    checkForPlace(tempArrPos, tempArrPos[Number(e.target.id)][0], Number(e.target.id));
   } else if (document.getElementById(`${e.target.id}`).classList.contains('rotate270')){
     document.getElementById(`${e.target.id}`).classList.remove('rotate270');
     document.getElementById(`${e.target.id}`).classList.add('rotate360');
-
     if (document.getElementById(`${e.target.id}`).classList.contains('typea')){
       changePos(tempArrPos, Number(e.target.id), false, true, true, false);
     }
@@ -599,8 +595,7 @@ const rotateFunc = (e) =>{
     if (document.getElementById(`${e.target.id}`).classList.contains('typec')){
       changePos(tempArrPos, Number(e.target.id), false, true, false, true);
     }
-    checkForPlace(tempArrPos, tempArrPos[Number(e.target.id)][0], id);
-
+    checkForPlace(tempArrPos, tempArrPos[Number(e.target.id)][0], Number(e.target.id));
   } else if (document.getElementById(`${e.target.id}`).classList.contains('rotate360')) {
     document.getElementById(`${e.target.id}`).classList.remove('rotate360');
     document.getElementById(`${e.target.id}`).classList.add('rotate90');
@@ -614,24 +609,20 @@ const rotateFunc = (e) =>{
     if (document.getElementById(`${e.target.id}`).classList.contains('typec')){
       changePos(tempArrPos, Number(e.target.id), true, false, true, false);
     }
-    checkForPlace(tempArrPos, tempArrPos[Number(e.target.id)][0], id);
-
+    checkForPlace(tempArrPos, tempArrPos[Number(e.target.id)][0], Number(e.target.id));
   } else {
     document.getElementById(`${e.target.id}`).classList.add('rotate90');
     
     if (document.getElementById(`${e.target.id}`).classList.contains('typea')){
       changePos(tempArrPos, Number(e.target.id), false, false, true, true);
-      console.log(tempArrPos);
     }
     if (document.getElementById(`${e.target.id}`).classList.contains('typeb')){
       changePos(tempArrPos, Number(e.target.id), false, false, true, false);
-      console.log(tempArrPos);
     }
     if (document.getElementById(`${e.target.id}`).classList.contains('typec')){
       changePos(tempArrPos, Number(e.target.id), true, false, true, false);
-      console.log(tempArrPos);
     }
-    checkForPlace(tempArrPos, tempArrPos[Number(e.target.id)][0], id);
+    checkForPlace(tempArrPos, tempArrPos[Number(e.target.id)][0], Number(e.target.id));
   }
 }
 
@@ -639,7 +630,7 @@ const eventListForDiv = (e) => {
   for (let i=0; i<gridHeight*gridLength; i++){
     if (e.target.id === `${i}`){
       let id = Number(e.target.id);
-      checkForPlace(shuffledCardDeck, shuffledCardDeck[shuffledCardDeck.length-1][0], id);
+      checkForPlace(tempArrPos, shuffledCardDeck[shuffledCardDeck.length-1][0], id);
       gridFill(shuffledCardDeck, id);
     }
   }
