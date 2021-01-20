@@ -34,8 +34,8 @@ request('https://dou.ua/', function(error, response, body) {
     }
 
     for (let i = 0; i < 10; i += 1) {
-      let = parseArr2[i][parseArr2[i].length-1].slice(0, -1);
-      request(parseArr3[i][1]).pipe(fs.createWriteStream(`./images/${let}`));
+      let name = parseArr2[i][parseArr2[i].length-1].slice(0, -1);
+      request(parseArr3[i][1]).pipe(fs.createWriteStream(`./images/${name}`));
     }
   }
 });
