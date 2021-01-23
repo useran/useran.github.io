@@ -1133,7 +1133,6 @@ const eventListForDiv = (e) => {
 
 for (let i=0; i<gridHeight*gridLength; i++){
   document.getElementById(`${i}`).addEventListener('click', eventListForDiv);
-  /* document.getElementById(`${i}`).addEventListener('mousedown', mouseFunc); */
 }
 
 resetBtnEl.addEventListener('click', () => {
