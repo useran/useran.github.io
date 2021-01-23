@@ -1131,13 +1131,6 @@ const eventListForDiv = (e) => {
   }
 }
 
-/* const mouseFunc = (e) => {
-  switch (e.button){
-    case 2:
-    rotateFunc(tempArrPos, e);
-    break;
-  }
-} */
 for (let i=0; i<gridHeight*gridLength; i++){
   document.getElementById(`${i}`).addEventListener('click', eventListForDiv);
   /* document.getElementById(`${i}`).addEventListener('mousedown', mouseFunc); */
