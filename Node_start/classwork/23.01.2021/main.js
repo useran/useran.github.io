@@ -32,8 +32,6 @@ if (error) {
       }
       return txtContainer;
     }
-    
-    
 
     let parseArr = [];
     let parseArr2 = [];
