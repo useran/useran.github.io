@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <h4>Welcome to your <%= title %> constructor!</h4>
+    <p>What do you want to write about? Choose an option:</p>
+
+    <% for(let i=0; i<topics.length; i++) {%>
+      <input type='radio' id=<%= topics[i] %> name='radiocheck'>
+      <label for=<%= topics[i] %>><%= topics[i] %></label><br>
+    <%} %>
+    
+    <button onclick="window.location.href='/blog'">Back</button>
+
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Please choose a pic you want to add</p>
+    <form>
+      <% for(let i=0; i<topics.length; i++) {%>
+        <div id='form'>
+          <div id='inpType'>
+            <input type='checkbox' id=<%= topics[i] %> name='radiocheck'>
+            <label for=<%= topics[i] %>><%= topics[i] %></label><br>
+          </div>
+          <div id= 'pics' style='background-image:url(<%=photos[topics[i]]%>)'></div>
+        </div>
+      <%} %>
+    </form>
+    <button onclick="window.location.href='/blog'">Back</button>
+  </body>
+</html>
