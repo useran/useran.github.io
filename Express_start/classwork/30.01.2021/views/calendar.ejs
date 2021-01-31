@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>This is calendar for <b><%= monthDay %></b> and year is <b><%= year %></b></p>
+    <br>
+    
+    <!--days area-->
+    <div class = 'wrapDays'>
+      <% days.forEach(e => { %>
+        <div class='el'><%= e %></div>
+        <% }) %>
+    </div>
+    
+    <!--numbers area-->
+    <div class='wrapper'>
+      <% for(let i=0; i<grid.length; i++) {%>
+        <% if(grid[i] === '0'){ %>
+          <div class='box' style='visibility: hidden;'><%= grid[i]%></div>
+        <%} else if(dayOff.includes(i)){ %>
+          <div class='box' style='color:darkorange;'><%= grid[i]%></div>
+        <%} else { %>
+          <div class='box'><%= grid[i]%></div>
+        <%} %>
+      <%} %>
+    </div>
+
+  </body>
+</html>
