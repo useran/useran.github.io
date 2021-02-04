@@ -4,6 +4,10 @@ const moment = require('moment');
 
 moment.locale('uk');
 
+/* router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Calendar2' });
+}); */
+
 router.get('/:year/:month', function(req, res, next) {
 
   let daysArr = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'нд'];
