@@ -28,14 +28,17 @@ router.get('/', function(req, res) {
     dwnlTimeArr.push(dwnlTime);
 
     // making an output if the array contains 30 links
-    if (linkArr.length > 29){ 
+    if (linkArr.length === 30){ 
       linkArr.forEach((e, index) => {
+
         //pulling the breed off the link
         let breed = e.slice(e.indexOf('breeds'), e.lastIndexOf('/')).split('/');
         breedArr.push(breed[1]);
+
         //creating an object array of pics
         picObjArr.push(new Picture((index+1).toString().padStart(4, '0'), linkArr[index], dwnlTimeArr[index], breedArr[index], ''));
       })
+      
       //apply sorting by download time
       picObjArr.sort((num1, num2) => {
         num1 = moment(num1.dwnlTime, 'HH:mm:ss').valueOf();
