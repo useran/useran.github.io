@@ -18,8 +18,6 @@ function Picture(id, url, time, breed, size){
 
 let url = 'https://dog.ceo/api/breeds/image/random';
 
-let getLink;
-
 router.get('/', function(req, res) {
   axios.get(url).then(r => {
     const obj = {
@@ -30,8 +28,10 @@ router.get('/', function(req, res) {
   })  
 })
 
+let getLink = axios.get(url)
+
 for(let i = 0; i<30; i++){
-  getLink = axios.get(url)
+  getLink
     .then(r => {
       linkArr.push(r.data.message);
       return axios.get(url)
