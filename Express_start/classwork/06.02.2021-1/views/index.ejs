@@ -5,7 +5,26 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class='wrapper'>
+      <h1><%= title %></h1>
+      <select class='dogs'>
+        <% if (value === '') {%>
+          <option disabled selected value> -- select a breed -- </option>
+          <% for(key in r) {%>
+            <option value='<%= key %>'><%= key %></option>
+          <%} %>
+        <%} else {%>
+          <option disabled selected value><%= value %></option>
+          <% for(key in r) {%>
+            <option value='<%= key %>'><%= key %></option>
+          <%} %>
+        <%} %>
+      </select>
+      <a class='links' href="/"></a>
+      <% if (link !=='') {%>
+        <img src='<%=link%>'></img>
+      <%} %>
+    </div>
+    <script src='/javascripts/main.js'></script>
   </body>
 </html>
