@@ -34,8 +34,8 @@ for(let i = 0; i<30; i++){
   getLink
     .then(r => {
       linkArr.push(r.data.message);
-      return axios.get(url)
     })
+  axios.get(url);
 }
 
 getLink

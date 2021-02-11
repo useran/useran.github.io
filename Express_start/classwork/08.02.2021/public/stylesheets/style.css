@@ -1,0 +1,38 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0; }
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  justify-content: space-between; }
+
+.wrapper {
+  width: 200px;
+  height: 150px;
+  margin-bottom: 15px;
+  position: relative; }
+
+.pics {
+  width: 200px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  color: transparent;
+  position: absolute;
+  user-select: none; }
+
+.txt {
+  width: 200px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: darkturquoise;
+  user-select: none;
+  position: absolute; }
+
+/*# sourceMappingURL=style.css.map */

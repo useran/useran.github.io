@@ -20,6 +20,7 @@ router.get('/', function(req, res) {
     obj.value = '';
     res.render('index', obj);
   })
+  .catch(err => console.log('>>> err= ', err))
 })
 
 router.get('/:name', function(req, res) {
@@ -29,7 +30,8 @@ router.get('/:name', function(req, res) {
     obj.link = r.data.message;
     obj.value = req.params.name;
     res.render('index', obj);
-  }) 
+  })
+  .catch(err => console.log('>>> err= ', err))
 })
 
 module.exports = router;

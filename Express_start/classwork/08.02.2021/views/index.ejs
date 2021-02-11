@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dogs</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class='main'>
+      <% picObjArr.forEach(e => { %>
+        <div class='wrapper'>
+          <div id='<%= e.id %>' class='pics' style='background-image: url(<%= e.url %>)'><%= e.breed %></div>
+          <div class='txt'><%= e.breed %></div>
+        </div>
+      <%}) %>
+    </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js'></script>
+    <script src='/javascripts/main.js'></script>
+  </body>
+</html>
