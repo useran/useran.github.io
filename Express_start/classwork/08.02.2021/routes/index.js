@@ -10,7 +10,6 @@ function Picture(id, url, breed){
 }
 
 let url = 'https://dog.ceo/api/breeds/image/random';
-//const getUrl = breed => breed.includes('-') ? `https://dog.ceo/api/breed/${breed.slice(0, breed.indexOf('-'))}/images/random` : `https://dog.ceo/api/breed/${breed}/images/random`;
 
 router.get('/', function(req, res) {
   const links = [];
@@ -27,7 +26,6 @@ router.get('/', function(req, res) {
         breedArr.push(breed[1]);
         picObjArr.push(new Picture(index, r[index], breedArr[index]));
       })
-      return r;
     })
     .then(() => res.render('index', {picObjArr}))
     .catch(err => console.log('>>>> err: ', err));

@@ -16,5 +16,6 @@ picsEl.forEach(e => {
       .then(r => {
         event.target.style.backgroundImage = `url(${r.data.message})`;
       })
+      .catch(err => console.log('>>> err= ', err))
   })
 })
